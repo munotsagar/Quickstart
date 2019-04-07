@@ -1282,3 +1282,6 @@
 2018-08-06 11:39:35 - PHP Notice:  Undefined variable: mysql in /var/www/html/avocado/Quickstart/install/controller/install/step_3.php on line 280
 2018-08-06 11:39:35 - PHP Notice:  Trying to get property of non-object in /var/www/html/avocado/Quickstart/install/controller/install/step_3.php on line 280
 2018-12-25 9:02:44 - PHP Notice:  Undefined index: api_token in /var/www/html/avocado/Quickstart/catalog/controller/startup/session.php on line 8
+2019-04-07 13:43:47 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'admin_tc92262'@'localhost' (using password: YES) in E:\xampp\htdocs\Quickstart\system\library\db\mysqli.php on line 7
+2019-04-07 13:43:47 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in E:\xampp\htdocs\Quickstart\system\library\db\mysqli.php on line 10
+2019-04-07 13:43:47 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in E:\xampp\htdocs\Quickstart\system\library\db\mysqli.php on line 10

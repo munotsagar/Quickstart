@@ -55,7 +55,7 @@ class ModelAccountCustomer extends Model {
 // echo "<pre> khurram";	exit;
 
 
-			$url1 = 'http://167.99.147.172/avocado/avocadocrm/service/v4_1/rest.php?';
+			$url1 = 'http://devmike.ml/avocadocrm/service/v4_1/rest.php?';
           
               // Open a curl session for making the call
               $curl = curl_init($url1);
@@ -141,7 +141,7 @@ return $customer_id;
 
 		
 {
-		$url1 = 'http://167.99.147.172/avocado/avocadocrm/service/v4_1/rest.php?';
+		$url1 = 'http://devmike.ml/avocadocrm/service/v4_1/rest.php?';
           
               // Open a curl session for making the call
               $curl = curl_init($url1);
@@ -268,7 +268,7 @@ public function editCard($customer_id, $data) {
 	 // echo "khurram<pre>";print_r($data);exit;
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET card1 = '" . $this->db->escape($data['card1']) . "', card2 = '" . $this->db->escape($data['card2']) . "', card3 = '" . $this->db->escape($data['card3']) . "', oname1 = '" . $this->db->escape($data['oname1']) . "', oname2 = '" . $this->db->escape($data['oname2']) . "', oname3 = '" . $this->db->escape($data['oname3']) . "', crdnum1 = '" . $this->db->escape($data['crdnum1']) . "', crdnum2 = '" . $this->db->escape($data['crdnum2']) . "', crdnum3 = '" . $this->db->escape($data['crdnum3']) . "', ccidnum1 = '" . $this->db->escape($data['ccidnum1']) . "', ccidnum2 = '" . $this->db->escape($data['ccidnum2']) . "', ccidnum3 = '" . $this->db->escape($data['ccidnum3']) . "', mon1 = '" . $this->db->escape($data['mon1']) . "', mon2 = '" . $this->db->escape($data['mon2']) . "', mon3 = '" . $this->db->escape($data['mon3']) . "', yr1 = '" . $this->db->escape($data['yr1']) . "', yr2 = '" . $this->db->escape($data['yr2']) . "', yr3 = '" . $this->db->escape($data['yr3']) . "', addn1 = '" . $this->db->escape($data['addn1']) . "', addn2 = '" . $this->db->escape($data['addn2']) . "', addn3 = '" . $this->db->escape($data['addn3']) . "' WHERE customer_id = '" . (int)$customer_id . "'");
 		{
-		$url1 = 'http://167.99.147.172/avocado/avocadocrm/service/v4_1/rest.php?';
+		$url1 = 'http://devmike.ml/avocadocrm/service/v4_1/rest.php?';
           
               // Open a curl session for making the call
               $curl = curl_init($url1);

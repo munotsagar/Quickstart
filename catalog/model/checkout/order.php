@@ -39,7 +39,7 @@ class ModelCheckoutOrder extends Model {
 			$lst['orderid_c']=$order_id;
 			// customer_id
 
-			$url1 = 'http://167.99.147.172/avocado/avocadocrm/service/v4_1/rest.php?';
+			$url1 = 'http://devmike.ml/avocadocrm/service/v4_1/rest.php?';
           
               // Open a curl session for making the call
               $curl = curl_init($url1);
@@ -381,7 +381,7 @@ class ModelCheckoutOrder extends Model {
 
 			
 
-			$url1 = 'http://167.99.147.172/avocado/avocadocrm/service/v4_1/rest.php?';
+			$url1 = 'http://devmike.ml/avocadocrm/service/v4_1/rest.php?';
           
               // Open a curl session for making the call
               $curl = curl_init($url1);
