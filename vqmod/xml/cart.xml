@@ -1,0 +1,90 @@
+<modification>
+	<id>VQMod Manager Menu Shortcut</id>
+	<version>2.0.0</version>
+	<vqmver>2.3.0</vqmver>
+	<author>Jason Clark (mithereal@gmail.com)</author>
+	 
+	   
+	<file name="catalog/language/en-gb/common/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']     = '%s item(s) - %s';
+			]]></search>
+			<add><![CDATA[
+			$_['text_items']     = '%s';
+			]]></add>
+		</operation>
+	</file> 
+	 <file name="catalog/language/en-gb/checkout/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']               = '%s item(s) - %s';
+			]]></search>
+			<add><![CDATA[
+		$_['text_items']     = '%s';
+		 	]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/fr-Fr/common/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']     ='%s élément (s) - %s';
+			]]></search>
+			<add><![CDATA[
+			$_['text_items']     = '%s';
+			]]></add>
+		</operation>
+	</file> 
+	 <file name="catalog/language/fr-Fr/checkout/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']               ='%s élément (s) - %s';
+			]]></search>
+			<add><![CDATA[
+		$_['text_items']     = '%s';
+		 	]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/el-gr/common/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']     = '%s προϊόν(τα) - %s';
+			]]></search>
+			<add><![CDATA[
+			$_['text_items']     = '%s';
+			]]></add>
+		</operation>
+	</file> 
+	 <file name="catalog/language/el-gr/checkout/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']               = '%s προϊόν(τα) - %s';
+			]]></search>
+			<add><![CDATA[
+		$_['text_items']     = '%s';
+		 	]]></add>
+		</operation>
+	</file>
+	   
+	<file name="catalog/language/it/common/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']    = '%s articolo(i) - %s';
+			]]></search>
+			<add><![CDATA[
+			$_['text_items']     = '%s';
+			]]></add>
+		</operation>
+	</file> 
+	 <file name="catalog/language/it/checkout/cart.php">
+		<operation>
+			<search position="replace" log="error"><![CDATA[
+			$_['text_items']    = '%s articolo(i) - %s';
+			]]></search>
+			<add><![CDATA[
+		$_['text_items']     = '%s';
+		 	]]></add>
+		</operation>
+	</file>
+	 
+</modification>

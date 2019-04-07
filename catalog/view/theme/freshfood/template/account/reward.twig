@@ -1,0 +1,62 @@
+{{ header }}
+<div class="container account-reward">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+    <div class="container container-ver2 ">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h1 class="title-brand">{{ heading_title }}</h1>
+      <p>{{ text_rewardpoint }} <b>{{ total }}</b>.</p><br>
+      <div class="table-responsive box cart-container">
+        <table class="table  cart-table space-80">
+          <thead>
+            <tr>
+              <th class="text-left">{{ column_date_added }}</th>
+              <th class="text-left">{{ column_description }}</th>
+              <th class="text-center">{{ column_points }}</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {% if rewards %}
+          {% for reward in rewards %}
+          <tr>
+            <td class="text-left">{{ reward.date_added }}</td>
+            <td class="text-left">{% if reward.order_id %} <a href="{{ reward.href }}">{{ reward.description }}</a> {% else %}
+              {{ reward.description }}
+              {% endif %}</td>
+            <td class="text-right">{{ reward.points }}</td>
+          </tr>
+          {% endfor %}
+          {% else %}
+          <tr>
+            <td class="text-center  no-point" colspan="3">{{ rewardempty_text }}</td>
+          </tr>
+          {% endif %}
+            </tbody>
+          
+        </table>
+		
+      </div>
+      
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div></div>
+{{ footer }}

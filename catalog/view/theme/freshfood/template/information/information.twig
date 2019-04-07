@@ -1,0 +1,30 @@
+{{ header }}
+
+ <div class="container" id="information_page">
+   <div class="banner-header banner-lbook3 space-70">
+        <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+    </div>
+  </div>
+      
+  <div>{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="infor">
+       
+      {{ description }}
+	</div>
+  </div>
+
+
+{{ footer }}

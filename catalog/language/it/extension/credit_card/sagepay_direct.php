@@ -1,0 +1,19 @@
+<?php
+$_['heading_title'] = 'Carte Sagepay Direct';
+$_['text_empty'] = 'Non hai ancora carte salvate';
+$_['text_account'] = 'Conto';
+$_['text_card'] = 'Gestione carta SagePay Direct';
+$_['text_fail_card'] = 'Si &egrave; verificato un errore nel rimuovere la tua carta SagePay, contatta l\'amministratore del negozio.';
+$_['text_success_card'] = 'Carta SagePay rimossa correttamente';
+$_['text_success_add_card'] = 'Carta SagePay aggiunta correttamente';
+$_['column_type'] = 'Tipo di carta';
+$_['column_digits'] = 'Ultime cifre';
+$_['column_expiry'] = 'Scadenza';
+$_['entry_cc_owner'] = 'Proprietario';
+$_['entry_cc_type'] = 'Tipo di carta';
+$_['entry_cc_number'] = 'Numero della carta';
+$_['entry_cc_expire_date'] = 'Data di scadenza';
+$_['entry_cc_cvv2'] = 'Codice di sicurezza (CVV2)';
+$_['entry_cc_choice'] = 'Scegli una carta';
+$_['button_add_card'] = 'Aggiungi una carta';
+$_['button_new_card'] = 'Aggiungi una nuova carta';

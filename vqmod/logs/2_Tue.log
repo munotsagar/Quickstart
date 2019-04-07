@@ -1,0 +1,14 @@
+---------- Date: 2018-08-07 08:15:48 ~ IP : 49.207.52.89 ----------
+REQUEST URI : /avocado/Quickstart/index.php?route=checkout/cart/add
+MOD DETAILS:
+   modFile   : /var/www/html/avocado/Quickstart/vqmod/xml/cart.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']               = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+

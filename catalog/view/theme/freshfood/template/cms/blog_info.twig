@@ -1,0 +1,101 @@
+{{ header }}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+<div id="cms-blog-info">
+  <div class="container">
+   <div class="banner-header banner-lbook3 space-50">
+        <img src="image/catalog/images/banner-catalog1.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ text_blog }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+    </div>
+  </div>
+  <div class="container container-ver2">
+    {{ column_left }}
+	<div class="blog-post-container blog-page blog-classic">
+    <div id="content" class="col-lg-8 col-md-9  col-sm-12 col-12 p_R">
+	<div class="blog-post-item">
+	<div class="head">
+      {{ content_top }}
+
+      <h1>{{ heading_title }}</h1>
+	<p class="post-by">
+		<span>{{ date_available|date('dS F Y')}}</span><span><i class="fa fa-pencil-square-o"></i> {{text_admin}}</span>
+	</p>
+      <figure><img src="{{ image }}" class="img-responsive" alt="{{ heading_title }}" title="{{ heading_title }}" /></figure>
+
+      <article>
+        {{ description }}
+
+        <hr />
+
+        <ul class="list-inline">
+          <li><div class="fb-share-button" data-href="{{ current_url }}" data-layout="button" data-size="large" data-mobile-iframe="true">
+            <a class="fb-xfbml-parse-ignore" target="_blank" href="{{ current_url }}">{{ text_facebook }}</a>
+          </div></li>
+          <li><a href="https://twitter.com/intent/tweet" data-size="large" class="twitter-share-button">{{ text_twitter }}</a></li>
+          <li><a href="https://plus.google.com/share?url={{ current_url }}" class="gplus-share-button" target="_blank"><i class="fa fa-google-plus fa-fw"></i> {{ text_google_plus }}</a></li>
+        </ul>
+
+        <hr />
+        
+
+        </article>
+
+      
+    </div>
+    </div>
+    </div>
+   
+	<div class="col-lg-4 col-md-4 col-sm-12 col-12 blog-classic"> 
+		<div class="widget-area float-right">
+            <div class="wrap-sidebar">
+                <aside class="widget recent-post">
+                    <h3 class="widget-title">{{text_all_post}}</h3>
+					
+                    <ul>{%for blog_list in all_blogs%}
+                        <li><a href="{{blog_list.href}}" title="{{blog_list.title}}">{{blog_list.title}}</a></li>
+                        {%endfor%}
+                    </ul>
+                </aside>
+            </div>
+        </div>
+	</div>
+
+    {{ column_right }}
+
+  </div>
+</div>
+ </div>
+
+
+{{ footer }}

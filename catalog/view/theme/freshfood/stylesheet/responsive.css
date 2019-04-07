@@ -1,0 +1,415 @@
+
+  
+@media (max-width: 480px) {
+  #homepage_1 .date_set { left: 35% !important;}
+} 
+@media (min-width: 481px) and (max-width: 640px) {   
+	#homepage_1 .date_set{left: 39% !important;}
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {   
+	 #cart .dropdown-menu{width: 360px !important;}
+}
+
+ 
+/*new responsive*/
+@media screen and (min-width: 480px) and (max-width: 667px) {
+	.account-wishlist .container-ver2 {padding:0px;}
+    .account-wishlist .container-ver2 #content {padding:0px;}
+	.account-wishlist .cart-box-container .container{padding:0px;}
+	#information_page .choose-us .title-choose h3{font-size:30px !important;}
+	.featured-products .products .slide_pro {width: 100% !important;}
+}
+@media screen and (min-width: 668px) and (max-width: 991px) {
+	.account-wishlist .container-ver2 {padding:0px;}
+     .account-wishlist .container-ver2 #content {padding:0px;}
+	 .account-wishlist .cart-box-container .container{padding:0px;}
+     
+} 
+/**/
+@media (max-width: 320px){
+	.furniture{margin-bottom:40px!important;}
+	#homepage_1 .hoz-tab-container .tabs li{width:100%; float:left;}
+	#homepage_2 .special.special-v2 .special-content h3{font: 700 45px/70px "Roboto Slab";}
+	.checkout-success .container .banner-header .text{margin-top: -47px;}
+	.cart-container table.table.cart-table td.add-cart img{ padding-left:0px !important;}
+	.account-forgotten .left_for{text-align:center; margin-bottom:20px; width:100%;}
+	.account-forgotten .right_for{text-align:center; width:100%;}
+	.product-details-content .options input { width: 52% !important;}
+	#product .changer{left: 45%;}
+	.banner-header.banner-lbook3 .text p{padding:0px;}
+	.common-home .slide_first_char{font-size:25px !important; left:15% !important;}
+	.common-home .slide_view_detail{text-align:center !important;}
+	.common-home .slide_view_detail .view_detail.btn_hover2{font-weight:700 !important;}
+	.common-home .slide_view_detail1 .view_detail{font-weight:700 !important;}
+	.account-return-info .container-ver2 #content table.table.cart-table thead th:first-child {padding-left: 5px;}
+	.account-transaction .container-ver2 #content table.table.cart-table thead th:first-child { padding-left: 5px;}
+	.slider3_h2{font-size:12px !important; left:5% !important;}
+	.slider3_h4{font-size:12px !important; left: 14% !important;}
+	.slidethree .tp-rightarrow{top:55% !important;}
+	.slidethree .tp-leftarrow{top:55% !important;}
+	.detail_page4 input#input-quantity { width: 52% !important;}
+	.choose-us .title-choose.color-brand h3{font: 700 33px "Roboto Slab" !important;}
+	.products.grid_full.list-item .item-inner .product p.rating i:first-child {margin-left: 0px !important;}
+	.products.grid_full .product .product-price {line-height: 17px !important;}
+	
+}
+@media (min-width: 321px) and (max-width: 360px) {
+	.furniture{margin-bottom:40px!important;}
+#homepage_1 .hoz-tab-container .tabs li{width:100%; float:left;}
+#homepage_1 .featured-products.new-arrivals .products .product{padding-left: 15px !important; padding-right: 15px !important; }
+#homepage_2 .featured-products.new-arrivals .products .product{padding-left: 15px !important; padding-right: 15px !important; }
+#homepage_3 .featured-products.new-arrivals .products .product{padding-left: 15px !important; padding-right: 15px !important; }
+#homepage_2 .special.special-v2 .special-content h3{font: 700 45px/70px "Roboto Slab";}
+ .checkout-checkout .guest_reg{margin-top: 15px; width:100%;}
+ .account-forgotten .left_for{text-align:center; margin-bottom:20px; width:100%;}
+.account-forgotten .right_for{text-align:center; width:100%;}
+.account-edit .cart-box-container .container-ver2 #content .title-brand { font-size: 27px;}
+.account-order-info .container-ver2 #content .box .product-order {width: 100%; float: left;}
+.account-order-info .container-ver2 #content .box .product-order .text {width: 100% !important; float: left;}
+.product-details-content .options input { width: 45% !important;}
+#product .changer{left: 38%;}
+.common-home .slider_sec_line{display:none;}
+
+.common-home  .slide_first_char{font-size:25px !important; left:15% !important;} 
+ #homepage_1 .slide_view_detail a.viewdetail:hover{color:white !important;}
+
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+	#homepage_3 .banner-home3 .text h4{margin-bottom: 0px; padding-bottom: 0px;}
+	#homepage_4 .banner-home3 .text h4{margin-bottom: 0px; padding-bottom: 0px;}
+
+	.account-wishlist table.table.cart-table thead th{font-size: 14px;}
+	.account-wishlist table.table.cart-table td.add-cart{padding: 0 10px;}
+	.account-wishlist table.table.cart-table td.product-model{font-size:16px;}
+	.products .slide_pro .action{width:auto !important;}
+	.products .slide_pro .action a{width: 55px !important;}
+	.checkout-success .container .banner-header .text h3{font-size: 30px;} 
+	.checkout-success .container .banner-header .text p{font-size: 12px; padding:0px;} 
+	.cart-container table.table.cart-table td.add-cart img{ padding-top:10px !important; padding-left:0px !important;}
+	.products .product .action a{width: 55px !important;}
+	.cat #content .ordering .form{margin-left:0px;} .ri{float:right !important;} 
+	.account-register .banner-header.banner-lbook3 .text h3{font-size: 35px;}
+	.account-forgotten .banner-header.banner-lbook3 .text h3{font-size: 35px;}
+	.account-edit .banner-header.banner-lbook3 .text h3{font-size:30px;}
+	.account-edit .banner-header.banner-lbook3 .text p{padding:0px;}
+	.account-password .banner-header.banner-lbook3 .text h3{font-size:35px;}
+	.product-details-content .options input { width: 33% !important;}
+	#product .changer{left: 27%; width: 6%;}
+	.common-home .slider_sec_line{margin:20px 0px;}
+	.common-home .slide_first_char{font-size:30px !important; left:17% !important;}
+	
+	.common-home .slider_sec_line p{margin:10px 0px !important; }
+	.common-home .slide_view_detail1 {margin-top:20px !important; }
+	#account_return .banner-header.banner-lbook3 .text h3{font-size: 35px;}
+	.product-search .banner-header.banner-lbook3 .text{padding:0px;}
+	.product-search .products.grid_full.border-space-full{margin-left: 0px;}
+	.account-order-info .container .banner-header.banner-lbook3 .text {padding: 0px 10px !important;}
+	.account-return-info .container-ver2 #content table.table.cart-table thead th:first-child {padding-left: 10px;}
+	.account-return-info .banner-header.banner-lbook3 .text{padding:0px;}
+	.banner-header.banner-lbook3 .text { padding:0px;}
+	.product-special .products.grid_full.border-space-full{padding-left:15px;}
+	.detail_page4 input#input-quantity { width: 33% !important;}
+}
+ 
+
+@media screen and (max-width: 480px) {
+	.product-compare #content .table thead tr td{font: 700 12px "Roboto Slab";}
+	 
+	.account-wishlist .container .space-70{margin-bottom: 30px !important;}
+    .account-wishlist .container-ver2 {padding:0px;}
+    .account-wishlist .container-ver2 #content {padding:0px;}
+	.account-wishlist .cart-box-container .container{padding:0px;}
+	#information_page .space-70{margin-bottom: 15px !important;}
+	#information_page .container-ver2{padding:0px;}
+	.head-about .col-md-6.pd-left-10 h3{padding-right: 0px !important;}
+	.choose-us .title-choose .color-brand h3{font-size:30px;}
+	#information_page .choose-us .title-choose h3{font-size:22px !important;}
+	.account-order .container .container-ver2{padding:0px;}
+	.account-order .container .space-70 {margin-bottom: 30px !important;}
+	.account-order tr td .link-v1.lh-50{padding:10 10px; line-height: 40px; width: 50%;}
+	  
+	.account-order table.table.cart-table tbody td {text-align: center; font-size: 14px;}
+	#homepage_1 .special-content h3{font-size: 30px;}
+	#homepage_1 .special-content h5{font-size: 16px; letter-spacing: 2px; margin-top: 10px; line-height: 20px;}
+	.checkout-cart .product-quantity .input-group .form-control{padding:0px; text-align: left; padding: 0px 10px;}
+	.checkout-cart .product-quantity button{padding: 0px 12px !important;}
+	.checkout-cart .box .space-80{margin-bottom:0px !important;}
+	.checkout-cart #content .box .row-total tr td h3{padding:0px;}
+	.checkout-cart #content .box .row-total{padding:0px; margin-bottom:30px;}
+	.checkout-checkout #content{padding:0px;}
+	.checkout-checkout .space-70{margin-bottom:30px !important;}
+	.checkout-checkout .pull-right #button-payment-method{margin: 10px 0px;}
+	.checkout-checkout .info-order ul li {width:50% !important;}
+	.checkout-checkout .info-order .product-name .name{width:100%;}
+	 
+	.checkout-checkout .info-order .product-order .right.brand{margin-right: 19%; float: left;}
+	.checkout-checkout .info-order .product-order .left{margin-left: 13%;}
+	.checkout-checkout .info-order .product-name .name{width:100% !important;}
+	.product-search .cart-box-container #content{padding:0px;} 
+	.product-search .container .space-70{margin-bottom: 30px !important;}
+	/* .product-search .search_input{margin-bottom: 15px;} */
+	#homepage_4 .banner-home3 .text h3 {font: 700 20px/25px "Roboto Slab";}
+	
+	#homepage_1 .align-left .special-content .link-v1{margin:0px;}
+	#homepage_1 .special.home_v1.bg-images.box.space-100{padding:0px;}
+	.product_detail #quickview .breadcrumb{padding: 0px;}
+	.product-compare .text h3{font-size: 35px; padding-top:0px;}
+	.product-compare .text p{padding-top:0px !important;}
+	.cat .wrap-breadcrumb{padding:0px; margin:0px;}
+	 
+	.account-login .container-ver2 #content .page-login .reg{padding:0px;}
+	.account-login .container-ver2 #content .page-login .sign-in{padding:0px;}
+	.account-edit .cart-box-container #content .col-sm-2.control-label { padding: 0px;}
+	.account-password .container-ver2 #content .form-group label{padding:0px;}
+	.account-password .container-ver2 #content .form-group div{padding:0px;}
+	.account-address #content #address td{ width: 100%; float: left;}
+	.account-address #content #address td:last-child{ text-align:center;}
+	.account-address-edit .container-ver2 #content .form-group div{padding:0px;}
+	.account-order-info .container-ver2 #content .box .product-order {width: 100%; float: left;}
+	.account-order-info .container-ver2 #content .box .product-order .text {width: 100% !important; float: left;}
+	.checkout-cart .container-ver2 #content .cart-container .row-total .float-right p { padding-right: 0px;}
+	#homepage_3 #header .right #topbar.topbar-ver2{display: block;}
+	#homepage_3 #header.header-v3-new.header-v3 .header-top { padding: 0px 0px 0px !important;}
+	.banner-header .text{padding: 10px 0px;}	
+	.common-home .slide_view_detail{width:auto; height:auto; padding:8px 7px !important; margin-left:-30px !important;}
+	.common-home .view_detail { font-size: 12px !important;}
+	.banner-header.banner-lbook3 .text { height: 60px; margin-top: -30px !important;}
+
+	.common-home .slider_sec_line{font-size:10px !important; left:30px !important;}
+	.account-order-info table.table.cart-table td {  padding: 0px 0px;}
+	 #homepage_1 .tp-banner-container .tp-rightarrow { margin-top: -20px !important;}
+	 #homepage_1 .tp-banner-container .tp-leftarrow {  margin-top: -20px !important;}
+	.tp-banner-container li img {  max-width: 100%; height: 160px !important;}
+	.common-home .slider_sec_line{display:none;}
+	.account-wishlist table.table.cart-table td.add-cart .link-v1 i{line-height: 40px;}
+	.account-wishlist table.table.cart-table td.add-cart .link-v1{padding: 0 10px; line-height: 20px;}
+	.products.grid_full.list-item .item-inner .product{padding: 30px 15px !important;}
+	.cat .wrap-breadcrumb #content .ordering .view_1 .view_pro #grid-view {  margin-right: 5px;}
+	.product-search .cart-box-container .container.container-ver2 {  padding: 0px;}
+	.product-search .cart-box-container .container-ver2 #content .search_input { padding: 10px 0px;}
+	.account-return-info .container-ver2 #content .cart-table .order-info td {float: left; width: 100% !important; width: 100% !important;  float: left;}
+	.account-transaction .container-ver2 #content table.table.cart-table thead th{ font: 700 14px "Roboto Slab";}
+	.affiliate-edit .container-ver2 #content .title-brand {font: 700 24px "Roboto Slab";}
+	.account-wishlist #content .table tr td{color:#747474;font-size:15px}
+	.shipping{margin-bottom:10px;}
+	 
+	.tp-banner-container .link-1.color-white a{padding: 8px 0px 8px !important;}
+	 
+} 
+
+@media (min-width: 481px) and (max-width: 640px) {
+#homepage_1 .product-details-content .options input{width:25%; }
+.furniture .product .product-price-old { margin-left: 0px !important;}
+
+
+.checkout-cart .product-quantity button{padding: 0px 12px;}
+.checkout-success .container .banner-header .text h3{font-size: 31px;} 
+.checkout-success .container .banner-header .text p{padding:0px;}
+.ri{float:right !important;} .view_1{position:absolute;}
+.account-edit .banner-header.banner-lbook3 .text h3{font-size:35px;}
+.account-password .container-ver2 #content .form-group label{padding:0px;}
+.account-password .container-ver2 #content .form-group div{padding:0px;}
+.product-details-content .options input { width: 24.5% !important;}
+#product .changer{left: 20.5%; width: 4%;}
+#homepage_3 #header .right #topbar.topbar-ver2{display: block;}
+ #homepage_3 #header.header-v3-new.header-v3 .header-top { padding: 0px 0px 0px !important;}
+.common-home .slider_sec_line p{font-size:15px; margin:15px 0px;}
+ .common-home .slide_view_detail{margin:35px 0px !important;}
+ .common-home .slide_view_detail{width:20%; height:10%; padding:6px 0px !important; margin-left:-25px !important; }	
+ .common-home .view_detail { font-size: 12px !important;}
+ .common-home .slider_sec_line{font-size:15px !important; left:6% !important; top: 53% !important;}
+ .common-home .slide_first_char{font-size:30px !important;}
+ .products.grid_full.list-item .item-inner .product{padding: 30px 15px !important;}
+ .cat .wrap-breadcrumb #content .ordering .view_1 .view_pro #grid-view {margin-right: 5px;}
+ .product-search .cart-box-container .container.container-ver2 { padding: 0px;}
+.product-search .cart-box-container .container-ver2 #content .search_input {  padding: 10px 0px;}
+.product-search .products.grid_full.border-space-full{margin-left: 0px;}
+.account-return-info .container-ver2 #content .cart-table .order-info td {float: left; width: 100% !important; width: 100% !important;  float: left;}
+.account-return-info .container-ver2 #content table.table.cart-table thead th:first-child {padding-left: 10px;}
+ 
+}
+
+@media (max-width: 767px){
+	.products .product .action{display: block !important;}
+	.checkout-cart table tr td.float-right.border-remove{width: 50%; float: right; text-align: right;}
+	#header .header-top{margin-bottom: 0px !important;}
+	.checkout-checkout .guest_login{margin-top: 30px;}
+	.product-compare #content tr td:first-child,.account-wishlist #content tr td:first-child{text-align: center !important;}
+	 
+
+	.account-register #content\ link {padding: 0px;}
+	.account-register #content\ link .container-ver2 #account label{padding: 0px;}
+	.account-register #content\ link .container-ver2 #account div{padding: 0px;}
+	 
+	.account-register #address label{padding:0px;}
+	.account-register #address div{padding:0px;}
+	.account-register #password label{padding:0px;}
+	.account-register #password div{padding:0px;}
+	.account-register #news_letter label:first-child{padding:0px;}
+	.form-horizontal .col-md-6:nth-child(2n){padding-left:0px !important;}
+	.form-horizontal .col-md-6:nth-child(2n+1){padding-right:0px !important;}
+	.account-forgotten .form-group label{padding:0px;}
+	.account-forgotten .form-group div{padding:0px;}
+	.account-edit .cart-box-container #content .col-sm-2.control-label {padding: 0px;}
+
+	.account-edit .cart-box-container .container-ver2 #content .form-group div{padding:0px;}
+	.account-edit .cart-box-container .container-ver2 #content{padding:0px;}
+	.account-address-edit .container-ver2 #content .form-group div{padding:0px;}
+	.checkout-cart .container .product-quantity button{height:46px;}
+ 
+	/*home 1 only*/
+	.top_1 .float-left p span{font: 700 15px/18px "Roboto Slab" !important;}
+	.hover-menu .list-menu.log_user { width: 105%;} 
+	.header-v3 .top_1 .float-right a{font: 400 11px/32px "Roboto" !important;}
+	#homepage_1 #in_page .float-left p { paddding-top: 6px !important; margin-top: 7px;}
+	#topbar.topbar-ver2 { display: block !important;}
+	 
+	#header.header-v3-new.header-v3 .header-top { padding: 0px 0px 0px !important;}
+	#header.header-v4 .left_phone{ display: block !important;}
+	.left_phone_4 {display:block !important; margin-top:0px !important;}
+	.actop img {padding-right: 3px;}
+	.information-contact .map_full{padding:0px;}
+	#footer.footer-v3 { margin-top: 200px !important;  }
+	/*#topbar .inner-topbar {  border: 0px solid #cdcdcd ! important;}*/
+	.account-order tr td:first-child{color: #747474; text-align: right; font-weight: 600 !important; font: 400 14px "Roboto Slab"; text-align:center;}
+	.account-order tr td:last-child{text-align:center; color: #a7a7a7; font: 400 14px/15px "Roboto Slab"; }
+	.account-order-info .box .sm-table thead{background: #80b435; color:white; font: 700 18px "Roboto Slab";}
+	.account-order-info .box .sm-table tr td:first-child{color: #747474; text-align: center; width:50%; font: 600 14px "Roboto Slab";}
+	.account-order-info .box .sm-table tr td:last-child{color: #a7a7a7; font: 400 14px/24px "Roboto Slab";}
+	.account-order-info .box .sm-table tfoot tr td:last-child{color:#80b435; font: 600 14px/24px "Roboto Slab";}
+	.account-order-info .box .sm-table tr:last-child td:last-child{color:#80b435; font: 700 18px/24px "Roboto Slab";}
+	#account_return .product-return {padding:0px;}
+	.account-order-info table.table.cart-table thead th:first-child { padding-left: 30px; font: 700 18px "Roboto Slab"; }
+	.account-order .container-ver2 #content .table tr th { font: 700 20px "Roboto Slab";}
+	.account-reward .table.table.cart-table thead th{font: 700 14px "Roboto Slab" !important;}
+	.account-reward .table.table.cart-table thead th:first-child{padding-left:0px;}
+	.account-return .container-ver2 #content .cart-container .cart-return tr td:first-child{color: #747474; font: 600 14px "Roboto Slab"; text-align:center;}
+	.account-return .container-ver2 #content .cart-container .cart-return tr td:last-child{text-align: center; color: #a7a7a7; font: 400 14px/10px "Roboto Slab"; }
+		 
+	.account-return .container-ver2 #content .cart-container .cart-return thead th{font: 700 20px "Roboto Slab";
+background: #80b435; color: white;}
+	.account-return-info .container-ver2 #content .list.cart-table tr td:first-child { color: #747474; text-align: center;
+    width: 50%; font: 600 14px "Roboto Slab";}
+	 
+	.account-return-info .container-ver2 #content table.table.cart-table thead th{font: 700 13px/18px "Roboto Slab";}
+	.container .container.container-ver2 { padding: 0px;}
+	.account-recurring #content h1{font: 700 25px "Roboto Slab";}
+	.account-order-info #content .cart-table .link-v1.lh-50.rt { padding: 10px 20px;}
+	
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+	
+
+#homepage_1 #footer.footer-v3 .footer-inner::after,#homepage_2 #footer.footer-v3 .footer-inner::after,#homepage_3 #footer.footer-v3 .footer-inner::after  {bottom: calc(100% - 32px);}
+  
+#homepage_1 .wrappage #header #topbar{margin-bottom:20px;}
+#footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px) !important;}
+#homepage_3 .box-cat-home3{margin-top:30px;}
+#homepage_4 #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px);}
+ .product-details-content .options input { width: 44% !important;}
+
+#product .changer {width: 7%; left: 37%;}
+#header.header-v3.header-v2 .search {margin-top: 20px !important;}
+#header.header-v3-new.header-v3 .header-top .search{margin-top: 20px !important;}
+.checkout-success .container .banner-header .text h3{font-size: 35px;} 
+.product-compare .banner-header.banner-lbook3 .text h3{font-size: 45px;}
+ 
+	.account-register #content\ link {padding: 0px;}
+	.account-register #content\ link .container-ver2 #account label,.account-register #content\ link .container-ver2 #account div{padding: 0px;}
+	 
+	 
+	.account-register #address label,.account-register #address div,.account-register #password label,.account-register #password div,.account-register #news_letter label:first-child{padding:0px;}
+	 
+	.form-horizontal .col-md-6:nth-child(2n){padding-left:0px !important;}
+	.form-horizontal .col-md-6:nth-child(2n+1){padding-right:0px !important;}
+	.account-forgotten .banner-header.banner-lbook3 .text h3{font-size:50px;}
+	.account-forgotten .form-group label{padding:0px;}
+	.account-edit .cart-box-container #content .col-sm-2.control-label {padding: 0px;}
+	.account-edit .banner-header.banner-lbook3 .text h3{font-size:45px;}
+	 
+	.account-edit .cart-box-container .container-ver2 #content,.account-password .container-ver2 #content .form-group label,.account-password .container-ver2 #content .form-group div,.account-address-edit .container-ver2 #content .form-group label,.account-address-edit .container-ver2 #content .form-group div{padding:0px;}
+	
+	.account-address-edit .radio-inline.radio { padding-left: 10px !important;}
+	.information-contact .map_full,#account_return .product-return,.product-search .cart-box-container .container.container-ver2{padding:0px;}
+	.product-search .products.grid_full.border-space-full{margin-left: 0px;}
+	.account-return-info .banner-header.banner-lbook3 .text{padding:20px;}
+	.account-newsletter .text h3 {font-size: 40px !important;}
+	.banner-header.banner-lbook3 .text h3{font-size:40px !important;}
+	.container .container.container-ver2 { padding: 0px;}
+	.product_detail #quickview .box #product .changer { left: 42%;}
+	.choose-us.about-choose .items .text p{padding-left: 10px !important;}
+   
+	 
+}
+
+@media (min-width: 991px) and (max-width: 1024px) {
+	 
+#homepage_1 #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px);}
+#homepage_2 #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px);}
+#homepage_3 #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px);}
+#homepage_1 .wrappage #header #topbar{margin-bottom:20px;}
+  #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px) !important;}
+#homepage_3 .box-cat-home3{margin-top:30px;}
+#homepage_4 #footer.footer-v3 .footer-inner::after {bottom: calc(100% - 32px);}
+#homepage_1 .product-details-content .options input{width:31%;}
+#product .changer {width: 5%; left:26%;}
+#header.header-v3.header-v2 .search {margin-top: 20px !important;}
+#header.header-v3-new.header-v3 .header-top .search{margin-top: 20px !important;}
+.checkout-success .container .banner-header .text h3{font-size: 35px;} 
+.account-register #content\ link {padding: 0px;}
+	.account-register #content\ link .container-ver2 #account label{padding: 0px;}
+	.account-register #content\ link .container-ver2 #account div{padding: 0px;}
+	/*.account-register #content\ link #address label{padding: 0px;}
+	.account-register #content\ link #address div{padding: 0px;}*/
+	.account-register #address label{padding:0px;}
+	.account-register #address div{padding:0px;}
+	.account-register #password label{padding:0px;}
+	.account-register #password div{padding:0px;}
+	.account-register #news_letter label:first-child{padding:0px;}
+	
+	.form-horizontal .col-md-6:nth-child(2n){padding-left:0px !important;}
+	.form-horizontal .col-md-6:nth-child(2n+1){padding-right:0px !important;}
+	.account-address-edit .container-ver2 #content .form-group div{padding:0px;}
+	.product_detail .product-details-content .options input{width:31%;}
+	.product-search .products.grid_full.border-space-full{margin-left: 0px;}
+	.product-details-content .options input { width: 92% !important;}
+	 
+
+	 
+  
+}
+
+@media (max-width: 1024px){ 
+#homepage_1 .container #product .col-md-5:first-child{margin-bottom: 0px;}
+#homepage_2 .container #product .col-md-5:first-child{margin-bottom: 0px !important;}
+ #product .col-md-5:first-child{margin-bottom: 0px !important;}
+ 
+ 
+}
+
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+#homepage_3 .box-cat-home3{margin-top:30px;}
+ 
+}
+@media (min-width: 1280px){
+	#homepage_3 .box-cat-home3 .top_slide{margin-top:30px;}
+	#product .changer {width: 10%; left:82%;}
+	#product .homev4 { width: 5%; left: 28%;}
+	.product-details-content .options input { width: 92% !important;}
+	 .detail_page4 input#input-quantity{width: 33% !important;}
+	 .products .product .action a{width:60px;}.products .product .action{width:220px;}
+	 .products.grid_full.list-item .item-inner .product .description {margin: 20px 0px 50px !important;}
+	   .blog_post{width:33.33%;}
+}
+  
+
+
+
+
+
+

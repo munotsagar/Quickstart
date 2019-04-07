@@ -1,0 +1,401 @@
+{%if homepage == 1%}
+			<nav class="mega-menu">
+		  
+			  <ul class="nav navbar-nav" id="navbar">
+				<li class="level1 active dropdown"><a href="{{home}}" title="{{text_home_only}}">{{text_home_only}}</a>
+					<!-- <ul class="menu-level-1 dropdown-menu">
+					   	<li class="level2"><a href="?home=home1" title="{{text_home1}}">{{text_home1}}</a></li>
+						<li class="level2"><a href="?home=home2" title="{{text_home2}}">{{text_home2}}</a></li>
+						<li class="level2"><a href="?home=home3" title="{{text_home3}}">{{text_home3}}</a></li>
+						<li class="level2"><a href="?home=home4" title="{{text_home4}}">{{text_home4}}</a></li>
+					</ul> -->
+				</li>
+			
+				<li class="level1"><a href="{{info }}&information_id=4">{{text_aboutus}}</a></li>
+				<li class="level1 dropdown">
+						<a href="#" title="{{text_store_menu}}">{{text_store_menu}}</a>
+						<div class="sub-menu sub-menu-v2 dropdown-menu">
+						<div class="top-sub-menu">
+							<img src="image/catalog/images/top-submenu1.jpg" alt="images">
+						</div>
+						<ul class="menu-level-1">
+						 {%for category in categories%}  
+							<li class="level2"><a href="{{category.href}}" >{{category.name}}</a>
+								 <ul class="menu-level-2">
+								{% if category.children %}
+									{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+										{% for child in children %}
+											<li class="level3"><a href="{{ child.href }}">{{ child.name }}</a></li>
+										{% endfor %}
+								  {% endfor %}
+								{%endif%}
+								  
+								</ul>
+							</li>
+							{%endfor%}
+						  </ul>
+						  
+						  
+						   
+					  </div>
+					  
+				</li>
+				<!-- <li class="level1 dropdown"><a href="#" title="{{text_page_menu}}">{{text_page_menu}}</a>
+					<div class="sub-menu dropdown-menu">
+					  <ul class="menu-level-1">
+						<li class="level2"><a href="#">{{text_shop_page_menu}}</a>
+							<ul class="menu-level-2">
+							 <li class="level3"><a href="{{cart}}" title="{{text_shopping_cart}}">{{text_shopping_cart}}</a></li>
+								<li class="level3"><a href="{{checkout}}" title="{{text_checkout}}">{{text_checkout}}</a></li>
+								<li class="level3"><a href="{{wishlist}}" title="{{text_wishlist}}">{{text_wishlist}}</a></li>
+							</ul>
+						</li>
+						<li class="level2"><a href="#">{{text_other_page_menu}}</a>
+							<ul class="menu-level-2">
+								<li class="level3"><a href="{{info }}&information_id=9">{{text_faq}}</a></li>
+								<li class="level3"><a href="{{info }}&information_id=7">{{text_menu_error_404}}</a></li>
+								<li class="level3"><a href="{{newsletter}}" title="{{text_newsletter}}">{{text_newsletter}}</a></li>
+								<li class="level3"><a href="{{account_login}}">{{text_log_reg}}</a></li>
+							</ul>
+						</li>
+						<li class="level2"><a href="#">{{text_blog_page_menu}}</a>
+							<ul class="menu-level-2">
+							{% if logged%}
+								<li class="level3"><a href="{{account}}">{{text_account}}</a></li>
+								<li class="level3"><a href="{{account}}">{{text_edit}}</a></li>
+								 <li class="level3"><a href="{{order_history}}">{{text_order}}</a></li>
+								 <li class="level3"><a href="{{transaction}}">{{text_transaction}}</a></li>
+							{%else%}
+								   <li class="level3"><a href="{{account}}">{{text_account}}</a></li>
+								   <li class="level3"><a href="{{order_history}}">{{text_order}}</a></li>
+								   <li class="level3"><a href="{{transaction}}">{{text_transaction}}</a></li>
+							{%endif%}
+							</ul>
+						</li>
+						 <li class="level2"><a href="#">{{text_single_page_menu}}</a>
+							 <ul class="menu-level-2">
+								  <li class="level3"><a href="{{info}}&information_id=4">{{text_aboutus}}</a></li>
+								  <li class="level3"><a href="{{info}}&information_id=6">{{text_delivery_info}}</a></li>
+								  <li class="level3"><a href="{{info}}&information_id=5">{{text_term_condition}}</a></li>
+								  <li class="level3"><a href="{{info}}&information_id=9">{{ text_faq}} </a></li>
+							</ul>
+						</li>
+						 
+					  </ul>
+					  
+				  </div>
+				 
+				</li> -->
+			   <li class="level1"><a href="{{blog}}" title="{{text_blog}}">{{text_blog}}</a></li>
+			   <li class="level1"><a href="{{contact}}" title="{{text_contact}}">{{text_contact}}</a></li>
+			   <li class="level1"><a href="{{account}}" title="{{text_account}}">{{text_account}}</a></li>
+							<ul class="menu-level-1">
+							{% if logged%}
+								<li class="level2"><a href="{{account}}">{{text_account}}</a></li>
+								<li class="level2"><a href="{{account}}">{{text_edit}}</a></li>
+								 <li class="level2"><a href="{{order_history}}">{{text_order}}</a></li>
+								 <li class="level2"><a href="{{transaction}}">{{text_transaction}}</a></li>
+							{%else%}
+								   <li class="level2"><a href="{{account}}">{{text_account}}</a></li>
+								   <li class="level2"><a href="{{order_history}}">{{text_order}}</a></li>
+								   <li class="level2"><a href="{{transaction}}">{{text_transaction}}</a></li>
+							{%endif%}
+							</ul>
+						</li>
+			  </ul>
+			</nav>
+		 
+		
+	 
+	
+	{%endif%}
+		<!--
+	{% if homepage ==2%}
+	  <nav class="mega-menu">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		 <ul class="nav navbar-nav" id="navbar">
+			<li class="level1 active dropdown"><a href="#" title="{{text_home_only}}">{{text_home_only}}</a>
+				<ul class="menu-level-1 dropdown-menu">
+				   <li class="level2"><a href="?home=home1" title="{{text_home1}}">{{text_home1}}</a></li>
+					<li class="level2"><a href="?home=home2" title="{{text_home2}}">{{text_home2}}</a></li>
+					<li class="level2"><a href="?home=home3" title="{{text_home3}}">{{text_home3}}</a></li>
+					<li class="level2"><a href="?home=home4" title="{{text_home4}}">{{text_home4}}</a></li>
+				</ul>
+			</li>
+			  <li class="level1"><a href="{{info}}&amp;information_id=4">{{text_aboutus}}</a></li>
+			<li class="level1 dropdown">
+				<a href="#" title="{{text_store }}">{{text_store}}</a>
+				<div class="sub-menu sub-menu-v2 dropdown-menu">
+				<div class="top-sub-menu">
+					<img src="image/catalog/images/top-submenu1.jpg" alt="images">
+				</div>
+					  <ul class="menu-level-1">
+						
+						{%for category in categories%}
+							<li class="level2"><a href="{{category.href}}" >{{category.name}}</a>
+								<ul class="menu-level-2">
+								{% if category.children %}
+									{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+										{% for child in children %}
+											<li class="level3"><a href="{{ child.href }}">{{ child.name }}</a></li>
+										{% endfor %}
+								  {% endfor %}
+								{%endif%}
+								  
+								</ul>
+							</li>
+							{%endfor%}
+					  </ul>
+				  
+			  </div>
+			  
+			</li>
+			   <li class="level1 dropdown"><a href="#" title="{{ text_page_menu }}">{{ text_page_menu }}</a>
+			
+				<div class="sub-menu dropdown-menu">
+				 <ul class="menu-level-1">
+					<li class="level2"><a href="#">{{ text_shop_page_menu }}</a>
+						<ul class="menu-level-2">
+							 
+							<li class="level3"><a href="{{ cart }}" title="{{ text_shopping_cart }}">{{ text_shopping_cart }}</a></li>
+							<li class="level3"><a href="{{ checkout }}" title="{{ text_checkout }}">{{ text_checkout }}</a></li>
+							<li class="level3"><a href="{{ wishlist }}" title="{{ text_wishlist }}">{{ text_wishlist }}</a></li>
+							
+
+						</ul>
+					</li>
+					<li class="level2"><a href="#">{{ text_other_page_menu }}</a>
+						<ul class="menu-level-2">
+							<li class="level3"><a href="{{info }}&information_id=9" title="{{text_faq}}">{{ text_faq }}</a></li>
+							<li class="level3"><a href="{{info }}&information_id=7" title={{ text_menu_error_404 }}>{{ text_menu_error_404 }}</a></li>
+							<li class="level3"><a href="{{ newsletter }}" title="{{ text_newsletter }}">{{ text_newsletter }}</a></li>
+							
+							<li class="level3"><a href="{{ account }}" title="{{ text_log_reg }}">{{ text_log_reg }}</a></li>
+							 
+						</ul>
+					</li>
+					<li class="level2"><a href="#">{{ text_blog_page_menu }}</a>
+						<ul class="menu-level-2">{% if logged%}
+							<li class="level3"><a href="{{ account }}">{{ text_account }}</a></li>
+							<li class="level3"><a href="{{ account }}">{{ text_edit }}</a></li>
+							 <li class="level3"><a href="{{ order_history }}">{{ text_order }}</a></li>
+							 <li class="level3"><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+								 {%else%}
+							   <li class="level3"><a href="{{ account }}">{{ text_account }}</a></li>
+						 <li class="level3"><a href="{{ order_history }}">{{ text_order }}</a></li>
+								<li class="level3"><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+									{% endif %}
+					   </ul>
+					</li>
+					 <li class="level2"><a href="#">{{ text_single_page_menu }}</a>
+						 <ul class="menu-level-2">
+							  <li class="level3"><a href="{{info }}&information_id=4">{{ text_aboutus }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=6">{{ text_delivery_info }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=5">{{ text_term_condition }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=9">{{ text_faq }}</a></li>
+						</ul>
+					</li>
+					</ul>
+				</div>
+			 
+			</li>
+			<li class="level1"><a href="{{blog}}" title="{{text_blog}}">{{text_blog}}</a></li>
+			 <li class="level1"><a href="{{ contact }}" title="{{ text_contact }}">{{ text_contact }}</a></li>
+		  </ul>
+		</nav>
+
+
+	{%endif%} -->
+	<!--
+	{% if homepage == 3 %}
+		<nav class="mega-menu">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		 <ul class="nav navbar-nav" id="navbar">
+			<li class="level1 active dropdown"><a href="#" title="{{text_home_only}}">{{text_home_only}}</a>
+				<ul class="menu-level-1 dropdown-menu">
+				   <li class="level2"><a href="?home=home1" title="{{text_home1}}">{{text_home1}}</a></li>
+					<li class="level2"><a href="?home=home2" title="{{text_home2}}">{{text_home2}}</a></li>
+					<li class="level2"><a href="?home=home3" title="{{text_home3}}">{{text_home3}}</a></li>
+					<li class="level2"><a href="?home=home4" title="{{text_home4}}">{{text_home4}}</a></li>
+				</ul>
+			</li>
+			  <li class="level1"><a href="{{info}}&amp;information_id=4">{{text_aboutus}}</a></li>
+			<li class="level1 dropdown">
+				<a href="#" title="{{text_store }}">{{text_store}}</a>
+				<div class="sub-menu sub-menu-v2 dropdown-menu">
+				<div class="top-sub-menu">
+					<img src="image/catalog/images/top-submenu1.jpg" alt="images">
+				</div>
+					  <ul class="menu-level-1">
+						
+						{%for category in categories%}
+							<li class="level2"><a href="{{category.href}}" >{{category.name}}</a>
+								<ul class="menu-level-2">
+								{% if category.children %}
+									{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+										{% for child in children %}
+											<li class="level3"><a href="{{ child.href }}">{{ child.name }}</a></li>
+										{% endfor %}
+								  {% endfor %}
+								{%endif%}
+								  
+								</ul>
+							</li>
+							{%endfor%}
+					  </ul>
+				  
+			  </div>
+			  
+			</li>
+			   <li class="level1 dropdown"><a href="#" title="{{ text_page_menu }}">{{ text_page_menu }}</a>
+			
+				<div class="sub-menu dropdown-menu">
+				 <ul class="menu-level-1">
+					<li class="level2"><a href="#">{{ text_shop_page_menu }}</a>
+						<ul class="menu-level-2">
+						 
+							<li class="level3"><a href="{{ cart }}" title="{{ text_shopping_cart }}">{{ text_shopping_cart }}</a></li>
+							<li class="level3"><a href="{{ checkout }}" title="{{ text_checkout }}">{{ text_checkout }}</a></li>
+							<li class="level3"><a href="{{ wishlist }}" title="{{ text_wishlist }}">{{ text_wishlist }}</a></li>
+							
+
+						</ul>
+					</li>
+					<li class="level2"><a href="#">{{ text_other_page_menu }}</a>
+						<ul class="menu-level-2">
+							<li class="level3"><a href="{{info }}&information_id=9" title="{{ text_faq }}">{{ text_faq }}</a></li>
+							<li class="level3"><a href="{{info }}&information_id=7" title="{{ text_menu_error_404 }}">{{ text_menu_error_404 }}</a></li>
+							<li class="level3"><a href="{{ newsletter }}" title="{{ text_newsletter }}">{{ text_newsletter }}</a></li>
+							
+							<li class="level3"><a href="{{ account }}">{{ text_log_reg }}</a></li>
+							 
+						</ul>
+					</li>
+					<li class="level2"><a href="#">{{ text_blog_page_menu }}</a>
+						<ul class="menu-level-2">
+						{% if logged%}
+							<li class="level3"><a href="{{ account }}">{{ text_account }}</a></li>
+							<li class="level3"><a href="{{ account }}">{{ text_edit }}</a></li>
+							<li class="level3"><a href="{{ order_history }}">{{ text_order }}</a></li>
+							<li class="level3"><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+						{%else%}
+							<li class="level3"><a href="{{ account }}">{{ text_account }}</a></li>
+							<li class="level3"><a href="{{ order_history }}">{{ text_order }}</a></li>
+							<li class="level3"><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+						{% endif %}
+					   </ul>
+					</li>
+					 <li class="level2"><a href="#">{{ text_single_page_menu }}</a>
+						 <ul class="menu-level-2">
+							  <li class="level3"><a href="{{info }}&information_id=4">{{ text_aboutus }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=6">{{ text_delivery_info }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=5">{{ text_term_condition }}</a></li>
+							  <li class="level3"><a href="{{info }}&information_id=9">{{ text_faq }}</a></li>
+						</ul>
+					</li>
+					</ul>
+				</div>
+			 
+			</li>
+			<li class="level1"><a href="{{blog}}" title="{{text_blog}}">{{text_blog}}</a></li>
+			 <li class="level1"><a href="{{ contact }}" title="{{ text_contact }}">{{ text_contact }}</a></li>
+		  </ul>
+		</nav>
+	{%endif%}-->
+	<!--
+	{% if homepage == 4 %}
+		  <nav class="mega-menu">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+							<ul class="nav navbar-nav" id="navbar">
+                            <li class="level1 active dropdown"><a href="#" title="{{ text_home_only }}">{{ text_home_only }}</a>
+                                <ul class="menu-level-1 dropdown-menu">
+                                   <li class="level2"><a href="?home=home1" title="{{text_home1}}">{{text_home1}}</a></li>
+                                    <li class="level2"><a href="?home=home2" title="{{text_home2}}">{{text_home2}}</a></li>
+                                    <li class="level2"><a href="?home=home3" title="{{text_home3}}">{{text_home3}}</a></li>
+                                    <li class="level2"><a href="?home=home4" title="{{text_home4}}">{{text_home4}}</a></li>
+                                </ul>
+                            </li>
+							<li class="level1"><a href="{{info }}&amp;information_id=4">{{text_aboutus}}</a></li>
+							
+							 <li class="level1 dropdown">
+                                <a href="#" title="{{ text_store}}">{{ text_store}}</a>
+                                <div class="sub-menu sub-menu-v2 dropdown-menu">
+                                <div class="top-sub-menu">
+                                    <img src="image/catalog/images/top-submenu1.jpg" alt="images">
+                                </div>
+									  <ul class="menu-level-1">
+									   {%for category in categories%}
+							<li class="level2"><a href="{{category.href}}" >{{category.name}}</a>
+								<ul class="menu-level-2">
+								{% if category.children %}
+									{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+										{% for child in children %}
+											<li class="level3"><a href="{{ child.href }}">{{ child.name }}</a></li>
+										{% endfor %}
+								  {% endfor %}
+								{%endif%}
+								  
+								</ul>
+							</li>
+							{%endfor%}
+									  </ul>
+                                  <!-- End RightSubMenu -->
+                              </div>
+                              <!-- End Dropdow Menu -->
+                            </li>
+							
+							<li class="level1 dropdown"><a href="#" title="{{ text_page_menu }}">{{ text_page_menu }}</a>
+                            
+                                <div class="sub-menu dropdown-menu">
+                                 <ul class="menu-level-1">
+                                    <li class="level2"><a href="#">{{text_shop_page_menu}}</a>
+                                        <ul class="menu-level-2">
+                                            
+                                            <li class="level3"><a href="{{cart}}" title="{{text_shopping_cart}}">{{text_shopping_cart}}</a></li>
+                                            <li class="level3"><a href="{{checkout }}" title="{{text_checkout }}">{{text_checkout}}</a></li>
+                                            <li class="level3"><a href="{{wishlist }}" title="{{text_wishlist }}">{{text_wishlist}}</a></li>
+                                            
+
+                                        </ul>
+                                    </li>
+                                    <li class="level2"><a href="#">{{ text_other_page_menu }}</a>
+                                        <ul class="menu-level-2">
+                                            <li class="level3"><a href="{{ info }}&amp;information_id=9">{{text_faq }}</a></li>
+                                            <li class="level3"><a href="{{info }}&amp;information_id=7">{{text_menu_error_404}}</a></li>
+                                            <li class="level3"><a href="{{ newsletter}}" title="{{ text_newsletter}}">{{ text_newsletter }}</a></li>
+                                            
+                                            <li class="level3"><a href="{{ account }}"> {{ text_log_reg }}</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li class="level2"><a href="{{blog}}">{{ text_blog_page_menu }}</a>
+                                        <ul class="menu-level-2">
+										{% if  logged %}
+                                            <li class="level3"><a href="{{ account }}">{{ text_account}}</a></li>
+                                            <li class="level3"><a href="{{ account }}">{{text_edit}}</a></li>
+											<li class="level3"><a href="{{ order_history }}">{{ text_order }}</a></li>
+											<li class="level3"><a href="{{ transaction }}"> {{ text_transaction }}</a></li>
+										{%else%}
+											<li class="level3"><a href="{{ account }}">{{text_account}}</a></li>
+											<li class="level3"><a href="{{ order_history }}">{{text_order}}</a></li>
+											<li class="level3"><a href="{{ transaction }}">{{text_transaction}}</a></li>
+											     
+											{%endif%}
+									   </ul>
+                                    </li>
+									 <li class="level2"><a href="#">{{ text_single_page_menu}}</a>
+										 <ul class="menu-level-2">
+											  <li class="level3"><a href="{{ info }}&information_id=4">{{ text_aboutus}}</a></li>
+											  <li class="level3"><a href="{{ info }}&information_id=6">{{text_delivery_info}}</a></li>
+											  <li class="level3"><a href="{{ info }}&information_id=5">{{text_term_condition}}</a></li>
+											  <li class="level3"><a href="{{ info }}&information_id=9">{{text_faq }}</a></li>
+										</ul>
+									</li>
+                                    </ul>
+                                </div>
+                            </li><li class="level1"><a href="{{blog}}" title="{{text_blog}}">{{text_blog}}</a></li>
+                             <li class="level1"><a href="{{ contact }}" title="{{ text_contact}}">{{ text_contact }}</a>
+							 </li>
+                        </ul>
+                    </nav>
+	{% endif %} -->

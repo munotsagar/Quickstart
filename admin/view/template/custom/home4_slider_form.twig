@@ -1,0 +1,77 @@
+{{ header }}
+{{ column_left }}
+<div id="content">
+   <div class="page-header">
+    <div class="container-fluid">
+      <h1>{{ heading_title }}</h1>
+      <div class="pull-right">
+       <button type="submit" form="form-category" id="save" data-toggle="tooltip" title="{{ btn_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ btn_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+        </div>
+        <ul class="breadcrumb">
+		{% for breadcrumb in breadcrumbs %}
+		<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+		{% endfor %}
+		</ul>
+    </div>
+    </div>
+	<div class="container-fluid">
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-pencil"></i>{{ text_slider_form }}</h3>
+            </div>
+      
+            <div class="panel-body"> 
+                <form action="{{ action }}"  method="post" enctype="multipart/form-data" id="form-shop" class="form-horizontal">
+            
+                       <div class="form-group required">
+							<label class="col-sm-2 control-label" for="input-name">{{ column_title1 }}</label>
+							<div class="col-sm-8"> 
+								<input type="text" name="title1" value="{{ title1 }}" id="title1" placeholder="Enter Title1" class="form-control" />
+							 		<div id="valid_sname"></div>
+                 			</div>
+						</div>
+                     
+						 <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-name">{{ column_title2 }}</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="title2" value="{{ title2 }}" id="title2" placeholder="Enter Title2" class="form-control" />
+                        <div id="valid_sname"></div>
+                 
+                    </div>
+                  </div>
+				  
+				    <div class="form-group">
+						<label class="col-sm-2 control-label">{{ column_image }}</label>
+						  <div class="col-sm-10">
+						<a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
+						<img src="{{ thumb }}"data-placeholder="{{ placeholder }}" /></a>
+						  <input type="hidden" name="image_slide4" value="{{ image_slide4 }}" id="image_slide4" />
+						</div>
+					</div>
+				 
+				  
+                    
+                </form>
+            </div>
+        </div>
+    
+    
+    </div>
+ 
+
+</div>
+{{ footer }}
+<link href="view/stylesheet/colorpicker/mcColorPicker.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="view/javascript/colorpicker/mcColorPicker.js" ></script>
+   <script>
+                                         $(function(){
+                                         
+                                         $('#s_description').summernote({
+                                                    height: 300
+                                        });
+                                        
+                               
+                                  });
+                                         </script>

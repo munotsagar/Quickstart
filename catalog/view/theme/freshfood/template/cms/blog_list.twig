@@ -1,0 +1,78 @@
+{{ header }}
+
+<div id="cms-blog" >
+  <div class="container">
+   <div class="banner-header banner-lbook3 space-50">
+        <img src="image/catalog/images/banner-catalog1.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+    </div>
+  </div>
+  <div class="container container-ver2">
+    {{ column_left }}
+ 
+    <div id="content" class="col-lg-12 col-md-12 col-sm-12 p_R" >
+	 
+      {% if blogs is not empty %}
+	  
+	  <div class="blog-post-container blog-page blog-post-columns-3 center">
+            <div class="container container-ver2">
+            <div class="row">
+				 {% for blog in blogs %}
+				 
+                    <div class="blog-post-item blog_post">
+                        <div class="blog-post-image hover-images">
+                            <a href="#" title="Post"><img src="{{ blog.image}}" alt="{{ blog.title }}" title="{{ blog.title }}"></a>
+                        </div>  
+                        <div class="text">                          
+                            <h3><a href="{{ blog.href }}" title="{{blog.title}}">
+								 {{ blog.title }}</a></h3>
+                            
+                            <p class="content">{{blog.description}}</p>
+                            <a class="link-v1 color-brand border_blog" href="{{blog.href}}" title="{{text_READMORE}}">{{text_READMORE}}</a>
+							 
+                        </div>
+                        <!-- End text -->
+                    </div>
+                    
+                    {%endfor%}
+                     
+                </div>
+            </div>
+           
+            <!-- End link -->
+            </div>
+	  
+      <div class="row">
+        <div class="col-sm-6">
+          {{ pagination }}
+        </div>
+        <div class="col-sm-6">
+          <p class="text-right" style="font: 500 16px/38px Roboto Slab";>{{ results }}</p>
+        </div>
+      </div>
+      {% else %}
+
+      <div class="well">
+        <p class="text-center">{{ text_empty }}</p>
+      </div>
+
+      <hr/>
+      <p class="text-center"><a href="{{ continue }}" class="link-v1 rt">{{ button_back }}</a></p>
+      {% endif %}
+
+      {{ content_bottom }}
+    </div>
+
+    {{ column_right }}
+
+  </div>
+</div>
+
+
+
+{{ footer }}

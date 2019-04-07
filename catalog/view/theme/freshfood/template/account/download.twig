@@ -1,0 +1,65 @@
+{{ header }}
+<div class="container account-download">
+<div class="banner-header banner-lbook3 space-50">
+    <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+<div class="container container-ver2 ">
+  
+  <div class="row">{{ column_left }}
+<h1> Hello wold</h1>
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h2 class="title-brand">{{ heading_title }}</h2>
+      {% if downloads %}
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <td class="text-right">{{ column_order_id }}</td>
+              <td class="text-left">{{ column_name }}</td>
+              <td class="text-left">{{ column_size }}</td>
+              <td class="text-left">{{ column_date_added }}</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {% for download in downloads %}
+          <tr>
+            <td class="text-right">{{ download.order_id }}</td>
+            <td class="text-left">{{ download.name }}</td>
+            <td class="text-left">{{ download.size }}</td>
+            <td class="text-left">{{ download.date_added }}</td>
+            <td><a href="{{ download.href }}" data-toggle="tooltip" title="{{ button_download }}" class="btn btn-primary"><i class="fa fa-cloud-download"></i></a></td>
+          </tr>
+          {% endfor %}
+          </tbody>
+          
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+      {% else %}
+      <p class="space-50">{{ downloadempty_text }}</p>
+      {% endif %}
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div></div>
+{{ footer }}

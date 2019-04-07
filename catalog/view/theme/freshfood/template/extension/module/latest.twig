@@ -1,0 +1,18 @@
+
+<div class="products">
+ {% for product in products %}
+	<div class="product">
+    
+      <div class="product-images"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="primary_image" /></a></div>
+     
+        <a href="{{ product.href }}"><p class="product-title">{{ product.name }}</p></a>
+         {% if product.special %}
+			<p class="product-price-old">{{ product.price }}</p>
+			<p class="product-price">{{ product.special }}</p>
+		{% else %}
+			<p class="product-price">{{ product.price }}</p>
+		 {% endif %}
+	 
+  </div>
+  {% endfor %}
+</div>

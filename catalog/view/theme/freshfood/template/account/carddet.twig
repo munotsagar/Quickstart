@@ -1,0 +1,310 @@
+{{ header }}
+<div class="container">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-catalog1.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ breadcrumbs[2].text }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+<div id="account-carddet" class="account-carddet">
+<div class="container container-ver2 ">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class=" col-md-8">{{ content_top }}
+      <h1 class="title-brand">{{ breadcrumbs[2].text }}</h1>
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <fieldset>
+          <legend>{{ text_crdhead1 }}</legend>
+
+	<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-card1">{{ entry_card1 }}</label>
+            <div class="col-sm-2">
+
+		<select name="card1" class="card">
+		            
+			<option>visa</option>
+  			<option>amex</option>
+  			<option>master</option>
+			<option>discover</option>
+  			<option>others</option>
+			
+              </select>
+              {% if error_card1 %}
+              <div class="text-danger">{{ error_card1 }}</div>
+              {% endif %} </div>
+          </div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-oname1">{{ entry_oname1 }}</label>
+            <div class="col-sm-6">
+              <input type="text" name="oname1" value="{{ oname1 }}" placeholder="{{ entry_oname1 }}" id="input-oname1" class="form-control" />
+              {% if error_oname1 %}
+              <div class="text-danger">{{ error_oname1 }}</div>
+              {% endif %}
+            </div>
+          </div>
+	<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-crdnum1">{{ entry_crdnum1 }}</label>
+            <div class="col-sm-4">
+              <input type="text" name="crdnum1" value="{{ crdnum1 }}" placeholder="{{ entry_crdnum1 }}" id="input-crdnum1" class="form-control" />
+              {% if error_crdnum1 %}
+              <div class="text-danger">{{ error_crdnum1 }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+            <label class="col-sm-2 control-label" for="input-ccidnum1">{{ entry_ccidnum1 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="ccidnum1" value="{{ ccidnum1 }}" placeholder="{{ entry_ccidnum1 }}" id="input-ccidnum1" class="form-control" />
+              {% if error_ccidnum1	 %}
+              <div class="text-danger">{{ error_crdnum1 }}</div>
+              {% endif %}
+            </div>
+          
+		
+            <label class="col-sm-2 control-label" for="input-mon1">{{ entry_mon1 }}</label>
+            <div class="col-sm-2">
+              <select name="mon1"  class="mon">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+  			
+              </select>
+              {% if error_mon1 %}
+              <div class="text-danger">{{ error_mon1 }}</div>
+              {% endif %} </div>
+		
+            <label class="col-sm-2 control-label" for="input-yr1">{{ entry_yr1 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="yr1" value="{{ yr1 }}" placeholder="{{ entry_yr1 }}" id="input-yr1" class="form-control" />
+              {% if error_yr1	 %}
+              <div class="text-danger">{{ error_yr1 }}</div>
+              {% endif %}
+		</div>
+          	<div class="col-sm-12"><br></div>
+         <div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-addn1">{{ entry_addn1 }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="addn1" value="{{ addn1 }}" placeholder="{{ entry_addn1 }}" id="input-addn1" class="form-control" />
+              {% if error_addn1	 %}
+              <div class="text-danger">{{ error_addn1 }}</div>
+              {% endif %}
+            </div>
+          </div>
+ <legend>{{ text_crdhead2 }}</legend>
+	<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-card2">{{ entry_card2 }}</label>
+            <div class="col-sm-2">
+		<select name="card2" class="card1">
+		            
+			<option>visa</option>
+  			<option>amex</option>
+  			<option>master</option>
+			<option>discover</option>
+  			<option>others</option>
+			
+              </select>
+              
+              {% if error_card2 %}
+              <div class="text-danger">{{ error_card2 }}</div>
+              {% endif %} </div>
+          </div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-oname2">{{ entry_oname2 }}</label>
+            <div class="col-sm-6">
+              <input type="text" name="oname2" value="{{ oname2 }}" placeholder="{{ entry_oname2 }}" id="input-oname1" class="form-control" />
+              {% if error_oname2 %}
+              <div class="text-danger">{{ error_oname2 }}</div>
+              {% endif %}
+            </div>
+          </div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-crdnum2">{{ entry_crdnum2 }}</label>
+            <div class="col-sm-6">
+              <input type="text" name="crdnum2" value="{{ crdnum2 }}" placeholder="{{ entry_crdnum2 }}" id="input-crdnum2" class="form-control" />
+              {% if error_crdnum2 %}
+              <div class="text-danger">{{ error_crdnum2 }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+            <label class="col-sm-2 control-label" for="input-ccidnum2">{{ entry_ccidnum2 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="ccidnum2" value="{{ ccidnum2 }}" placeholder="{{ entry_ccidnum2 }}" id="input-ccidnum2" class="form-control" />
+              {% if error_ccidnum2	 %}
+              <div class="text-danger">{{ error_crdnum2 }}</div>
+              {% endif %}
+            </div>
+          
+
+            <label class="col-sm-2 control-label" for="input-mon2">{{ entry_mon2 }}</label>
+            <div class="col-sm-2">
+              <select name="mon2"  class="mon">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+  			
+              </select>
+              {% if error_mon2 %}
+              <div class="text-danger">{{ error_mon2 }}</div>
+              {% endif %} </div>
+          
+
+            <label class="col-sm-2 control-label" for="input-yr2">{{ entry_yr2 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="yr2" value="{{ yr2 }}" placeholder="{{ entry_yr2 }}" id="input-yr2" class="form-control" />
+              {% if error_yr2	 %}
+              <div class="text-danger">{{ error_yr2 }}</div>
+              {% endif %}
+		</div>
+         <div class="col-sm-12"><br></div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-addn2">{{ entry_addn2 }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="addn2" value="{{ addn2 }}" placeholder="{{ entry_addn2 }}" id="input-addn2" class="form-control" />
+              {% if error_addn2	 %}
+              <div class="text-danger">{{ error_addn2 }}</div>
+              {% endif %}
+            </div>
+          </div>
+ <legend>{{ text_crdhead3 }}</legend>
+	<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-card3">{{ entry_card3 }}</label>
+            <div class="col-sm-2">
+              <select name="card3" class="card">
+		            
+			<option>visa</option>
+  			<option>amex</option>
+  			<option>master</option>
+			<option>discover</option>
+  			<option>others</option>
+			
+              </select>
+              {% if error_card3 %}
+              <div class="text-danger">{{ error_card3 }}</div>
+              {% endif %} </div>
+          </div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-oname3">{{ entry_oname3 }}</label>
+            <div class="col-sm-6">
+              <input type="text" name="oname3" value="{{ oname3 }}" placeholder="{{ entry_oname3 }}" id="input-oname3" class="form-control" />
+              {% if error_oname3 %}
+              <div class="text-danger">{{ error_oname3 }}</div>
+              {% endif %}
+            </div>
+          </div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-crdnum3">{{ entry_crdnum3 }}</label>
+            <div class="col-sm-6">
+              <input type="text" name="crdnum3" value="{{ crdnum3 }}" placeholder="{{ entry_crdnum3 }}" id="input-crdnum3" class="form-control" />
+              {% if error_crdnum3 %}
+              <div class="text-danger">{{ error_crdnum3 }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+            <label class="col-sm-2 control-label" for="input-ccidnum3">{{ entry_ccidnum3 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="ccidnum3" value="{{ ccidnum3 }}" placeholder="{{ entry_ccidnum3 }}" id="input-ccidnum3" class="form-control" />
+              {% if error_ccidnum3	 %}
+              <div class="text-danger">{{ error_crdnum3 }}</div>
+              {% endif %}
+            </div>
+          
+
+            <label class="col-sm-2 control-label" for="input-mon3">{{ entry_mon3 }}</label>
+            <div class="col-sm-2">
+              <select name="mon3"  class="mon">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+  			
+              </select>
+              {% if error_mon3 %}
+              <div class="text-danger">{{ error_mon3 }}</div>
+              {% endif %} </div>
+          
+<label class="col-sm-2 control-label" for="input-yr3">{{ entry_yr3 }}</label>
+            <div class="col-sm-2">
+              <input type="text" name="yr3" value="{{ yr3 }}" placeholder="{{ entry_yr3 }}" id="input-yr3" class="form-control" />
+              {% if error_yr3	 %}
+              <div class="text-danger">{{ error_yr3 }}</div>
+              {% endif %}
+		</div>
+         <div class="col-sm-12"><br></div>
+<div class="form-group required">
+            <label class="col-sm-2 control-label" for="input-addn3">{{ entry_addn3 }}</label>
+            <div class="col-sm-10">
+              <input type="text" name="addn3" value="{{ addn3 }}" placeholder="{{ entry_addn3 }}" id="input-addn3" class="form-control" />
+              {% if error_addn3	 %}
+              <div class="text-danger">{{ error_addn3 }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+     
+        </fieldset>
+        <div class="buttons clearfix">
+          <div class="pull-left"><a href="{{ back }}" class="link-v1 lh-50 rt">{{ button_back }}</a></div>
+          <div class="pull-right">
+            <input type="submit" value="{{ button_continue }}" class="link-v1 lh-50 rt" />
+          </div>
+        </div>
+      </form>
+    </div>
+    </div></div>
+</div></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select.card").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        //alert("You have selected the country - " + selectedCountry);
+    });
+});
+</script>
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select.mon").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        //alert("You have selected the country - " + selectedCountry);
+    });
+});
+</script>
+{{ footer }}

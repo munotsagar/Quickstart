@@ -1,0 +1,134 @@
+ 
+{% if homepage==1 or homepage==2 %}
+ 
+
+<section id="slider-section" class="slider_start"> 
+	<div id="main-slider" class="owl-carousel owl-theme slider positionR">
+	{% set count= 0 %}
+		{% for slider in slider_data %}
+			{% set countpl= count + 1 %}
+				{% set count = countpl %}
+		<div class="item positionR">
+			<figure class="slider-image positionR">
+				<img src="{{ slider.s_image }}" alt="{{ slider.title }}" class="sl_height"/>
+			</figure>
+			<div class="slider1_2 positionA text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 text-center">
+						{%if count % 2 == 0 %}
+						
+							<h2 class="even1">{{ slider.title1 }}</h2>
+							<h1 class="even2">{{ slider.title2 }}</h1>
+							 <a href="#" title="View Shop" class="even3">View Details</a>
+							{% else %}
+						
+							<h2>{{ slider.title1 }}</h2>
+							<h1>{{ slider.title2 }}</h1>
+							 <a href="#" title="View Shop" class="odd">View Details</a>
+								{% endif %}
+						
+						</div>
+						 
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		{%endfor%}
+	</div>
+</section> 
+
+
+
+<script type="text/javascript"><!--
+$('#slideshow').swiper({
+	mode: 'horizontal',
+	slidesPerView: 1,
+	pagination: '.slideshow{{ module }}',
+	paginationClickable: true,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 30,
+	autoplay: 2500,
+    autoplayDisableOnInteraction: true,
+	loop: true,
+	
+});
+--></script>
+
+{%endif%}
+
+{% if homepage==3%}
+<section id="slider-section" class="slider_start"> 
+	<div id="main-slider" class="owl-carousel owl-theme slider positionR">
+	{% set count= 0 %}
+		{% for slide3_data in slider3_data %}
+		{% set countpl= count + 1 %}
+		{% set count = countpl %}
+		<div class="item positionR">
+			<figure class="slider-image positionR">
+				<img src="{{ slide3_data.image_slide3 }}" alt="img" class="sl_height"/>
+			</figure>
+			<div class="slider3_4 positionA text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 text-center">
+							{%if count % 2 == 0 %}
+								<div class="col-lg-12 col-md-12 col-12"><h2 class="even1">{{ slide3_data.title1 }}</h2></div>
+								<div class="col-lg-12 col-md-12 col-12"><h1><span class="theme-color even2">{{ slide3_data.title2 }}</span></h1>
+							 {% else %}
+								<div class="col-lg-12 col-md-12 col-12"><h2>{{ slide3_data.title1 }}</h2></div>
+								<div class="col-lg-12 col-md-12 col-12"><h1><span class="theme-color">{{ slide3_data.title2 }}</span></h1></div>
+							{%endif%}
+						</div>
+						 
+					</div>
+				</div>
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+</section> 
+ 
+{% endif %}
+
+
+{% if homepage==4%}
+<section id="slider-section" class="slider_start"> 
+	<div id="main-slider" class="owl-carousel owl-theme slider positionR">
+	{% set count= 0 %} 
+		{% for slide4 in slider4_data %}
+		{% set countpl= count + 1 %}
+		{% set count = countpl %}
+		<div class="item positionR">
+			<figure class="slider-image positionR">
+				<img src="{{ slide4.image_slide4 }}" alt="img" class="sl_height"/>
+			</figure>
+			<div class="slider3_4 positionA text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-sm-10 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 text-center">
+							{%if count % 2 == 0 %}
+								<div class="col-lg-12 col-md-12 col-12"><h2 class="even1">{{ slide4.title1 }}</h2></div>
+								<div class="col-lg-12 col-md-12 col-12"><h1><span class="theme-color even2">{{ slide4.title2 }}</span></h1>
+							 {% else %}
+								<div class="col-lg-12 col-md-12 col-12"><h2>{{ slide4.title1 }}</h2></div>
+								<div class="col-lg-12 col-md-12 col-12"><h1><span class="theme-color">{{ slide4.title2 }}</span></h1></div>
+							{%endif%}
+						</div>
+						 
+					</div>
+				</div>
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+</section> 
+ 
+{% endif %}
+
+
+ 
+
+  

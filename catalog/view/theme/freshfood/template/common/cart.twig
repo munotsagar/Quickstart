@@ -1,0 +1,74 @@
+
+
+<div id="cart" class="btn-group btn-block icon-cart"> 
+  <button  data-toggle="dropdown" data-loading-text="{{text_loading}}" class="btn-inverse dropdown-toggle icon"> 
+  <span id="cart-count" class="cart-count">{{text_items}}</span></button>
+  <ul class="dropdown-menu pull-right cart-list">
+	{% if products or vouchers %} 
+      {% for product in products %} 
+         
+		 {%if product.thumb %}
+			 
+		   <li>
+            <a href="{{product['href']}}"><img src="{{product['thumb']}}" alt="{{product['name']}}" title="{{product['name']}}" class="cart-product-image" /></a>
+				{% endif%}</td>
+          <div class="text"><a href="{{product['href']}}" class="product-name">{{product['name']}}</a>
+			  {%if product.option%} 
+				{% for option in product.option %}
+            <br />
+            - <small>{{option['name']}} {{option['value']}}</small>
+				{%endfor%}
+				  
+			{%endif%}
+			
+            {%if product.recurring%}
+            <br />
+            - <small>{{text_recurring}} {{product['recurring']}}</small>
+            {%endif%}
+			
+			<p class="product-price">
+				
+				<span class="price">{{product['total']}}</span>
+			</p>
+			<span class="qty">QTY:{{product['quantity']}}</span><br />
+			<span class="qty" style="text-transform: lowercase;">{{text_weight}} : {{product['weight']}} </span>
+				 
+			<a onclick="cart.remove('{{product['cart_id']}}');" title="{{ button_remove}}" class="close"><i class="fa fa-times-circle"></i></a>
+		</div>
+			 </li>
+			 {%endfor%}
+		
+		{% for voucher in vouchers%}
+        
+        <tr>
+          <td class="text-center"></td>
+          <td class="text-left">{{voucher['description']}}</td>
+          <td class="text-right">x&nbsp;1</td>
+          <td class="text-right">{{voucher['amount']}}</td>
+          <td class="text-center text-danger"><button type="button" onclick="voucher.remove('{{voucher['key']}}');" title="{{button_remove}}" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i></button></td>
+        </tr>
+        {% endfor %}
+      
+    
+		 <li>
+		 {% for total in totals %}
+          <p class="total">
+            <span class="left"><strong>{{ total['title'] }}</strong></span>
+            <span class="right">{{ total['text'] }}</span>
+          </p>
+		  {% endfor %}
+        
+        <p class="bottom">
+				<a href="{{ cart }}" class="link-v1 ">{{ text_cart}}</a>
+				<a href="{{ checkout}}" class="link-v1 rt cart-view">{{ text_checkout}}</a>
+		</p>
+      
+    </li> 
+	{%else%}
+    <li>
+      <p class="text-center product-name">{{text_empty}}</p>
+    </li>
+	{%endif%}
+	</ul>
+</div>
+

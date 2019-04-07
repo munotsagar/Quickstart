@@ -1,0 +1,77 @@
+#cms-blog h1 {
+font: 400 25px/30px "Roboto Slab";
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #DDD;
+} #cms-blog #blog-list > div {
+  margin-bottom: 30px;
+} #cms-blog #blog-list article {
+  height: auto;  
+} #cms-blog #blog-list figure {
+  border-radius: 5px;
+   
+} #cms-blog #blog-list h3 {
+  line-height: 1.4;     margin: 10px 0px;font: 400 25px/30px "Roboto Slab";
+} #cms-blog #blog-list figure img {
+  border-radius: 4px;
+}  #cms-blog .well {
+  background-color: #fff;
+  box-shadow: inset 0 0px 0px rgba(0,0,0,0);
+  padding-top: 60px;
+  padding-bottom: 60px;
+} #cms-blog .well p {
+  margin-bottom: 0;
+}
+
+#cms-blog-info h1 {
+  font-weight: bold;
+  text-align:center;
+}
+#cms-blog-info figure {
+  margin-top: 20px;  
+    overflow: hidden;
+}
+#cms-blog-info article {
+  margin-top: 30px;
+}
+
+#cms-blog-info .list-inline {
+  margin-bottom: 0;
+} #cms-blog-info .list-inline > li {
+  vertical-align: top;
+}
+
+@media screen and (max-width: 767px){
+  #cms-blog #blog-list article {
+    height: auto;
+  }
+}
+
+footer .blog-item .title{
+  font-weight: bold;
+}
+footer .blog-item + .blog-item {
+  border-top: 1px solid #999;
+  padding-top: 12px;
+}
+
+.gplus-share-button {
+    background-color: #db4437;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px 7px;
+    position: absolute;
+}
+.blog_text a{
+	color: #666 !important;
+	 
+}
+.blog_text a:hover{text-decoration:none;}
+.blog_view .link-v1.rt{color:#FFFFFF !important;}
+article h3 a{color: #242626; }
+article p{color: #898989; font: 300 16px/25px "Roboto Slab"; }
+.blog-post-item .text a.link-v1.color-brand:hover {   color: #ffffff !important;}
+	ul.box.space-30 li{color: #898989;  font: 300 16px/25px "Roboto Slab";}
+    ul.box.space-30 li:before{display: inline-block; color: #898989;
+    font: 300 16px/25px "Roboto Slab"; line-height:30px; height: 5px; width: 5px;  background: #333;  margin-right: 10px;  content: '';   margin-bottom: 2px;}
+	artical text p.normal{font-weight:400px;}

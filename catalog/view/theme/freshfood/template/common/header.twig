@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html dir="{{ direction }}" lang="{{ lang }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ title }}</title>
+<base href="{{ base }}" />
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+  
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/bootstrap.css"/> 	
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/responsive.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/freshfood.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/fresh_food.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/style.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/ff_responsive.css"/> 
+
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/vendor/owl-slider.css"/>
+ 
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/vendor/owl.carousel.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/vendor/settings.css"/>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/freshfood/stylesheet/vendor/slick.css"/>
+ 
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,700,300' rel='stylesheet' type='text/css'/>
+       
+<script src="catalog/view/theme/freshfood/js/validation/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8">
+</script>
+<script src="catalog/view/theme/freshfood/js/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+</script>
+<link rel="stylesheet" href="catalog/view/theme/freshfood/stylesheet/validation/validationEngine.jquery.css" type="text/css"/>
+
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/owl.carousel.min.js"></script> 
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/main.js"></script>   
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/engo-plugins.js"></script>
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/slick.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/store.js"></script>
+<script type="text/javascript" src="catalog/view/theme/freshfood/js/jquery.zoom.js"></script>
+ 
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+<script type="text/javascript">
+jQuery(document).ready( function() {
+jQuery("#myvalidation").validationEngine();
+});
+
+</script>
+<style>
+.link-v1.rt,.link-v1:hover,#footer .subscribe button,.link-v1.bg-brand,.head-cart .item.active .icon,.tp-banner-container .link-1.bg-brand,#customer a.button-v1,.tp-banner-container .link-1:hover,.product-details-content .slider-nav .slick-slide.slick-current img, .product-details-content .slider-nav .slick-slide:hover img,.products.grid_full.list-item .item-inner .product .action a.add-cart,.products.grid_full.list-item .item-inner .product .action a.wish:hover,.products.grid_full.list-item .item-inner .product .action a.compare_icon:hover,.upsell-product.products.owl-carousel .owl-nav .owl-prev:hover, .upsell-product.products.owl-carousel .owl-nav .owl-next:hover,.slider1_2 a,.slider1_2 a:hover,a.link-v1.color-brand.border_blog,.products.grid_full.list-item .item-inner .product .action a.wish1:hover,.products.grid_full.list-item .item-inner .product .action a.add-cart1:hover{border-color: #{{theme_color}}!important;}
+
+#topbar .float-left a:hover,#topbar .float-left p span,.cart-list li .text .product-price,.cart-list .total span.right,.cart-list .bottom a:hover,.cart-list .bottom a:hover,ul.tabs.tabs-title li.active, ul.tabs.tabs-title li:hover,.products .product .product-price,a:hover,.products .product:hover .product-title,.special-content h3,#footer .title-footer,#footer .subscribe button:hover,#footer .social a:hover i,#footer .subscribe button i:hover,.choose-us .title-choose h4,.choose-us .title-choose.color-brand h3,.our-team .banner-title .action a:hover i:hover,#footer .language .btn-link,#footer .language .btn-block:hover,.ordering .form select,.link-v1.rt:hover, .title-brand,table.table.cart-table td.product-instock,.account-order-info .product-order .sub-price,table.table.cart-table td.total-price,.row-total .float-right p,.checkout-checkout .panel-title,.info-order .product-order .right.brand,.checkout-checkout tr:last-child .sub_t,.page-faq .content-text h2,.page-404 .text p a,.map_full .box-body .form-control-static,.page-contact .content-text h3,.link-footer,.color-brand,#content\ succs h3,.product-details-content .social h3,.fa-stack-2x,.hoz-tab-container .tabs li.active, .hoz-tab-container .tabs li:hover,.tp-banner-container .link-1.color-white a.view_detail:hover,.number,.product-details-content .rating span,.product-details-content .wrap-price p:last-child,.products.grid_full.list-item .item-inner .product .action a.add-cart:hover:after,.slick-slider .slick-list .slick-track .slick-slide a,.ordering span:hover,.ordering span.active,.title-brand,p a:first-child,p a:last-child,.alert-success a,.accordion .panel-title a,.produc-name a,.products__name a,.slider1_2 .odd:hover,.product-images .action a.wish1.fa.fa-heart-o:hover{ color: #{{theme_color}}!important;}
+
+.slider1_2 a:hover,.map_full .box-body .form-control-static,.ordering span.active,.accordion .panel-title a
+,.produc-name a, a:hover,.account-order-info .product-order .sub-price,.product-compare .fa-stack-2x,.checkout-checkout .panel-title,.checkout-checkout tr:last-child .sub_t,.choose-us .text h3,.product_detail .upsell-product.products.owl-carousel .owl-nav .owl-prev:hover i,
+	.product_detail .upsell-product.products.owl-carousel .owl-nav .owl-next:hover i{color: #{{theme_color}};}
+
+button.button_search:hover,#header .cart .cart-count,.link-v1.rt,#footer .subscribe button,.link-v1.bg-brand,table.table.cart-table thead,.account-order-info .box .sm-table thead,.head-cart .item.active .icon,.head-cart .item h3:after,.catbox-container .items .text h3, .product-details-content .action a.link-v1:hover,#customer a.button-v1,.tp-banner-container .link-1:hover,.page-login h3::after,.mega-menu ul.navbar-nav ul.menu-level-1 li a:hover:after,.checkout-checkout h2::after,.page-contact .head .item .icon span,.owl-nav-ver1 .owl-carousel .owl-nav .owl-next:hover,.owl-nav-ver1 .owl-carousel .owl-nav .owl-prev:hover,.hoz-tab-container.ver2 .tabs li.active:after, .hoz-tab-container.ver2 .tabs li:hover:after,.checkout-cart #content .table thead,.product-compare #content .table thead, .account-wishlist #content .table thead,.awe-loading-wrapper .progress .progress-bar,.widget .widget-title:after,.link-v1:hover{ background: #{{theme_color}}!important;}
+
+.products.grid_full.list-item .item-inner .product .action a.add-cart::after{background: #{{ theme_color}} none repeat scroll 0 0 !important;}
+
+.cart-list .bottom a:hover, #footer .subscribe button:hover,.link-v1.bg-brand:hover,.link-v1.rt:hover,.mega-menu ul.navbar-nav ul.menu-level-1 li a,#customer a.button-v1:hover,.product-details-content .action a.link-v1.add-cart:hover,.products.grid_full.list-item .item-inner .product .action a.add-cart:hover:after{background:#ffffff !important;}
+.tp-banner-container .link-1.color-white a:hover,.link-1.color-white a:hover,.tp-banner-container .color-white:hover,#plus_num:focus i, #minus_num:focus i,.link-v1:focus,.link-v1.rt:focus,.slider1_2 a{color:#FFFFFF !important;}
+.tp-banner-container .link-1.bg-brand,.products.grid_full.list-item .item-inner .product .action a.add-cart,.tp-banner-container .tp-caption.bg-brand,.tp-banner-container .tp-caption.bg-brand,#plus_num:focus, #minus_num:focus,.link-v1.rt:focus,.slider1_2 a,.slider1_2 .even3:hover,.slider3_4 h2{background-color:#{{theme_color}}!important;}
+.tp-banner-container .link-1.bg-brand:hover,.slider1_2 a:hover{background-color: transparent !important;}
+
+</style>
+</head>
+<body>
+ <div class="awe-page-loading">
+         <div class="awe-loading-wrapper">
+            <div class="awe-loading-icon">
+               <img src="image/catalog/images/logo.png">
+            </div>
+            <div class="progress">
+               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+         </div>
+      </div> 
+{% if homepage == 1%}
+<div class="wrappage"> 
+	<header id="header" class="header-v1 header-v3">
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popup-search">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+				 {{search}}
+                </div>
+            </div> 
+        </div> 
+    </div>
+            
+			<div class="right top_1 hidden-sm hidden-md hidden-lg " id="topbar">
+			  <div class="container">
+			 <div class="inner-topbar box homev1_lphone" id="in_page">
+                    <div class="float-left">
+						<p class="phone">
+						<img src="image/catalog/images/icon-phone-header.png.png"><span>{{telephone}}</span></p>
+                    </div>
+						<div class="float-right align-right">
+							<div class="hover-menu actop">
+								  <a class="acc text-uppercase"><img src="image/catalog/images/icon-user-header.png" alt="icon">{{text_account}}</a>
+							<ul class="list-menu log_user">
+							{% if logged %}
+								<li><a href="{{account}}" class="text-uppercase">{{text_account}}</a></li>
+								<li><a href="{{logout}}" class="text-uppercase">{{text_logout1}}</a></li>
+								{%else%}
+								<li><a href="{{login}}" title="{{text_login}}" class="text-uppercase">{{text_login}}</a></li>
+								<li><a href="{{register}}" title="{{text_register}}" class="text-uppercase">{{text_register}}</a></li>
+								{%endif%}
+								</ul>
+							</div>
+							 
+						</div>
+                    </div>
+			</div>
+			</div>
+			
+			<div id="topbar">
+			 
+                <div class="container container-ver2">
+					 
+                    <div class="inner-topbar box">
+                        <div class="float-left hidden-xs">
+                            <p class="acc"><a href="{{ login}}"><p class="acc"><img src="image/catalog/images/icon-user-header.png" alt="icon">{{text_account}}</a></p>
+						    <p class="phone acc_h1"><img src="image/catalog/images/icon-phone-header.png.png" alt=""><span>{{telephone}}</span></p>
+                       </div>
+                        <div class="logo" id="logo">
+							<a href="{{home}}" title="Uno">
+                                <img src="{{logo}}" alt="images">
+                            </a>
+                        </div> 
+                        <div class="float-right align-right">
+                            <div class="box-right">
+                                <div class="cart hover-menu">
+                                     <span class="icon-cart">{{cart}}</span>
+                                </div>
+                                <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <i class="icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+			<div class="header-top">
+				<div class="container container-ver2">
+					<div class="box">
+					<p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+					<div class="logo-mobile"><a href="{{home}}" title="Xanadu"><img src="{{logo}}" alt="Xanadu-Logo"></a></div>
+					{{ menu }}
+					</div>                
+				</div>
+		
+			</div>
+           
+            
+        </header>
+	</div>
+	 
+		 {%endif%}
+		 <!-->
+		{% if homepage ==2%}
+		 <div class="wrappage">
+        
+		 
+        <header id="header" class="header-v3 header-v2">
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popup-search">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+				 {{ search }}
+                </div>
+            </div> 
+        </div> 
+    </div>
+            <div id="topbar" class="topbar-ver2">
+                <div class="container container-ver2">
+                    <div class="inner-topbar box">
+                        <div class="float-left">
+                            <p><img src="image/catalog/images/icon-phone-header.png.png" alt="icon">{{ text_call }} <span>{{ telephone }}</span></p>
+                        </div>
+                        <div class="float-right align-right">
+                            <div class="hover-menu">
+                                <a class="acc text-uppercase"><img src="image/catalog/images/icon-user-header.png" alt="icon">{{ text_account }}</a>
+                                <ul class="list-menu log_user">
+								{% if logged %}
+										<li><a href="{{ account }}" class="text-uppercase">{{ text_account }}</a></li>
+										<li><a href="{{ logout }}" class="text-uppercase">{{ text_logout1 }}</a></li>
+								{% else %}
+										<li><a href="{{ login }}" title="{{ text_login }}" class="text-uppercase">{{ text_login }}</a></li>
+										<li><a href="{{ register }}" title="{{ text_register }}" class="text-uppercase">{{ text_register }}</a></li>
+								{% endif %}
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="header-top">
+                    <div class="container container-ver2">
+                    <div class="box">
+                        <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+                        <div class="logo"><a href="#" title="Uno">
+						<a href="{{ home }}" title="Uno">
+                            <img src="{{ logo }}" alt="images" class="img-responsive">
+                        </a>
+                        </a></div>
+                        <div class="logo-mobile"><a href="{{ home }}" title="Xanadu"><img src="{{ logo }}" alt="Xanadu-Logo"></a></div>
+
+                        <div class="box-right">
+                            <div class="cart hover-menu">
+                                {{ cart }}
+                            </div>
+							<div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <i class="icon"></i>
+                            </div>
+                        </div>
+						{{ menu }}
+                        
+                    </div>                
+                    </div>
+                    
+            </div>
+                
+        </header>
+</div>
+		{%endif%}
+ 
+{% if homepage == 3 %}
+	 <div class="wrappage">
+		<header id="header" class="header-v3 header-v3-new">
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content popup-search">
+					<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+					<div class="modal-body">
+					 {{ search }}
+					</div>
+				</div> 
+			</div> 
+		</div>
+            <div class="right">
+                <div id="topbar" class="topbar-ver2">
+                    <div class="container container-ver2">
+                        <a class="logo-header-v3" href="{{ home }}" title="Logo-FreshFood"><img src="image/catalog/images/logo-header3.jpg" alt="FreshFood"></a>
+                        <div class="inner-topbar box">
+                            <div class="float-left">
+                                <p><img src="image/catalog/images/icon-phone-header.png.png" alt="icon">{{ text_call }} <span>{{ telephone }}</span></p>
+                            </div>
+                            <div class="float-right align-right">
+                                <div class="hover-menu">
+                                    <a class="acc text-uppercase" href="#"><img src="image/catalog/images/icon-user-header.png" alt="icon" class=" ">{{ text_account }}</a>
+                                    <ul class="list-menu log_user">
+								{% if logged %}
+										<li><a href="{{ account }}" title="" class="text-uppercase">{{ text_account }}</a></li>
+										<li><a href="{{ logout }}" title="" class="text-uppercase">{{ text_logout1 }}</a></li>
+								{% else %}
+										<li><a href="{{ login }}" title="{{ text_login }}" class="text-uppercase">{{ text_login }}</a></li>
+										<li><a href="{{ register }}" title="{{ text_register }}" class="text-uppercase">{{ text_register }}</a></li>
+								{% endif %}
+                                </ul>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+                <div class="header-top">
+                        <div class="container container-ver2">
+                        <div class="box">
+                            <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+                            <div class="logo-mobile"><a href="{{ home }}" title="FreshFood"><img src="{{ logo }}" alt="FreshFood-Logo"></a></div>
+                            <div class="box-right">
+                                <div class="cart hover-menu">
+                                    {{ cart }}
+                                </div>
+								<div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <i class="icon"></i>
+								</div>
+                            </div>
+							{{ menu }}
+                       
+                        </div>
+                        </div>
+                        
+                    </div>
+                
+            </div>
+            
+        </header> 
+		</div>
+ 
+{% endif %} 
+
+
+{% if homepage == 4 %}
+<div class="wrappage">
+ <header id="header" class="header-v1 header-v3 header-v4">
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popup-search">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+				 {{ search }}
+                </div>
+            </div> 
+        </div> 
+    </div>
+		<div class="hidden-sm hidden-md hidden-lg">
+			<div class="right">
+                <div id="topbar" class="topbar-ver2">
+                    <div class="container container-ver2">
+                       
+                        <div class="inner-topba box" style="border-bottom: 1px solid #cdcdcd;">
+                            <div class="float-left left_phone_4">
+                                <p><img src="image/catalog/images/icon-phone-header.png.png" alt="icon">{{ text_call }} <span>{{ telephone }}</span></p>
+                            </div>
+                            <div class="float-right align-right">
+                                <div class="hover-menu">
+                                    <a class="acc text-uppercase" href="#"><img src="image/catalog/images/icon-user-header.png" alt="icon" class=" ">{{ text_account }}</a>
+                                    <ul class="list-menu log_user">
+								{% if logged %}
+										<li><a href="{{ account }}" title="" class="text-uppercase">{{ text_account }}</a></li>
+										<li><a href="{{ logout}}" title="" class="text-uppercase">{{ text_logout1 }}</a></li>
+										{%else%}
+										<li><a href="{{ login }}" title="{{ text_login }}" class="text-uppercase">{{ text_login }}</a></li>
+										<li><a href="{{ register }}" title="{{ text_register }}" class="text-uppercase">{{ text_register }}</a></li>
+									{%endif%}
+                                </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+		 
+		<div id="topbar">
+	        <div class="container container-ver2">
+                <div class="inner-topbar box">
+                    <div class="float-left">
+                        <a href="{{ account }}" title="{{ text_account }}"><img src="image/catalog/images/icon-acc.png" alt="icon"></a>
+                        <a class="icon-head4" href="{{ wishlist }}" title="wishlist"><img src="image/catalog/images/icon-wishlist.png" alt="icon"></a>
+                   </div>
+                    <div class="logo">
+                        <a href="#" title="Uno"> 
+                            <img src="{{ logo }}" alt="images">
+                        </a>
+                    </div>
+                    <div class="float-right align-right">
+                        <div class="box-right">
+                            <div class="cart hover-menu">
+                                {{ cart }}
+                            </div>
+                            <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-top">
+            <div class="container container-ver2">
+                <div class="box">
+                    <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p> 
+                    <div class="logo-mobile"><a href="#" title="Xanadu"><img src="{{ logo }}" alt="Xanadu-Logo"></a></div>
+                  {{menu}}
+                </div>
+            </div>
+        </div>
+    </header> 
+</div>
+
+{% endif %} 
+    
+

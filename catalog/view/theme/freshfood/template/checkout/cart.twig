@@ -1,0 +1,258 @@
+{{ header }}
+<div class="container checkout-cart">
+<div class="banner-header banner-lbook3 space-70">
+        <img src="image/catalog/images/banner-product-checkout.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ breadcrumbs[1].text }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+    </div>
+ <div class="container container-ver2">
+ 
+  {% if attention %}
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ attention }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+		 <div class="head-cart">
+				 <div class="row">
+                        <div class="col-md-4 space-30">
+                            <div class="item active center">
+                                <p class="icon">01</p>
+                                <h3>{{ text_shopping_cart }}</h3>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+                        <div class="col-md-4 space-30">
+                            <div class="item center">
+                                <p class="icon">02</p>
+                                <h3>{{ text_checkout }}</h3>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+                        <div class="col-md-4 space-30">
+                            <div class="item center">
+                                <p class="icon">03</p>
+                                <h3>{{ text_ordercomplite }}</h3>
+                            </div>
+                        </div>
+                        <!-- End col-md-4 -->
+ 
+                </div>
+            </div>
+		 <div class="breadcrumb"></div>
+	<div class="box cart-container">	 
+      <form action="{{ action }}" method="post" enctype="multipart/form-data"  class="hidden-xs">
+        <div class="table-responsive">
+          <table class="table cart-table">
+            <thead>
+              <tr>
+                <th class="product-photo">{{ column_image }}</th>
+                <th class="produc-name">{{ column_name }}</th>
+              
+                <th class="text-left produc-price">{{ column_price }}</th>
+				<th class="text-center">{{ column_quantity }}</th>
+                <th class="text-center">{{ column_total }}</th>
+				<th></th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            {% for product in products %}
+            <tr class="item_cart">
+              <td class="text-center product-photo">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a> {% endif %}</td>
+              <td class="produc-name"><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+                {% if product.option %}
+                {% for option in product.option %} <br />
+                <small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+                {% endif %} <br />
+				  <small>{{text_weight}} : {{ product.weight}}</small> 
+                {% if product.reward %} <br />
+                <small>{{ product.reward }}</small> {% endif %}
+                {% if product.recurring %} <br />
+                <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
+			  <td class="text-left produc-price">{{ product.price }}</td>
+              <td class="text-left product-quantity"><div class="input-group btn-block" style="max-width: 200px;">
+                  <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" size="1" class="form-control" />
+                  <span class="input-group-btn">
+                  <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="link-v1 lh-50 rt update_btn"><i class="fa fa-refresh"></i></button>
+                  
+                  </span></div></td>
+             
+              <td class="text-center total-price">{{ product.total }}</td>
+			  <td class="product-remove">
+			  <a  onclick="cart.remove('{{ product.cart_id }}');" class="remove" title="{{ button_remove }}"><img src="image/catalog/images/icon-delete-cart.png" alt="close" style="cursor: pointer;"></a>
+			</td>
+            </tr>
+            {% endfor %}
+            {% for voucher in vouchers %}
+            <tr>
+              <td></td>
+              <td class="text-left">{{ voucher.description }}</td>
+              <td class="text-left"></td>
+              <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                  <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
+                  <span class="input-group-btn">
+                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
+                  </span></div></td>
+              <td class="text-right">{{ voucher.amount }}</td>
+              <td class="text-right">{{ voucher.amount }}</td>
+            </tr>
+            {% endfor %}
+              </tbody>
+            
+          </table>
+        </div>
+      </form>
+	  
+	  <form action="{{ action }}" method="post" enctype="multipart/form-data" class="hidden-md hidden-sm hidden-lg">
+        <div class="table-responsive">
+         				   <table class="table table-bordered hidden-md hidden-sm hidden-lg"  cellspacing="0" cellpadding="0" >
+						  <thead class="head">
+						  <tr>
+							<td colspan="2"><strong>{{ text_product }}</strong></td>
+						  </tr>
+						</thead>
+						<tbody>
+						  {% for product in products %}
+						  <tr class="item_cart">
+						  <td>{{ column_image }}</td>
+							<td class="text-center product-photo">{% if product.thumb %} 
+							<a  onclick="cart.remove('{{ product.cart_id }}');" style="float:right" class="remove" title="{{ button_remove }}"><img src="image/catalog/images/icon-delete-cart.png" alt="close" style="cursor: pointer;"></a>
+							  <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
+							  {%endif%}
+							</td>
+						  </tr>
+						  <tr>
+							<td>{{ column_name }}</td>
+								<td class="produc-name"><a href="{{ product.href }}">{{ product.name }}</a>
+						   {% if not product.stock %} 
+						  <span class="text-danger">***</span>
+						  {%endif%}
+						   {% if product.option %}
+						  {% for option in product.option %} 
+						  <br />
+						  <small>{{ option.name }}: {{ option.value }}</small>
+						  {% endfor %}
+						  {% endif %}
+						  {% if product.reward %} 
+						  <br />
+						  <small>{{ product.reward }}</small>
+						  {% endif %}
+						  {% if product.recurring %}
+						  <br />
+						  <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small>
+						  {% endif %}</td>
+						  
+						  </tr>
+						  <tr>
+						  <td>{{ column_model }}</td>
+						  <td>{{ product.model }}</td>
+						  </tr>
+						  <tr>
+						  <td>{{ column_quantity }}</td>
+						  
+							<td class="text-left product-quantity"><div class="input-group btn-block" style="max-width: 200px;">
+							<input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" size="1" class="form-control" />
+							<span class="input-group-btn">
+							<button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="link-v1 lh-50 rt"><i class="fa fa-refresh"></i></button>
+							
+							</span></div></td>
+						  </tr>
+						<tr>
+						<tr><td>{{ text_weight }} : </td>
+							<td>{{ product.weight}}</td>
+						</tr>
+						  <td>{{ column_price }}</td>
+						  <td>{{ product.price }}</td>
+						  </tr>
+						  <tr>
+							<td>{{ column_total }}</td>
+							<td class="total_price">{{ product.total }}</td>
+						  </tr>
+						  <tr class="no-border">
+						<td class="text-center" colspan='2'><br></td>
+					</tr>
+						  
+						  {%endfor%}
+						</tbody>
+						</table>
+		  
+        </div>
+      </form>
+			<div class="row-total">
+				  <table class="table">
+					{% for total in totals %}
+					<tr class="">
+					  <td class="float-left border-remove"><h3>{{ total.title }}:</h3></td>
+					  <td class="float-right border-remove"><p>{{ total.text }}</p>
+					</tr>
+					{% endfor %}
+				  </table>
+			</div>
+			<div class="box space-30">
+		 		<div class="float-right">
+					 
+					<a href="{{ continue }}" class="link-v1 lh-50 rt bg-brand">{{ button_shopping }}</a>
+				</div>
+					<!-- End float-right -->
+			</div>
+	<div class="box cart-total space-30">
+	<div class="row">
+		{% if modules %}
+     
+			{% for module in modules %}
+				{{ module }}
+			{% endfor %}
+		{% endif %}
+		<br />
+
+		<div class="col-md-12 col-sm-12 col-xs-12 space-30">
+				<div class="row">
+					<div class="item">
+						<table class="table">
+						<h3 class="title">{{ text_cart_total }}</h3>
+							{% for total in totals %}
+							<tr class="">
+							  <td class="float-left border-remove"><p class="box"><b>{{ total.title }}:</b></p></td>
+							  <td class="float-right border-remove">
+							  <p><b class="color-brand prc">{{ total.text }}</b></p></td>
+							</tr>{% endfor %}
+						</table><a href="{{ checkout }}" class="link-v1 lh-50 rt">{{ button_checkout }}</a>
+	
+					</div>
+				</div>
+		</div>
+	</div>
+	</div>
+</div>	
+	  
+	</div>
+       
+      
+      
+      </div>
+  </div>
+</div></div>
+{{ footer }} 

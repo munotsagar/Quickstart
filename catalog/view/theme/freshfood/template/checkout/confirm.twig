@@ -1,0 +1,128 @@
+{% if not redirect %}
+<div class="box hidden-xs">
+	<div class="info-order">
+		<div class="product-name table-bordered">
+			<ul>
+				<li class="head text-center">
+					<span class="name">{{ column_name }}</span>
+					<span class="name">{{ column_model }}</span>
+					<span class="name">{{ column_quantity }}</span>
+					<span class="name">{{ column_price }}</span>
+					<span class="name">{{ column_total }}</span>
+				</li>
+  
+    
+    {% for product in products %}
+    <li class="text-center">
+      <span class="name"><a href="{{ product.href }}">{{ product.name }}</a> {% for option in product.option %} <br />
+        &nbsp;<small> - {{ option.name }}: {{ option.value }}</small> {% endfor %}
+        {% if product.recurring %} <br />
+        <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</span>
+      <span class="name">{{ product.model }}</span>
+      <span class="name">{{ product.quantity }}</span>
+      <span class="qty">{{ product.price }}</span>
+      <span class="name">{{ product.total }}</span>
+    </li>
+    {% endfor %}
+    {% for voucher in vouchers %}
+    <li class="text-center">
+      <span class="name">{{ voucher.description }}</span>
+      <span class="name"></span>
+      <span class="name">1</span>
+      <span class="name">{{ voucher.amount }}</span>
+      <span class="name">{{ voucher.amount }}</span>
+    </li>
+    {% endfor %}
+	</ul>
+    
+    <ul class="product-order">
+    {% for total in totals %}
+    <li colspan="4">
+      <span class="left">{{ total.title }}:</span>
+      <span class="right brand">{{ total.text }}</span>
+    </li>
+    {% endfor %}
+    </ul>
+    
+ 
+</div></div></div>
+<!--mobile view -->
+ 
+ <div class="box view hidden-md hidden-sm hidden-lg">
+   <table class="adminlist cart-details-tab float_left table-bordered" width="100%">
+		<thead>
+			{% for product in products %}
+			 	<tr class="one_row">
+					
+				 	<td class="shpping_chackout_table" align="center" >
+					 	<div class="float_left text-center order_header">
+						{{ column_name }}
+						 </div>
+						 <a href="{{ product.href }}">{{ product.name }}</a>
+						        {% for option in product.option %} 
+								 &nbsp;<h6> {{ option.name }}: {{ option.value }}</h6>
+								 {% endfor %}
+					 </td>
+					 
+					
+				 </tr>
+				 <tr class="one_row">
+				 	 <td class="shpping_chackout_table quantity" align="center">
+				 		<div class="float_left text-center order_header">
+						{{ column_model }} 
+				 		</div>
+				 		{{ product.model }}
+				 	 </td>
+				 </tr>
+				  <tr class="one_row">
+				 	 <td class="shpping_chackout_table model" align="center">
+				 		<div class="float_left text-center order_header">
+						{{ column_quantity }} 
+				 		</div>
+				 		{{ product.quantity }}
+				 	 </td>
+				</tr>
+				
+				<tr class="one_row">
+					 <td class="shpping_chackout_table price" align="center">
+						<div class="float_left text-center order_header">
+						{{ column_price }} 
+						</div>
+						{{ product.price }}
+					 </td>
+				</tr>
+				
+				<tr class="one_row">
+					 <td class="shpping_chackout_table title total_price" align="center">
+						<div class="float_left text-center order_header">
+						{{ column_total }} 
+						</div>
+						{{ product.total }}
+					 </td>
+				</tr> 
+				 <tr class="no-border">
+						<td class="text-center" colspan='2'><br></td>
+					</tr> 
+			
+			{% endfor %}
+			{% for total in totals %}
+			<tr class="one_row">
+				<td class="shpping_chackout_table total_price title" align="center">
+			 		<div class="float_left text-center order_header">
+			 			{{ total.title }}: 
+			 		</div>
+			 		<div class="sub_t">{{ total.text }}</div>
+			 	 </td>
+			</tr>			
+			{% endfor %}
+			 			 
+		</thead>
+	</table>
+</div>
+
+{{ payment }}
+{% else %} 
+<script type="text/javascript"><!--
+location = '{{ redirect }}';
+//--></script> 
+{% endif %} 

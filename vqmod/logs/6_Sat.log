@@ -1,0 +1,28 @@
+---------- Date: 2018-02-17 06:39:19 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=common/home
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/*/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_recurring'] = 'Payment Profile';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-02-17 06:42:15 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=common/home
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/*/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_recurring'] = 'Payment Profile';
+----------------------------------------------------------------------
+
+

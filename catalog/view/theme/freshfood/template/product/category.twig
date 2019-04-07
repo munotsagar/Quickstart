@@ -1,0 +1,136 @@
+<div id="homepage_1 product_category">
+{{ header }}
+ <div class="container">
+   <div class="banner-header banner-lbook3 space-50">
+        <img src="image/catalog/images/banner-product-checkout.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+    </div>
+  </div>
+ {% if products %}
+      <div class="container cat">
+		<div class="wrap-breadcrumb">
+			<div id="content">
+				<div class="ordering">
+					<div class="col-md-2 col-sm-2 col-xs-5 view_1">
+						<div class="row">
+							<div class="float-left view_pro">
+								<div class="btn-group btn-group-sm">
+									<span type="button" id="grid-view" class="col fa fa-th active" data-toggle="tooltip" title="{{ button_grid }}"></span>
+									<span type="button" id="list-view" class="list fa fa-list-ul" data-toggle="tooltip" title="{{ button_list }}"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-5 col-xs-7">
+						<div class="row">
+							<div class="float-left ri">
+								<div class="form-group input-group input-group-sm form">
+								<a href="{{ compare }}" id="compare-total" class="btn btn-link">{{ text_compare }}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-5 col-xs-12 respon_orderby">
+						<div class="row">
+							<div class="float-right">
+								<div class="form-group input-group input-group-sm order-by form">
+								<p style="float:left;">{{ text_sort }}</p>
+								<select id="input-sort" class="orderby"  onchange="location = this.value;">
+								  {% for sorts in sorts %}
+								  {% if sorts.value == '%s-%s'|format(sort, order) %}
+								  <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+								    {% else %}
+								  <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+								  {% endif %}
+								  {% endfor %}
+								</select>
+								</div>
+							</div> 
+						</div> 
+					</div>
+					<div class="col-md-2 col-xs-6 float-right hidden-sm hidden-xs">
+						<div class="row">
+							<div class="form-group input-group input-group-sm order-by form show">
+							<p style="float:left;">{{ text_limit }}</p>
+							<select id="input-limit" class="orderby" onchange="location = this.value;">
+							  {% for limits in limits %}
+							  {% if limits.value == limit %}
+							  <option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
+							   {% else %}
+							  <option value="{{ limits.href }}">{{ limits.text }}</option>
+							  {% endif %}
+							  {% endfor %}
+							</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="products ver2 grid_full hover-shadow furniture border-space-full">
+						{% for product in products %}
+							<div class="item-inner">
+								<div class="product">
+									<div class="product-images">
+										<a href="{{ product.href }}" title="{{ product.name }}">
+										<img class="primary_image" src="{{ product.thumb }}" alt="{{ product.name }}"/>
+										</a>
+									</div>
+									<a href="{{ product.href }}" title="{{ product.name }}">
+										<p class="product-title">{{ product.name }}</p>
+									</a>
+									<p class="rating">
+									 {% for i in 1..5 %}
+									   {% if product.rating < i %}
+									  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+									   {% else %} 
+									  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+									  {% endif %} 
+									  {% endfor %} 
+									</p>
+									{% if product.special %}
+									<p class="product-price-old"> {{ product.price }}</p>
+									<p class="product-price">{{ product.special }}</p>
+									{% else %} 
+									<p class="product-price ext"> {{ product.price }}</p>
+									{% endif %}
+									
+									<p class="description">{{ product.description }}</p>
+									<div class="action">
+										<a class="add-cart1 fa fa-shopping-bag" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"  title="{{ button_cart }}"></a>
+										<a class="fa fa-heart-o wish1 " onclick="wishlist.add('{{ product.product_id }}');" title="{{ button_wishlist }}"> </a>
+										<a class="fa fa-random compare_icon" title="compare" onclick="compare.add('{{ product.product_id }}');"> </a> 
+									</div>
+					
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="pagination-container">
+					<nav class="pagination align-center">
+						{{ pagination }}
+					</nav>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	  </div>  
+{% endif %} 
+{% if not categories and not products %}
+    <div class="container container-ver2 emp">
+	<p class="empty">{{ text_empty }}</p>
+      <div class="buttons">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 rt">{{ button_continue }}</a></div>
+      </div>
+	</div>
+{% endif %}      
+{{ footer }} 
+</div>

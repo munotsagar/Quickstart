@@ -1,0 +1,259 @@
+.banner-header.banner-lbook3 .text p i{margin:0 6px!important}
+.info-order .product-name .name a{color:#a7a7a7}
+.form-control{font:400 14px "Roboto Slab"!important}
+.link-footer{font:400 14px/20px "Roboto Slab"}
+.link-footer:hover{color:#666!important}
+.account-register p{font:500 16px "Roboto Slab"}
+.account-register .row p a{color:#888;font-weight:700}
+.account-register p a #account,.account-register .buttons .pull-right{font:400 14px "Roboto Slab"}
+.account-register .buttons .agr{font:400 14px "Roboto Slab";margin:10px;color:#aaa}
+.account-register legend{font:400 20px "Roboto Slab";padding-bottom:20px}
+.product-compare #content .table thead,.account-wishlist #content .table thead{background:#80b435}
+.product-compare #content .table thead tr td,.account-wishlist #content .table thead tr td{font:400 20px "Roboto Slab";color:#fff}
+.product-compare #content .table tr td{color:#747474;font-size:15px}
+.product-compare #content .table tr .title a,.pro a,.account-register .buttons .pull-right a,.account-register .buttons .agr a,.page-login .remember .help,.ordering a,.checkout-checkout .buttons .pull-right .agree,.product-manufacturer h2{color:#888}
+#content .wrap-breadcrumb .ordering a,.ordering a{background:none}
+.information-contact .gmap-canvas{width:100%!important;height:500px}
+.information-contact .col-sm-3,.information-contact .map_full{width:100%!important}
+.products a{cursor:pointer}
+#contentsuccs h3{font:600 25px/25px "Roboto Slab"}
+#contentsuccs p{font:400 16px/25px "Roboto Slab";color:#949494}
+/*table.table.cart-table thead th.add-cart{text-align:center!important}*/
+table.table.cart-table tbody td.pro-remove{padding-left:21px!important}
+.product-compare .emptypro{font:400 22px/35px "Roboto Slab";color:#666}
+table.table.cart-table td.produc-price{font:400 18px "Roboto Slab";color:#666}
+/*table.table.cart-table td.add-cart{text-align:center!important}*/
+table.table.cart-table td.product-model{font:400 18px "Roboto Slab";color:#2b2b2b}
+.account-register label{font:600 15px/20px "Roboto Slab"!important}
+.account-register .form-control{font:400 14px "Roboto Slab"}
+.checkout-cart .row-total .table .border-remove{border-top:0 solid #ddd}
+.checkout-cart table tr td.float-left.border-remove,.checkout-cart table tr td.float-right.border-remove{border-top:0}
+.product-compare #content .buton{text-align:center!important}
+.product-compare #content .buton a{padding:0 45px}
+.product-compare #content .head tr td{text-align:left!important}
+.product-compare #content tr td:first-child,.account-wishlist #content tr td:first-child{color:#747474;text-align:right;font-weight:600!important}
+.product-compare #content .table tr td{width:25%;max-width:100%!important}
+.product-compare .buton a,.product-compare .buton input[type=button]{width:auto!important}
+.product-compare .empty{font:400 16px/30px "Roboto Slab";color:#565656}
+.product-compare #content tr td .quality{float:left}
+.account-wishlist .empty{font:400 16px/30px "Roboto Slab";color:#565656}
+.account-wishlist .product-model{font:400 18px "Roboto Slab"}
+.account-wishlist .container-ver2 .box .cart-table i.fa.fa-shopping-cart {padding: 10px 0px;}
+.product-compare .head{margin-bottom:40px}
+.product-compare tr td,.account-wishlist tr td{font:400 18px "Roboto Slab"}
+#content .error-no-found{font:400 16px/30px "Roboto Slab";color:#565656}
+.checkout-checkout h2{font:700 16px/20px "Roboto Slab";text-transform:uppercase;position:relative;padding-bottom:10px}
+.checkout-checkout h2:after{position:absolute;content:'';left:0;width:55px;height:1px;background:#80b435;bottom:0}
+.checkout-checkout p{font:300 14px/20px "Roboto Slab";color:#888}
+.checkout-checkout .form-group .control-label{font:700 14px/20px Roboto;color:#000;text-transform:uppercase}
+.checkout-checkout .remember .help{font:300 14px/20px "Roboto Slab";color:#888}
+.checkout-checkout .radio label{font:700 14px/20px Roboto;color:#000}
+.checkout-checkout legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.checkout-checkout label{font:600 16px/20px "Roboto Slab"!important;text-transform:uppercase}
+.checkout-checkout .buttons .pull-right{font:400 14px "Roboto Slab"}
+.checkout-checkout .panel-default>.panel-heading{background-color:#FFF!important}
+.checkout-checkout .panel-title{font:700 20px "Roboto Slab"}
+.checkout-checkout .info-order ul li{border-bottom:1px solid #e6e6e6}
+.checkout-checkout .info-order .product-order .left{margin-left:5%}
+.checkout-checkout .info-order .product-order .right.brand{margin-right:9%}
+.delivery{color:#666;font:400 14px/24px "Roboto Slab"}
+.account-account .acc-style li{font:500 16px/20px "Roboto Slab";color:#a7a7a7}
+.account-account .acc-style li a{color:#565656}
+.account-password legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.account-forgotten h1{font:700 16px/20px "Roboto Slab";text-transform:uppercase;position:relative;padding-bottom:10px}
+.account-forgotten h1:after{position:absolute;content:'';left:0;width:55px;height:1px;background:#80b435;bottom:0}
+.account-forgotten p{font:300 14px/20px "Roboto Slab";color:#888}
+.account-forgotten legend{font:400 20px "Roboto Slab"}
+.account-forgotten .form-group .control-label{font:700 14px/20px Roboto;color:#000!important;text-transform:uppercase}
+.account-password #content label{font:600 14px/20px "Roboto Slab"!important}
+.account-edit legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.account-edit label{font:600 14px/20px "Roboto Slab"!important}
+.product-return #content label{font:600 14px/20px "Roboto Slab"!important}
+.account-order .pro-total{font:400 16px "Roboto Slab";color:#666}
+.account-order .page,.account-transaction .page,.product-special .page,.account-order .customer{font:400 16px "Roboto Slab"}
+.account-address #content .table{border-bottom:1px solid #e6e6e6}
+.account-address #content .table tr td{font:500 16px/20px "Roboto Slab";color:#a7a7a7}
+.account-order-info .product-order .left{font:600 14px "Roboto Slab";color:#565656;text-transform:uppercase;line-height:50px}
+.account-order-info .product-order .left-left{color:#a7a7a7;font:400 15px/50px "Roboto Slab";margin-left:15px}
+.account-order-info .product-order .addr{color:#a7a7a7;font:400 16px/25px "Roboto Slab";margin-left:15px}
+.account-order-info .product-order .pro-model{font:400 17px "Roboto Slab";color:#2b2b2b}
+.account-order-info .product-order .pro-price{font:400 16px "Roboto Slab";color:#666}
+.account-order-info .product-order .sub{font:700 16px "Roboto Condensed";color:#565656;text-transform:uppercase}
+.account-order-info .product-order .sub-price{font:600 16px "Roboto Slab"}
+.account-order-info .product-order .pro-name,.account-return-info .table tr .pro-name,.account-return-info .table tr .pro-model{font:400 17px "Roboto Slab";color:#a7a7a7;text-align:center}
+.product-return .row #content p{font:500 16px "Roboto Slab"}
+.product-return legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.product-return label{font:600 14px/20px "Roboto Slab"!important}
+.account-download #content p{font:400 17px "Roboto Slab"}
+.account-download #content .title-brand,.account-newsletter #content .title-brand,.account-account #content .title-brand{border-bottom:1px solid #ddd;padding-bottom:10px}
+.account-reward #content p,.account-reward #content .no-point,.account-recurring #content p{font:400 17px "Roboto Slab"}
+.account-reward #content .title-brand{border-bottom:1px solid #ddd;padding-bottom:10px}
+.account-reward table tr .no-point{font:400 16px "Roboto Slab"}
+.account-return table tr .return-id,.account-return table tr .order-id{font:400 16px "Roboto Slab";color:#666}
+.account-return table tr .date{font:400 16px "Roboto Slab";color:#666}
+.account-return table tr,.account-return .page{font:400 16px "Roboto Slab"}
+.account-return-info .order-info .left{font:700 16px "Roboto slab";color:#565656}
+.account-return-info .order-info .left-left{color:#a7a7a7;font:400 16px/50px "Roboto Condensed";margin-left:15px}
+.account-return-info .table tr .pro-qty{font:400 16px "Roboto Slab";color:#a7a7a7;text-align:center}
+.account-return #content .title-brand{border-bottom:1px solid #ddd;padding-bottom:10px}
+.account-transaction #content p{font:400 17px "Roboto Slab"}
+.account-transaction #content table tr .no-transaction{font:400 15px "Roboto Slab"}
+.account-newsletter #content label{font:600 14px/20px "Roboto Slab"!important}
+.account-account #content ul{margin-bottom:30px}
+#footer .subscribe button:hover{color:#80B437}
+#content .p-policy{color:#666;font:400 14px/24px "Roboto Slab"}
+#content .title-brand{padding-bottom:5px}
+.product-search label{font:400 17px/20px "Roboto Slab"}
+.product-search #content .ordering{text-align:left}
+.product-search .page{font:400 16px "Roboto Slab"}
+.box-right .search .cart1{background-color:#fff;border:0;border-radius:20px}
+.box-right .search .cart1 .dropdown-inner #search input{border-radius:20px;border-color:#ddd}
+.box-right .cart .cart .cart-list{height:auto;max-height:355px;overflow-y:auto}
+.box-right .cart #cart .dropdown-menu{height:auto;max-height:330px;overflow-y:auto}
+.box-right .cart #cart button{border:none;box-shadow:none}
+#topbar .float-right .product-name{font:400 18px/20px "Roboto Slab"!important;color:#2b2b2b}
+.cart-list .cart-product-image{vertical-align:sub!important}
+.box-right .cart #cart .dropdown-menu li a:hover,.box-right .cart #cart .dropdown-menu{background-color:#FFF}
+.bottom .cart-view{margin-right:0!important;color:#fff!important}
+.cart-list .bottom a{font:700 14px/40px "Roboto Slab"!important}
+#column-right .list-group a{font:600 14px/20px "Roboto Slab";color:#888}
+#column-right .list-group a:hover{background-color:#FFF}
+.bootstrap-datetimepicker-widget{background-color:#FFF!important}
+.product-return .date .rt{line-height:45px!important}
+.information-sitemap #content ul li a{font:400 16px "Roboto Slab";color:#666 }
+    #button-review{display: inline-block;
+    text-align: center;
+    font: 700 18px/40px "Roboto Slab";
+    color: #fff;
+    background: #80b435;
+    border: 1px solid #80b435;
+    text-transform: uppercase;
+    width: 180px;
+    transition: all 0.3s ease 0s;
+    float: right;}
+
+.information-sitemap #content ul .hassub{font:800 18px "Roboto Slab";color:#666;margin-top:20px}
+.information-sitemap #content ul{margin-bottom:20px}
+.information-sitemap #content ul li ul li{margin-left:20px}
+.information-sitemap #content .title-brand{border-bottom:1px solid #ddd}
+.hover-menu .pull-left #form-currency{padding:0!important;margin:-7px 0}
+#footer .footer-bottom .language .hover-menu .list-menu{min-width:140px;}
+#footer .footer-bottom .language .hover-menu .list-menu.lan{ min-width: 110px; float: left; width: auto !important;}
+#footer .footer-bottom .language .hover-menu .list-menu.lan ul li,#footer .footer-bottom .language .hover-menu .list-menu ul li{float:left;}
+#footer .language .btn-link{text-decoration:none;font:400 12px/20px "Roboto Slab";color:#666}
+#footer .language .btn-block{color:#666!important}
+#form-language{margin:-6px 0}
+.affiliate-account #content .title-brand{border-bottom:1px solid #ddd}
+.affiliate-login p,.affiliate-forgotten #content p{font:300 14px/20px "Roboto Slab";color:#888}
+.affiliate-login h2{font:700 16px/20px "Roboto Slab";text-transform:uppercase;padding-bottom:10px;margin-bottom:20px;position:relative}
+.affiliate-login h2:after{position:absolute;content:'';left:0;width:55px;height:1px;background:#80b435;bottom:0}
+.affiliate-login form .control-label{font:700 14px/20px Roboto;color:#000}
+.affiliate-login .remember .help{float:right;font:300 14px/20px "Roboto Slab";vertical-align:bottom;margin-top:12px;color:#888}
+.affiliate-forgotten legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.affiliate-forgotten .form-group .control-label{font:700 14px/20px Roboto;color:#000!important;text-transform:uppercase}
+.affiliate-register p{font:500 16px "Roboto Slab"}
+.affiliate-register #content p a{color:#888;font-weight:700}
+.affiliate-register legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.affiliate-register #content label,.affiliate-password #content label,.affiliate-payment #content label,.affiliate-tracking #content label,.affiliate-tracking .dropdown-menu li a{font:600 14px/20px "Roboto Slab"}
+.affiliate-register .buttons .agr{font:400 14px "Roboto Slab";margin:10px;color:#aaa}
+.affiliate-register .buttons .agr a{font-weight:700;color:#888}
+.succs h3{font:400 20px "Roboto Slab"}
+.affiliate-account li{font:500 16px/20px "Roboto Slab";color:#a7a7a7}
+.affiliate-account li a{color:#565656}
+.affiliate-edit legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.affiliate-edit #content label{font:600 14px/20px "Roboto Slab"}
+.affiliate-password #content legend,.affiliate-payment #content legend{font:400 20px "Roboto Slab";padding-bottom:15px}
+.affiliate-tracking #content p{font:400 16px "Roboto Slab"}
+.affiliate-tracking .dropdown-menu{background-color:#fff}
+.affiliate-tracking .dropdown-menu li{border:none}
+.affiliate-tracking .dropdown-menu li a:hover{background-color:#80b435;color:#FFF!important}
+.affiliate-transaction #content p{font:400 17px "Roboto Slab"}
+.affiliate-transaction #content table tr .no-transaction{font:400 17px "Roboto Slab"}
+.common-home .owl-carousel #homepage_1 .owl-carousel{border:0;background:none!important}
+.slick-slide{height:auto!important}
+#plus_num,#minus_num{width:100%;padding:3px;cursor:pointer;}
+ 
+ 
+.product-details-content .options input{width:86%}
+.product-details-content .options .box_review #review4{width:100%!important}
+.date_set{width:50%;left:63%}
+.date_set > button{height:50px;border:1px solid #cdcdcd}
+.changer{position:absolute;top:34px;left:44%;float:left;width:7%}
+#product .delivery_date{font:700 18px "Roboto Condensed";color:#2b2b2b;text-transform:uppercase;margin-bottom:10px}
+.homev3 #plus_num,.homev3 #minus_num,.homev4 #plus_num,.homev4 #minus_num{font:700 16px/14px "Roboto Slab"}
+
+.checkout-cart .box .row-total{padding:10px 0}
+.checkout-checkout .info-order .product-name .name{width:20%}
+.one_row .order_header{font:700 15px "Roboto Slab";background-color:#f5f5f5;padding:10px 0}
+.one_row td{padding:0 0 30px;margin-bottom:15px}
+.one_row td a{color:#888}
+.one_row td > div{padding:20px 0;margin-bottom:15px;margin-top:5px}
+.checkout-checkout .box tr .shpping_chackout_table{font:500 16px "Roboto Slab"}
+.checkout-checkout .view{margin-bottom:30px}
+#homepage_1 .product_detail .product-details-content .options > h3{font:500 18px/25px "Roboto Slab"}
+.compare_icon{color:#979797;font-size:17px}
+#header .cart .cart-list{padding:0 12px}
+.sl_mo .owl-nav{position:relative;top:48px}
+#homepage_4 .slick-slide{height:auto}
+#topbar .float-right .log_user{padding:0 12px!important}
+.box .box-right{padding-right:0!important}
+#cart .dropdown-menu{transform:translate(0px,0px)}
+#homepage_3 #header.header-v3-new.header-v3 .header-top{padding:15px 0 0}
+#homepage_3 #header{float:left;width:100%}
+#review .table tbody span{color:#80b435}
+.products.ver2.grid_full.hover-shadow.furniture.border-space-full .product-price.ext{margin-left:20px}
+.product-details-content .box #product .wish,.product-details-content .box #product .chart,.icon-cart .icon{cursor:pointer}
+.cart-container table.table.cart-table td.add-cart{padding:0 15px}
+.product-compare .rating{font-size:12px!important}
+.product-compare .container #content tr td{padding:10px 1px;text-align:center}
+.product-compare .container #content thead tr td{padding-left:10px}
+/*.products .product .action{width:240px!important}
+.products .product .action a{width:46px!important}*/
+.products.grid_full.list-item .item-inner .product .action a.add-cart{width:150px!important}
+.products.grid_full.list-item .item-inner .product .action a.compare_icon{position:absolute;top:1px; left:100%;}
+.products.grid_full.list-item .item-inner .product .action a.compare_icon::before{position:relative;/*top:-5px*/}
+.products.grid_full.list-item .item-inner .product .action a.compare_icon:hover{border:1px solid #80b435}
+.cat .wrap-breadcrumb #content .ordering a:first-child{background:transparent}
+.cat .wrap-breadcrumb #content .ordering #compare-total{font:400 14px "Roboto Slab";text-decoration:none;float:left;width:100%;padding-top:8px}
+.cat .wrap-breadcrumb #content .ordering .view_pro{margin-right:10px}
+.account-wishlist #content .empty{margin-bottom:30px}
+.checkout-checkout tr:last-child .sub_t{font-weight:700;font-size:20px;margin:0}
+.checkout-cart tr td:first-child{color:#747474;font:600 14px/20px "Roboto Slab"}
+.checkout-cart tr td:last-child{font:500 15px "Roboto Slab"}
+.checkout-cart #content .table thead{background:#80b435}
+.checkout-cart .container #content thead tr td{padding-left:10px;color:#fff;font-size:20px}
+.checkout-cart .container #content .cart-container tr td.total_price{font:400 16px "Roboto Slab"!important;color:#666}
+.top_1 .container .homev1_lphone{border-bottom:1px solid #cdcdcd!important;padding-bottom:0!important}
+.map_full .box-body .form-control-static{font:400 20px "Roboto Slab"}
+.infor{color:#666;font:400 14px/24px "Roboto Slab"}
+.account-order #content .table thead{background:#80b435;color:#fff}
+.common-home .slide_view_detail .view_detail.btn_hover2:hover{color:#fff!important}
+.cart-table .comment tr td{color:#a7a7a7;font:400 16px/25px "Roboto Slab"}
+.account-return-info .container-ver2 #content .comment .cart-table td{color:#a7a7a7;font:400 14px/24px "Roboto Slab"}
+.product-return #content .date #date_picker_btn{float:left;width:100%;padding: 14px;}
+.product-manufacturer .container-ver2 #content p{font:700 16px/20px "Roboto Slab";color:#888}
+.product_manufacturer_info .container-ver2 #content p{color:#888;font:400 14px "Roboto Slab"}
+small,.small{font:400 13px "Roboto Slab";color:#666}
+.products.grid_full.border-space-full .item-inner{padding-right:0!important}
+.checkout-cart .product-quantity button.link-v1.lh-50.rt.update_btn {padding: 15px;}
+.container-ver2.emp p.empty {font: 400 16px/20px "Roboto Slab"; color: #2b2b2b;}
+ 
+.account-logout .container .container-ver2 p,.checkout-success .container .container-ver2 p{font: 400 17px "Roboto Slab"; color:#666;}
+.account-order #content .cart-table .link-v1.lh-50.rt,.account-order-info #content .cart-table .link-v1.lh-50.rt,.account-order-info .container .container-ver2 #content .box .link-v1.lh-50.rt {padding: 5px 20px;}
+.alert-success,.alert-danger,.alert-info,.alert-warning{font: 500 15px/20px "Roboto Slab";}
+.alert-success{background-color: #f3f3f3; border-color: #cdcdcd;  color: #666666; float: left; width: 100%;}
+.no-border td,tr.no-border{border-left: 1px solid transparent !important; border-right: 1px solid transparent !important;} 
+#modal-shipping{top:-35%;}
+#modal-shipping .close{padding:10px;}
+.featured-products .products .product .product-images { margin-bottom: 10px;}
+.infor .title-brand {text-align: center;}
+.cat .form-group.input-group.input-group-sm.order-by.form.show {  width: 55%; float: right;}
+.about-choose .container-ver2 .items .text h3 { width: 60%;}
+.product p:last-child.product-price { margin-left: 10px !important;}
+/*.page-faq .container.container-ver2 {width: 100%; float: left;}*/
+#product .checkbox label input[type="checkbox"] {  float: left;  height: auto;  width: auto !important;}
+
+ 
+ 
+
+ 

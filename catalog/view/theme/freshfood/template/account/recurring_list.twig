@@ -1,0 +1,60 @@
+{{ header }}
+<div class="container account-recurring">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+ <div class="container container-ver2">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h1 class="title-brand">{{ heading_title }}</h1>
+      {% if recurrings %}
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <td class="text-right">{{ column_order_recurring_id }}</td>
+              <td class="text-left">{{ column_product }}</td>
+              <td class="text-left">{{ column_status }}</td>
+              <td class="text-left">{{ column_date_added }}</td>
+              <td class="text-right"></td>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {% for recurring in recurrings %}
+          <tr>
+            <td class="text-right">#{{ recurring.order_recurring_id }}</td>
+            <td class="text-left">{{ recurring.product }}</td>
+            <td class="text-left">{{ recurring.status }}</td>
+            <td class="text-left">{{ recurring.date_added }}</td>
+            <td class="text-right"><a href="{{ recurring.view }}" data-toggle="tooltip" title="{{ button_view }}" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
+          </tr>
+          {% endfor %}
+          
+          </tbody>
+        </table>
+      </div>
+      <div class="text-right">{{ pagination }}</div>
+      {% else %}
+      <p class="space-60">{{ recurringempty_text }}</p>
+      {% endif %}
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+     </div>
+   </div></div>
+</div>
+{{ footer }}

@@ -1,0 +1,32 @@
+{{ header }}
+<div class="container">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-catalog1.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+  <div class="cart-box-container">
+            <div class="container container-ver2 ">
+	
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+     
+      <p class="error-no-found">{{ text_error }}</p>
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div></div>
+</div></div>
+{{ footer }}

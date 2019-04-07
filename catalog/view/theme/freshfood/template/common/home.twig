@@ -1,0 +1,1263 @@
+
+{% if homepage == 1%}
+<div id="homepage_1">     
+{{ header }}
+	 
+<div id="common-home">
+   
+   
+	 
+	 {{content_top}}
+	{% if home1_banner_status == 1%}
+<div class="container container-ver2 space-30">
+	<div class="shipping-v2 home3-shiping space-30">
+		<div class="col-md-3 col-sm-3 col-xs-6">
+			<a href="{{home1_banner_link1}}"><img src="{{home1_banner1}}" alt="images"></a>
+			<h3>{{banner_title1 }}</h3>
+			<p>{{banner_title2}}</p>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-6">
+			<a href="{{ home1_banner_link1 }}"><img src="{{home1_banner2}}" alt="images"></a>
+			<h3>{{banner_title3}}</h3>
+			<p>{{banner_title4}}</p>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-6">
+			<a href="{{home1_banner_link1}}"><img src="{{home1_banner3}}" alt="images"></a>
+			<h3>{{banner_title5}}</h3>
+			<p>{{banner_title6}}</p>
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-6">
+			<a href="{{home1_banner_link1}}"><img src="{{home1_banner4}}" alt="images"></a>
+			<h3>{{banner_title7}}</h3>
+			<p>{{banner_title8}}</p>
+		</div>
+	</div>
+                
+</div>
+{%endif%}
+	  
+		<div class="container"> 
+		 <div id="content">
+<div class="title-text-v2"><h3>{{ text_latesthome }}</h3></div>
+<div class="featured-products home_2 new-arrivals lastest cust">
+		<ul class="tabs tabs-title">
+			<li class="item" rel="tab">{{ text_allproduct }}</li>
+				{% for link_array in outer_array %}
+					{% set counter = '1' %}
+						{% for name_link in link_array %}
+							
+						<li class="item" rel="tab_{{ counter }}">{{ name_link['category_name'] }}</li>
+						   {% set counter = counter + 1 %}
+							{% endfor %}
+							{% endfor %}
+        </ul>
+		<div class="tab-container space-10">
+			<div id="tab" class="tab-content" style="display:none;">
+				<div class="products hover-shadow ver2 border-space-product hidden-xs">
+				
+				{% for all_pro in results_prod_all  [0:15]%}
+					<div class="product">
+						<div class="product-images">
+							<a href="{{ all_pro['href'] }}" title="product-images">
+								<img class="primary_image" src="image/{{ all_pro['image']}}" alt="images"> 
+							</a>
+							<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+							
+							 <a href="{{ all_pro['href'] }}" title="Union Bed">
+							 <p class="product-title">{{ all_pro['name'] }}</p>
+							 </a>
+							 
+							 {% if all_pro.special %}
+							 <p class="product-price-old">{{ all_pro['price'] }}</p>
+							 <p class="product-price" style="padding-left: 0px;">{{ all_pro['special'] }}</p>
+							 {% else %}
+							 <p class="product-price">{{ all_pro['price'] }}</p>
+							{% endif %}
+							</div>
+						</div>
+						{% endfor %}
+				</div>
+				<div class="furniture sl_mo">
+					<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+						 
+						{% for all_pro in results_prod_all  [0:15]%}
+	
+							<div class="product slide_pro">
+								<div class="product-images">
+									<a href="{{ all_pro['href'] }}" title="product-images">
+										<img class="primary_image" src="image/{{all_pro['image'] }}" alt="images">
+									</a>
+									<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true""  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+									
+									 <a href="{{ all_pro['href'] }}" title="Union Bed">
+									 <p class="product-title">{{ all_pro['name'] }}</p>
+									 </a>
+									 {% if all_pro.special %}
+									 <p class="product-price-old">{{ all_pro['price'] }}</p>
+									 <p class="product-price" style="padding-left: 0px;"> {{all_pro['special'] }}</p>
+										 {%else%}
+									 <p class="product-price">{{ all_pro['price'] }}</p>
+										 {%endif%}
+									</div>
+							</div>
+						{% endfor %}
+						
+					</div>
+				</div>
+			</div>
+			 
+			{% for link_array in outer_array %}
+				 {% set counter = '1' %}
+					 {% for name_cate in link_array  %} 					 
+					 <div id="tab_{{ counter }}" class="tab-content" style="display:none;">
+						<div class="products hover-shadow ver2 border-space-product hidden-xs">
+						 		{% for name_pro in name_cate [2:15] %}
+						  
+									<div class="product">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+												<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images"> 
+											</a>
+											<div class="action"> 
+											<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+											</a>
+											<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+											<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+										</div>
+										
+										 <a href="{{ name_pro['href'] }}" title="Union Bed">
+										 <p class="product-title">{{ name_pro['name'] }}</p>
+										 </a>
+										{% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price'] }}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special'] }}</p>
+										 {%else%}
+										 <p class="product-price">{{name_pro['price'] }}</p>
+										 {%endif%}
+									</div>
+								</div>
+							{%endfor%}
+						</div>
+						<div class="furniture sl_mo">
+						<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+                    
+							 {% for name_pro in name_cate[2:15] %}
+								<div class="product slide_pro">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+										<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images">
+											</a>
+											<div class="action"> 
+												<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+												</a>
+												<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+												<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+											</div>
+										
+										 <a href="{{name_pro['href']}}" title="Union Bed">
+										 <p class="product-title">{{name_pro['name']}}</p>
+										 </a>
+										  {% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price']}}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special']}}</p>
+											 {% else %}
+										 <p class="product-price">{{ name_pro['price'] }}</p>
+											 {%endif%}
+									</div>
+									</div>
+									{%endfor%}
+                   
+				 			</div>
+				 			</div> 
+					</div>
+					 {% set counter = counter + 1 %}
+					{% endfor %}
+					{% endfor %}
+				 
+		</div>
+	</div>
+	   
+</div>
+</div>
+ {# end product section #} 
+	  
+	{% if home1_big_status == 1%}
+		<div class="special home_v1 bg-images box space-100" style="background-image:url('{{home1_big_img1}}');background-repeat: no-repeat;">
+            <div class="col-md-5 float-left align-right">
+                <img class="images-logo" src="{{home1_big_img2}}" alt="images">
+            </div>
+			<div class="col-md-7 float-right align-left">
+				<div class="special-content">
+					<img class="icon-big" src="{{home1_big_img3}}" alt="Big sale today"><h3>{{home1_big_title}}</h3>
+					<h5>{{home1_big_desc}}</h5>
+						 
+						 
+					<div class="time" data-countdown="countdown" data-date="{{home1_valid_date}}"></div> 
+					<a class="link-v1 bg-brand font-300" href="{{home1_big_shop_link}}" title="{{home1_big_shop}}">{{home1_big_shop}}</a>
+				</div>
+			</div>
+                
+		</div>
+	{%endif%}
+ 
+		<div class="choose-us">
+		<div class="container container-ver2">
+			<div class="title-choose align-center">
+				<h3>{{h1_choose_center1}}</h3>
+				<p>{{h1_choose_center2}}</p>
+				<div class="align-center border-choose">
+					<div class="images">
+						<img src="image/catalog/images/bg-border-center.png" alt="icon">
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3 align-left">
+				<div class="text">
+					<img class="icon-choose" src="{{home1_choose_left_img1}}" alt="icon-choose">
+					<h3>{{home1_choose_left_title1}}</h3>
+					<p>{{home1_choose_left_desc1}}</p>
+				</div>
+				
+				<div class="text">
+					<img class="icon-choose" src="{{home1_choose_left_img2}}" alt="icon-choose">
+					<h3>{{home1_choose_left_title2}}</h3>
+					<p>{{home1_choose_left_desc1}}</p>
+				</div>
+			   
+				<div class="text">
+					<img class="icon-choose" src="{{home1_choose_left_img3}}" alt="icon-choose">
+					<h3>{{home1_choose_left_title3}}</h3>
+					<p>{{home1_choose_left_desc3}}</p>
+				</div>
+			   
+			</div>
+		   
+			<div class="col-md-6">
+				<img class="img-responsive" src="{{home1_choose_center3}}" alt="banner">
+			</div>
+			 
+			<div class="col-md-3 align-right right-items">
+				<div class="text">
+					<h3>{{home1_choose_right_title1}}</h3>
+					<img class="icon-choose" src="{{home1_choose_right_img1}}" alt="icon-choose">
+					<p>{{home1_choose_right_desc1}}</p>
+				</div>
+				<div class="text">
+					<h3>{{home1_choose_right_title2}}</h3>
+					<img class="icon-choose" src="{{home1_choose_right_img2}}" alt="icon-choose">
+					<p>{{home1_choose_right_desc2}}</p>
+				</div>
+				<div class="text">
+					<h3>{{home1_choose_right_title3}}</h3>
+					<img class="icon-choose" src="{{home1_choose_right_img3}}" alt="icon-choose">
+					<p>{{home1_choose_right_desc3}}</p>
+				</div>
+				
+			</div>
+			
+		</div>
+            
+	</div>
+	{{ home1_testimonial }}
+	 
+	<div class="container container-ver2">
+		<div class="title-text-v2"> 
+			<h3>{{ text_featured_products }}</h3>
+		</div>
+	<div class="featured-products products-size-small">
+		<ul class="tabs tabs-title">
+			<li class="item" rel="tab_01">{{ text_popular }}</li>
+			<li class="item" rel="tab_02">{{ text_new_arrival }}</li>
+			<li class="item" rel="tab_03">{{ text_specials }}</li>
+			<li class="item" rel="tab_04">{{ text_on_sale }}</li>
+			
+        </ul>
+		<div class="tab-container space-10">
+			<div id="tab_01" class="tab-content"> 
+				{{home1_featured }}
+			</div>
+			<div id="tab_02" class="tab-content">
+				{{ home1_latest }}
+			</div>
+			<div id="tab_03" class="tab-content">
+				{{ home1_special }}
+			</div>
+			<div id="tab_04" class="tab-content"> 
+				{{ home1_best }}
+			</div>
+		</div>
+	</div>
+</div> 
+	  
+	
+	
+	
+    {{ column_right }} 
+</div>
+ <div class="container container-ver2 blog-home1">
+			{%if blogs%}
+			<div class="title-text-v2">
+				<div class="icon-title align-center space-20">
+					<img src="image/catalog/images/title-lastest-from.png" alt="icon-title">
+				</div>  
+				<h3>{{text_Lastest_blog}}</h3>
+				<a class="link padding-bt-20" href="{{blog}}" title="{{text_seeall}}">{{text_seeall}}</a>
+			</div>
+                  
+			<div class="blog-content slider-three-item owl-carousel">
+			 {%for blog_data in blogs%}
+			 
+				<div class="item">
+					<a class="hover-images">
+						<img class="img-responsive" src="{{blog_data.image}}">
+					</a>
+					<div class="text">
+						 
+						<a href="{{blog_data.href}}" title="Blog Title"><h3>{{blog_data.title}}</h3></a>
+						<p class="by">{{blog_data.meta_description}}</p>
+						 
+					</div>
+				</div>
+					
+			   {%endfor%}
+				
+			</div>
+			{%endif%}     
+          </div>
+
+
+
+
+{{ footer }}	
+</div>
+
+{%endif%}
+
+<!-->
+{% if homepage == 2%}
+<div id="homepage_2">
+<div class="wrappage">
+{{ header }}
+	{{ content_top }}
+	{% if home2_banner_status == 1 %}
+  <div class="container container-ver2">
+		<div class="banner-home2 center">
+			<div class="row">
+				<div class="col-md-4 col-sm-4">
+					<a class="hover-images" href="#" title="images">
+						<img class="img-responsive" src="{{ home2_banner_img1 }}" alt="banner">
+					</a>
+				</div> 
+				<div class="col-md-4 col-sm-4">
+					<a class="hover-images" href="#" title="images">
+						<img class="img-responsive" src="{{ home2_banner_img2 }}" alt="banner">
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<a class="hover-images" href="#" title="images">
+						<img class="img-responsive" src="{{ home2_banner_img3 }}" alt="banner">
+					</a>
+				</div>
+			 
+			</div>
+		</div>
+    </div>
+	{% endif %}
+	
+    {% if h1_choose_us2_status == 1 %}
+   <div class="container container-ver2">
+                <div class="choose-us choose-us-home2">
+                    <div class="col-md-4">
+                        <img class="img-responsive hidden-table" src="{{ home2_choose_img }}" alt="banner">
+                    </div>
+                    
+                    <div class="col-md-8">
+						<div class="title-choose align-center">
+                            <h3><span>{{ h1_choose_us2_title1 }}</span>&nbsp;{{ h1_choose_us2_title2 }}</h3>
+							<p>{{ h1_choose_us2_text }}</p>
+                        </div>
+                       
+                         <div class="align-center border-choose">
+                            <div class="images">
+                                <img src="catalog/view/theme/freshfood/images/bg-border-center.png" alt="icon">
+                            </div>
+                        </div>
+                        
+                      <div class="shipping-v2 home3-shiping home2-shipping">
+                           <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img1_link }}"><img src="{{ home1_banner_img1 }}" alt="images1"></a>
+									
+                                    <h3>{{ home1_banner_title1 }}</h3>
+                                    <p>{{ home1_banner_title2 }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img2_link }}"><img src="{{ home1_banner_img2 }}" alt="images2"></a>
+                                    <h3>{{ home1_banner_title3 }}</h3>
+									<p>{{home1_banner_title4}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img3_link }}"><img src="{{ home1_banner_img3 }}" alt="images3"></a>
+                                    <h3>{{ home1_banner_title5 }}</h3>
+                                    <p>{{ home1_banner_title6 }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                              <div class="border">
+                                      <a href="{{ h1_banner_img4_link }}"><img src="{{ home1_banner_img4 }}"></a>
+                                   <h3>{{ home1_banner_title7 }}</h3>
+                                    <p>{{ home1_banner_title8 }} </p>
+                                </div>
+                            </div> 
+                        </div>  
+                    </div>
+                     
+                </div>
+            </div>
+		{% endif %}
+	<div class="bg-slider-one-item space-100 bg-home2-slider">
+		<div class="container container-ver2">
+			<div class="title-text-v2 align-center">
+				<h3>{{ home2_testi_title }}</h3>
+				<img src="catalog/view/theme/freshfood/images/title-line.png" alt="icon">
+			</div>{{ home2_testimonial }}
+		 
+		</div>
+	</div>
+
+	<div class="container"><div class="row"><div id="content"></div></div>
+		<div class="title-text-v2">
+			<h3>{{ text_latesthome }}</h3>
+		</div>
+		<div class="featured-products home_2 new-arrivals lastest cust">
+			<ul class="tabs tabs-title">
+				<li class="item" rel="tab">{{ text_allproduct }}</li>
+					{% for link_array in outer_array %}
+						{% set counter=1 %}
+						{% for name_link in link_array %}
+						<li class="item" rel="tab_{{ counter }}">{{ name_link.category_name }}</li>
+						 {% set counter = counter + 1 %}
+						{% endfor %}
+					{% endfor %}
+			</ul>
+			<div class="tab-container space-10">
+			<div id="tab" class="tab-content" style="display:none;">
+				<div class="products hover-shadow ver2 border-space-product hidden-xs">
+				
+				{% for all_pro in results_prod_all [2:15] %}
+					  {% set add_link = app.request %}
+					  <div class="product">
+							<div class="product-images">
+								<a href="{{ all_pro['href'] }}" title="product-images">
+									<img class="primary_image" src="image/{{ all_pro['image']}}" alt="images"> 
+								</a>
+								<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+							
+							 <a href="{{ all_pro['href'] }}" title="Union Bed">
+							 <p class="product-title">{{ all_pro['name'] }}</p>
+							 </a>
+							 
+							 {% if all_pro.special %}
+							 <p class="product-price-old">{{ all_pro['price'] }}</p>
+							 <p class="product-price" style="padding-left: 0px;">{{ all_pro['special'] }}</p>
+							 {% else %}
+							 <p class="product-price">{{ all_pro['price'] }}</p>
+							{% endif %}
+						</div>
+						</div>
+						{% endfor %}
+				</div>
+				<div class="furniture sl_mo">
+					<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+						 
+						{% for all_pro in results_prod_all %}
+									<div class="product slide_pro">
+									<div class="product-images">
+										<a href="{{ all_pro['href'] }}" title="product-images">
+											<img class="primary_image" src="image/{{all_pro['image'] }}" alt="images">
+										</a>
+										<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										 
+									
+									 <a href="{{ all_pro['href'] }}" title="Union Bed">
+									 <p class="product-title">{{ all_pro['name'] }}</p>
+									 </a>
+									 {% if all_pro.special %}
+									 <p class="product-price-old">{{ all_pro['price'] }}</p>
+									 <p class="product-price" style="padding-left: 0px;"> {{all_pro['special'] }}</p>
+										 {%else%}
+									 <p class="product-price">{{ all_pro['price'] }}</p>
+										 {%endif%}
+								</div>
+								</div>
+								{% endfor %}
+						
+					</div>
+				</div>
+			</div>
+			 
+			{% for link_array in outer_array %}
+				 {% set counter = '1' %}
+					 {% for name_cate in link_array  %} 					 
+					 <div id="tab_{{ counter }}" class="tab-content" style="display:none;">
+						<div class="products hover-shadow ver2 border-space-product hidden-xs">
+						 		 {% for name_pro in name_cate [2:15] %}
+						  
+									<div class="product">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+												<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images"> 
+											</a>
+											<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										 
+										 <a href="{{ name_pro['href'] }}" title="Union Bed">
+										 <p class="product-title">{{ name_pro['name'] }}</p>
+										 </a>
+										{% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price'] }}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special'] }}</p>
+										 {%else%}
+										 <p class="product-price">{{name_pro['price'] }}</p>
+										 {%endif%}
+									</div>
+									</div>
+									{%endfor%}
+						</div>
+						<div class="furniture sl_mo">
+						<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+                    
+							 {% for name_pro in name_cate[2:15] %}
+								<div class="product slide_pro">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+								<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images">
+											</a>
+											<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										 
+										 <a href="{{name_pro['href']}}">
+										 <p class="product-title">{{name_pro['name']}}</p>
+										 </a>
+										  {% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price']}}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special']}}</p>
+											 {% else %}
+										 <p class="product-price">{{ name_pro['price'] }}</p>
+											 {%endif%}
+									</div>
+									</div>
+									{%endfor%}
+                   
+				 			</div>
+				 			</div> 
+					</div>
+					 {% set counter = counter + 1 %}
+					{% endfor %}
+					{% endfor %}
+				 
+		</div>
+		</div>
+	</div>
+	
+	{% if home2_big_offers_status == 1 %}
+	<div class="special bg-images special-v2 box" style="background-image:url('{{ home2_special_img1 }}');background-repeat: no-repeat;">
+		<div class="col-md-12 col-sm-12 ">
+		<div class="col-md-7 col-sm-12 float-left align-right">
+			<img class="images-logo" src="{{ home2_special_img2 }}" alt="images">
+		</div>
+           
+		<div class="col-md-5 col-sm-12 float-right">
+		<div class="row">
+			<div class="special-content align-center">
+				<p>{{ home2_big_title1 }} </p>
+				<h3>{{ home2_big_title2 }}</h3>
+				<h5>{{ home2_big_title3 }}</h5>
+				<div class="time" data-countdown="countdown" data-date="{{ home2_valid_date }}"></div> 
+				<a class="link-v1 rt" href="{{ home2_big_shop_link }}" title="shopnow">{{ home2_big_shop_now }}</a> 
+			</div>
+		</div>
+		</div>
+		</div>
+		
+    </div>
+	{% endif %}
+	
+	<div id="back-to-top" class="show">
+    <i class="fa fa-long-arrow-up"></i>
+	</div> 
+	 <div class="container container-ver2 blog-home1">
+	 {%if blogs%}
+			<div class="title-text-v2">
+				<div class="icon-title align-center space-20">
+					<img src="image/catalog/images/title-lastest-from.png" alt="icon-title">
+				</div>  
+				<h3>{{text_Lastest_blog}}</h3>
+				<a class="link padding-bt-20" href="#" title="{{text_seeall}}">{{text_seeall}}</a>
+			</div>
+                  
+			<div class="blog-content slider-three-item owl-carousel">
+			 {%for blog_data in blogs%}
+			 
+				<div class="item">
+					<a class="hover-images">
+						<img class="img-responsive" src="{{blog_data.image}}">
+					</a>
+					<div class="text">
+						 
+						<a href="{{blog_data.href}}" title="Blog Title"><h3>{{blog_data.title}}</h3></a>
+						<p class="by">{{blog_data.meta_description}}</p>
+						 
+					</div>
+				</div>
+					
+			   {%endfor%}
+				
+			</div>
+			{%endif%}   
+          </div>
+	
+	
+	
+
+{{ footer }}
+</div>
+</div>
+{%endif%}
+ 
+ 
+{% if homepage == 3 %}
+<div id="homepage_3">
+<div class="wrappage">
+{{ header }}
+	<div class="container container-ver2 box-cat-home3">
+        <div class="row">
+			<div class="col-md-12 top_slide">
+			<div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="categories-home3">
+                        <h3>{{ text_Categories }}</h3>
+                        <i class="fa fa-chevron-circle-down icon-click"></i>
+                        <ul class="menu-vertical">
+							 {% for product_no in product_name %}
+							  
+                            <li><img src="image/{{product_no.catimage}}">
+								<a href="{{ product_no.href }}" title="{{ product_no.name }}">{{ product_no.name }}</a>
+							</li>
+							{% endfor %}
+                        </ul>
+                    </div>
+                </div>
+				<div class="col-md-9">{{ content_top }}</div>
+			</div>
+			</div>
+		</div>
+	</div>
+		
+		{% if h1_choose_us2_status == 1 %}
+		
+		<div class="container container-ver2">
+                <div class="choose-us choose-us-home2">
+                    <div class="col-md-4">
+                        <img class="img-responsive hidden-table" src="{{ home2_choose_img }}" alt="banner">
+                    </div>
+					<div class="col-md-8">
+						<div class="title-choose align-center">
+                            <h3><span>{{ h1_choose_us2_title1 }}</span>&nbsp;{{ h1_choose_us2_title2 }}</h3>
+                            <p>{{ h1_choose_us2_text }}</p>
+                        </div>
+                       
+                         <div class="align-center border-choose">
+                            <div class="images">
+                                <img src="image/catalog/images/bg-border-center.png" alt="icon">
+                            </div>
+                        </div>
+                       
+                        <div class="shipping-v2 home3-shiping home2-shipping">
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img1_link }}"><img src="{{ home1_banner_img1 }}" alt="images"></a>
+									<h3>{{ home1_banner_title1 }}</h3>
+                                    <p>{{ home1_banner_title2 }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img2_link }}"><img src="{{ home1_banner_img2 }}" alt="images"></a>
+                                    <h3>{{ home1_banner_title3 }}</h3>
+                                    <p>{{ home1_banner_title4 }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img3_link }}"><img src="{{ home1_banner_img3 }}" alt="images"></a>
+                                    <h3>{{ home1_banner_title5 }}</h3>
+                                    <p>{{ home1_banner_title6 }} </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="border">
+                                    <a href="{{ h1_banner_img4_link }}"><img src="{{ home1_banner_img4 }}" alt="images"></a>
+                                    <h3>{{ home1_banner_title7 }}</h3>
+                                    <p>{{ home1_banner_title8 }}</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+					 
+					
+				</div>
+		</div>
+		{%endif%}
+			{% if home3_cat_img_status == 1 %}
+		<div class="catbox-container space-80"> 
+            <div class="items hover-images">
+                <img src="{{ home3_category_img1 }}" alt="catbox">
+                <div class="text"> 
+                    <h3>{{ h1_cat3_title1 }}</h3>
+                    <a href="{{ h1_cat3_link1 }}" title="{{text_view_all_product}}">{{ text_view_all_product }}</a>
+                </div>
+            </div>
+           
+            <div class="items hover-images">
+                <img src="{{ home3_category_img2 }}" alt="catbox">
+                <div class="text">
+                    <h3>{{ h1_cat3_title2 }}</h3>
+                    <a href="{{ h1_cat3_link2 }}" title="{{text_view_all_product}}">{{ text_view_all_product }}</a>
+                </div>
+            </div>
+           
+            <div class="items hover-images">
+                <img src="{{ home3_category_img3 }}" alt="catbox">
+                <div class="text">
+                    <h3>{{ h1_cat3_title3 }}</h3>
+                    <a href="{{ h1_cat3_link3 }}" title="{{text_view_all_product}}">{{ text_view_all_product }}</a>
+                </div>
+            </div>
+        </div>
+		{%endif%}
+<div class="container">
+	<div class="row">
+		<div id="content"></div>
+	</div>
+	<div class="title-text-v2">
+        <h3>{{ text_latesthome }}</h3>
+	</div>
+	<div class="featured-products home_2 new-arrivals lastest cust">
+			<ul class="tabs tabs-title">
+				<li class="item" rel="tab">{{ text_allproduct }}</li>
+					{% for link_array in outer_array %}
+						{% set counter=1 %}
+						{% for name_link in link_array %}
+						<li class="item" rel="tab_{{ counter }}">{{ name_link.category_name }}</li>
+						 {% set counter = counter + 1 %}
+						{% endfor %}
+					{% endfor %}
+			</ul>
+			<div class="tab-container space-10">
+			<div id="tab" class="tab-content" style="display:none;">
+				<div class="products hover-shadow ver2 border-space-product hidden-xs">
+				
+				{% for all_pro in results_prod_all [2:15] %}
+					  {% set add_link = app.request %}
+					  <div class="product">
+							<div class="product-images">
+								<a href="{{ all_pro['href'] }}" title="product-images">
+									<img class="primary_image" src="image/{{ all_pro['image']}}" alt="images"> 
+								</a>
+								<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+							 
+							 <a href="{{ all_pro['href'] }}">
+							 <p class="product-title">{{ all_pro['name'] }}</p>
+							 </a>
+							 
+							 {% if all_pro.special %}
+							 <p class="product-price-old">{{ all_pro['price'] }}</p>
+							 <p class="product-price" style="padding-left: 0px;">{{ all_pro['special'] }}</p>
+							 {% else %}
+							 <p class="product-price">{{ all_pro['price'] }}</p>
+							{% endif %}
+						</div>
+						</div>
+						{% endfor %}
+				</div>
+				<div class="furniture sl_mo">
+					<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+						 
+						{% for all_pro in results_prod_all %}
+						 	<div class="product slide_pro">
+									<div class="product-images">
+										<a href="{{ all_pro['href'] }}" title="product-images">
+											<img class="primary_image" src="image/{{all_pro['image'] }}" alt="images">
+										</a>
+										<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+									</div>
+									</div>
+									 <a href="{{ all_pro['href'] }}" title="Union Bed">
+									 <p class="product-title">{{ all_pro['name'] }}</p>
+									 </a>
+									 {% if all_pro.special %}
+									 <p class="product-price-old">{{ all_pro['price'] }}</p>
+									 <p class="product-price" style="padding-left: 0px;"> {{all_pro['special'] }}</p>
+										 {%else%}
+									 <p class="product-price">{{ all_pro['price'] }}</p>
+										 {%endif%}
+								</div>
+								{% endfor %}
+						
+					</div>
+				</div>
+			</div>
+			 
+			{% for link_array in outer_array %}
+				 {% set counter = '1' %}
+					 {% for name_cate in link_array  %} 					 
+					 <div id="tab_{{ counter }}" class="tab-content" style="display:none;">
+						<div class="products hover-shadow ver2 border-space-product hidden-xs">
+						 		 {% for name_pro in name_cate [2:15] %}
+						  
+									<div class="product">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+												<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images"> 
+											</a>
+											<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										 
+										 <a href="{{ name_pro['href'] }}" title="Union Bed">
+										 <p class="product-title">{{ name_pro['name'] }}</p>
+										 </a>
+										{% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price'] }}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special'] }}</p>
+										 {%else%}
+										 <p class="product-price">{{name_pro['price'] }}</p>
+										 {%endif%}
+									</div>
+									</div>
+									{%endfor%}
+						</div>
+						<div class="furniture sl_mo">
+						<div class="upsell-product owl-carousel products hover-shadow ver2 visible-xs hidden-md hidden-sm">
+                    
+							 {% for name_pro in name_cate[2:15] %}
+								<div class="product slide_pro">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+								<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images">
+											</a>
+											<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true""  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										</div>
+										 <a href="{{name_pro['href']}}" title="Union Bed">
+										 <p class="product-title">{{name_pro['name']}}</p>
+										 </a>
+										  {% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price']}}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special']}}</p>
+											 {% else %}
+										 <p class="product-price">{{ name_pro['price'] }}</p>
+											 {%endif%}
+									</div>
+									{%endfor%}
+                   
+				 			</div>
+				 			</div> 
+					</div>
+					 {% set counter = counter + 1 %}
+					{% endfor %}
+					{% endfor %}
+	</div>
+	</div>
+</div>
+{% if home4_big_banner_status == 1 %}
+  <div class="banner-home3">
+            <div class="container container-ver2 space-40">
+                <img class="img-responsive" src="{{ home3_banner_img1 }}" alt="banner-home3">
+                <div class="text">
+                    <img src="catalog/view/theme/freshfood/images/icon-phone.png" alt="icon">
+                    <h4>{{ home3_big_banner_title2 }}</h4>
+                    <h3>{{ telephone }}</h3>
+                    <p>{{ home3_big_banner_title }}</p>
+                </div>
+                
+                <div class="icon-banner">
+                    <img src="{{ home3_banner_img2 }}" alt="icon-banner">
+                </div>
+            </div>
+    </div>
+{% endif %}
+	{# featured-products #}
+	<div class="container container-ver2">
+    <div class="title-text-v2"> 
+		<h3>{{ text_featured_products }}</h3>
+    </div>
+	<div class="featured-products products-size-small">
+		<ul class="tabs tabs-title">
+			<li class="item" rel="tab_01">{{ text_popular }}</li>
+			<li class="item" rel="tab_02">{{ text_new_arrival }}</li>
+			<li class="item" rel="tab_03">{{ text_specials }}</li>
+			<li class="item" rel="tab_04">{{ text_on_sale }}</li>
+        </ul>
+		<div class="tab-container space-10">
+			<div id="tab_01" class="tab-content">
+				{{ home1_featured }}
+			</div>
+			<div id="tab_02" class="tab-content">
+				{{ home1_latest }}
+			</div>
+			<div id="tab_03" class="tab-content">
+				{{ home1_special }}
+			</div>
+			<div id="tab_04" class="tab-content">
+				{{ home1_best }}
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div class="container container-ver2"><div class="border-title"></div></div>
+	<div id="back-to-top" class="show">
+        <i class="fa fa-long-arrow-up"></i>
+    </div>
+{{ footer }}
+</div>
+</div>
+{%endif%}
+ 
+{% if homepage == 4 %}
+ <div id="homepage_4">
+ {{ header }}
+	<div class="container container-ver2" style="margin-bottom:30px;">
+	{{ content_top }}
+	</div>
+	{% if home1_banner_status == 1 %}
+    <div class="container container-ver2">
+        <div class="shipping-v2 home3-shiping home4-shipping space-30">
+				<div class="col-md-3 col-sm-3 col-xs-6">
+					<div class="border">
+						<a href="{{ h1_banner_img1_link }}"><img src="{{ home1_banner_img1 }}" alt="images"></a>
+						
+						<h3>{{ home1_banner_title1 }}</h3>
+						<p>{{ home1_banner_title2 }}</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6">
+					<div class="border">
+						<a href="{{ h1_banner_img2_link }}"><img src="{{ home1_banner_img2 }}" alt="images"></a>
+						<h3>{{ home1_banner_title3 }}</h3>
+						<p>{{ home1_banner_title4 }}</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6">
+					<div class="border">
+						<a href="{{ h1_banner_img3_link }}" ><img src="{{ home1_banner_img3 }}" alt="images"></a>
+						<h3>{{ home1_banner_title5 }}</h3>
+						<p>{{ home1_banner_title6 }}</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6">
+					<div class="border">
+						<a href= "{{ h1_banner_img4_link }}"><img src="{{ home1_banner_img4 }}" alt="images"></a>
+						<h3>{{ home1_banner_title7 }}</h3>
+						<p>{{ home1_banner_title8 }}</p>
+					</div>
+				</div>
+			</div> 
+	</div> 
+	{% endif %}
+	<div class="container container-ver2 banner-home4">
+        <div class="catbox-container home-4">
+            <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="items">
+                    <div class="hover-images">
+                        <img src="{{ home4_five_image1 }}" alt="banner">
+                        <div class="text">
+                            <h3>{{ home4_banner_title1 }}</h3>
+                            <a href="{{ home4_banner_link1 }}" title="View all product">{{ text_view_all_product }}</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="items left">
+                    <div class="hover-images">
+                        <img src="{{ home4_five_image2 }}" alt="banner">
+                        <div class="text">
+                            <h3>{{ home4_banner_title2 }}</h3>
+                            <a href="{{ home4_banner_link2 }}" title="View all product">{{ text_view_all_product }}</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+          
+            <div class="col-md-4 col-sm-4">
+                <div class="items">
+                    <div class="hover-images">
+                        <img src="{{ home4_five_image3 }}" alt="banner">
+                        <div class="text">
+                            <h3>{{ home4_banner_title3 }}</h3>
+                            <a href="{{ home4_banner_link3 }}" title="View all product">{{ text_view_all_product }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-md-4 col-sm-4">
+                <div class="items">
+                    <div class="hover-images">
+                        <img src="{{ home4_five_image4 }}" alt="banner">
+                        <div class="text">
+                            <h3>{{ home4_banner_title4 }}</h3>
+                            <a href="{{ home4_banner_link4 }}" title="View all product">{{ text_view_all_product }}</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="items bottom">
+                    <div class="hover-images">
+                        <img src="{{ home4_five_image5 }}" alt="banner">
+                        <div class="text">
+                            <h3>{{ home4_banner_title5 }}</h3>
+                            <a href="{{ home4_banner_link5 }}" title="View all product">{{ text_view_all_product }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        </div>
+    </div>
+	<div class="container container-ver2">
+		<div class="row"><div id="content"></div></div>
+        <div class="furniture owl-nav-ver1">
+			<div class="title-text-v2"> 
+                <h3>{{ text_Best_week }}</h3>
+            </div>
+			<ul class="tabs tabs-title">
+				<li class="item" rel="tab">{{ text_allproduct }}</li>
+					{% for link_array in outer_array %}
+						{% set counter=1 %}
+						{% for name_link in link_array %}
+						<li class="item" rel="tab_{{ counter }}">{{ name_link.category_name }}</li>
+						 {% set counter = counter + 1 %}
+						{% endfor %}
+					{% endfor %}
+			</ul>
+			<div class="tab-container space-50">
+			<div id="tab" class="tab-content" style="display:none;">
+				<div class="product-tab-content1 owl-carousel products hover-shadow ver2 hidden-xs">
+				
+				{% for all_pro in results_prod_all %}
+					  {% set add_link = app.request %}
+					  
+					  <div class="product">
+							<div class="product-images">
+								<a href="{{ all_pro['href'] }}" title="product-images">
+									<img class="primary_image" src="image/{{ all_pro['image']}}" alt="images"> 
+								</a>
+								 <div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+							 
+							 <a href="{{ all_pro['href'] }}" title="Union Bed">
+							 <p class="product-title">{{ all_pro['name'] }}</p>
+							 </a>
+							 
+							 {% if all_pro.special %}
+							 <p class="product-price-old">{{ all_pro['price'] }}</p>
+							 <p class="product-price" style="padding-left: 0px;">{{ all_pro['special'] }}</p>
+							 {% else %}
+							 <p class="product-price">{{ all_pro['price'] }}</p>
+							{% endif %}
+						</div>
+						</div>
+						{% endfor %}
+				</div>
+				<div class="furniture sl_mo visible-xs hidden-md hidden-sm">
+					<div class="upsell-product owl-carousel products hover-shadow ver2">
+						 
+						{% for all_pro in results_prod_all %}
+						 	<div class="product slide_pro">
+									<div class="product-images">
+										<a href="{{ all_pro['href'] }}" title="product-images">
+											<img class="primary_image" src="image/{{all_pro['image'] }}" alt="images">
+										</a>
+										<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true"  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+									 
+									 <a href="{{ all_pro['href'] }}" title="Union Bed">
+									 <p class="product-title">{{ all_pro['name'] }}</p>
+									 </a>
+									 {% if all_pro.special %}
+									 <p class="product-price-old">{{ all_pro['price'] }}</p>
+									 <p class="product-price" style="padding-left: 0px;"> {{all_pro['special'] }}</p>
+										 {%else%}
+									 <p class="product-price">{{ all_pro['price'] }}</p>
+										 {%endif%}
+								</div>
+								</div>
+								{% endfor %}
+						
+					</div>
+				</div>
+			</div>
+			 
+			{% for link_array in outer_array %}
+				 {% set counter = '1' %}
+					 {% for name_cate in link_array  %} 					 
+					 <div id="tab_{{ counter }}" class="tab-content" style="display:none;">
+						<div class="product-tab-content1 owl-carousel products hover-shadow ver2">
+						 		 {% for name_pro in name_cate [2:15] %}
+						  
+									<div class="product">
+										<div class="product-images">
+											<a href="{{ name_pro['href'] }}" title="product-images">
+												<img class="primary_image" src="image/{{name_pro['image'] }}" alt="images"> 
+											</a>
+											<div class="action"> 
+								<a class="add-cart1 fa fa-shopping-bag"  title="Add to cart" onclick="cart.add('{{ all_pro['product_id']}}');">
+								</a>
+								<a class="wish1 fa fa-heart-o" aria-hidden="true""  title="Wishlist" onclick="wishlist.add('{{ all_pro['product_id']}}');"></a>
+								<a class="fa fa-random compare_icon"  title="compare" onclick="compare.add('{{ all_pro['product_id'] }}');"></a>
+							</div>
+										 
+										 <a href="{{ name_pro['href'] }}" title="Union Bed">
+										 <p class="product-title">{{ name_pro['name'] }}</p>
+										 </a>
+										{% if all_pro.special %}
+										 <p class="product-price-old">{{name_pro['price'] }}</p>
+										 <p class="product-price" style="padding-left: 0px;">{{name_pro['special'] }}</p>
+										 {%else%}
+										 <p class="product-price">{{name_pro['price'] }}</p>
+										 {%endif%}
+									</div>
+									</div>
+									{%endfor%}
+						</div>
+						
+					</div>
+					<script>
+						$(document).ready(function(){
+							$("#tab").show();
+							$("#tab_{{counter}}").hide();
+						});
+						</script>
+					 {% set counter = counter + 1 %}
+					{% endfor %}
+					{% endfor %}
+	</div>
+		
+		
+		</div>
+	</div>
+	
+	{% if home4_big_banner_status == 1 %}
+	<div class="banner-home3">
+            <div class="container container-ver2 space-40">
+                <img class="img-responsive" src="{{ home3_banner_img1 }}" alt="banner-home3">
+                <div class="text">
+                    <img src="catalog/view/theme/freshfood/images/icon-phone.png" alt="icon">
+	<h4>{{ home3_big_banner_title2 }}</h4>
+                    <h3>{{ telephone }}</h3>
+                    <p>{{ home3_big_banner_title }}</p>
+                </div>
+               <div class="icon-banner">
+                    <img src="{{ home3_banner_img2 }}" alt="icon-banner">
+                </div>
+            </div>
+    </div>
+	{% endif %}
+	
+	{# featured-products #}
+ <div class="container container-ver2">
+    <div class="title-text-v2"> 
+		<h3>{{ text_featured_products }}</h3>
+    </div>
+	<div class="featured-products products-size-small">
+		<ul class="tabs tabs-title">
+			<li class="item" rel="tab_01">{{ text_popular }}</li>
+			<li class="item" rel="tab_02">{{ text_new_arrival }}</li>
+			<li class="item" rel="tab_03">{{ text_specials }}</li>
+			<li class="item" rel="tab_04">{{ text_on_sale }}</li>
+			
+        </ul>
+		<div class="tab-container space-10">
+			<div id="tab_01" class="tab-content">
+			{{ home1_featured }}
+			</div>
+			<div id="tab_02" class="tab-content">
+			{{ home1_latest }}
+			</div>
+			<div id="tab_03" class="tab-content">
+			{{ home1_special }}
+			</div>
+			<div id="tab_04" class="tab-content">
+			{{ home1_best }}
+			</div>
+		</div>
+	</div>
+</div>
+{{ home4_testi }}
+<div id="back-to-top" class="show"><i class="fa fa-long-arrow-up"></i> </div>
+{{footer}}
+</div>	
+{%endif%}

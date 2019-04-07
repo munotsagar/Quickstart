@@ -1,0 +1,126 @@
+---------- Date: 2018-03-08 03:56:25 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood_lan.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 04:16:58 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 04:51:15 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=account/login
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 05:30:29 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=common/home
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/fr-Fr/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     ='%s élément (s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 08:01:34 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']               = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 08:50:33 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=account/wishlist
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/freshfood.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 08:51:30 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=account/wishlist
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/cart.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']     = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 08:53:23 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=checkout/cart
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/cart.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/en-gb/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']               = '%s item(s) - %s';
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-03-08 08:55:38 ~ IP : 192.168.1.33 ----------
+REQUEST URI : /opencart/freshfood_3/Quickstart/index.php?route=common/home
+MOD DETAILS:
+   modFile   : D:\xampp\htdocs\opencart\freshfood_3\Quickstart\vqmod/xml/cart.xml
+   id        : VQMod Manager Menu Shortcut
+   version   : 2.0.0
+   vqmver    : 2.3.0
+   author    : Jason Clark (mithereal@gmail.com)
+
+File Name    : catalog/language/it/common/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_items']    = '%s articolo(i) - %s';
+----------------------------------------------------------------------
+
+

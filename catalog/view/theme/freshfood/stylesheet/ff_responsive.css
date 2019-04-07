@@ -1,0 +1,140 @@
+@media screen and (max-width: 320px) {
+	 .head-cart .item{padding:15px 0px;}
+	.slider1_2 { top: 10px; }
+	.slider1_2 h2 { font-size: 23px;line-height: 15px;margin-top:5px;}
+	.slider1_2 h1{line-height:20px;font-size: 12px;margin-bottom:1px;}
+	.slider3_4 {  top: 50px; font-size: 20px; line-height:40px;}
+	.slider3_4 h2{line-height: 40px;font-size: 15px;}
+	.slider3_4 h1{line-height: 22px;font-size: 10px;}
+	.slider1_2 .even1{font-size:18px;line-height: 20px;}
+	.banner-home2{margin-top:30px;}
+	.products.grid_full.list-item .item-inner .product p.rating i {	margin-left: 0px !important;}
+	.checkout-cart .table-responsive > .table > tbody > tr > td{	white-space: unset;}
+	.product-search .wrap-breadcrumb .ordering #grid-view{	margin-left:10px;}
+	.account-address .container-ver2 .link-v1.lh-50 {padding: 0 12px;}
+	.information-contact .page-contact .content-text #myvalidation .input-nameformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-emailformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-enquiryformError.parentFormmyvalidation.formError {
+    left: 50% !important;}
+	.blog-home1 .blog-content .text h3{font: 400 16px/30px "Roboto Slab";}
+	.slider3_4 .even2{font-size:12px;line-height:20px;}
+	.choose-us.choose-us-home2 .title-choose h3{font-size:26px;}
+	.ordering .ri .form a{padding:0px 0px;}.slider3_4 h2{line-height:40px;}
+	.ordering .form{margin-top:0px;	}.ordering span{padding:8px;}.ordering span{height:38px;}
+	.cat .wrap-breadcrumb #content .ordering #compare-total {  font: 400 13px "Roboto Slab"; letter-spacing:0px; }
+}
+
+@media screen and (min-width: 321px) and (max-width: 360px) {
+	.head-cart .item{padding:15px 0px;}.slider3_4 .even2 {   font-size: 12px;   line-height: 25px;}
+	#homepage_2 .wrappage #slider-section #main-slider .owl-stage-outer .owl-stage .item .slider1_2 a{display:none;}
+	.slider1_2 { top:10px;}
+	.slider1_2 h2 {font-size: 25px; line-height:50px;}
+	.slider1_2 h1{line-height: 20px; font-size:14px; margin-bottom: 10px;}
+	.slider3_4 {  top: 60px;}
+	.slider3_4 h2{line-height:30px; font-size:16px;}
+	.slider3_4 h1{line-height: 25px;font-size: 12px;}
+	.products.grid_full.list-item .item-inner .product p.rating i {	margin-left: 0px !important;}
+	.product-search .wrap-breadcrumb .ordering #grid-view{	margin-left:10px;}
+	.account-address .container-ver2 .link-v1.lh-50 {	padding: 0 22px;}
+.information-contact .page-contact .content-text #myvalidation .input-nameformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-emailformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-enquiryformError.parentFormmyvalidation.formError {
+    left: 60% !important;}
+	.blog-home1 .blog-content .text h3{font: 400 16px/30px "Roboto Slab";}
+}
+
+@media screen and (min-width: 361px) and (max-width: 480px) {
+	.head-cart .item{padding:15px 0px;}
+	.slider3_4 h2{font-size:24px;}.slider3_4 .even2 {font-size: 15px;}.slider3_4 h2{line-height:55px;}
+	.cat .wrap-breadcrumb #content .ordering #compare-total{letter-spacing:1px;}
+	 .products.grid_full.ver2 .item-inner .product .action { width: 205px;}
+	.slider1_2 { top: 35px; line-height: 35px;}
+	 .slider1_2 h2 { font-size: 30px; line-height: 15px;}.slider1_2 .even1 {font-size: 30px; line-height: 15px;} 
+	 .slider1_2 h1 {line-height: 20px; margin-bottom: 15px; font-size: 11px;}
+	 .slider3_4 {top: 70px;}
+	  
+	.information-contact .page-contact .content-text #myvalidation .input-nameformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-emailformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-enquiryformError.parentFormmyvalidation.formError {
+    left: 60% !important;}
+	.blog-home1 .blog-content .text h3{font: 400 16px/30px "Roboto Slab";}
+	 
+}
+
+@media screen and (min-width: 481px) and (max-width: 640px) {
+		.slider1_2 {  top: 48px;}.slider1_2 h2 {font-size: 50px; line-height: 60px;}
+		.slider1_2 h1{line-height: 30px;margin-bottom: 20px;}
+		.slider3_4 {  top: 105px;}.slider3_4 h2{font-size:30px;}
+		.information-contact .page-contact .content-text #myvalidation .input-nameformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-emailformError.parentFormmyvalidation.formError,.information-contact .page-contact .content-text #myvalidation .input-enquiryformError.parentFormmyvalidation.formError {left: 70% !important;}
+}
+@media screen and (min-width: 0px) and (max-width: 640px) {
+.M_top20{margin-top: 35px;}
+
+}
+
+@media screen and (max-width: 767px) {
+	.ordering .respon_orderby .order-by.form {	padding: 10px;}
+	.ordering .respon_orderby .order-by.form select {	padding: 0px;}
+	.table-responsive {	border:none;}
+	.table-responsive > .table-bordered {	border:1px solid #ddd;}
+	.account-order td .link-v1 {	display:inline-block;	width: 50%;}
+	.owl-dots{	display: none !important;}	
+	.P15{padding-left:15px !important;padding-right:15px !important;}
+}
+
+@media screen and (min-width: 640px) and (max-width: 768px) {
+	.slider1_2 {  top: 75px;}
+	
+	
+	
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.slider3_4 h2{font-size:25px;}
+	
+	.information-contact .page-contact .content-text #myvalidation .input-nameformError.parentFormmyvalidation.formError,
+	.information-contact .page-contact .content-text #myvalidation .input-emailformError.parentFormmyvalidation.formError,
+	.information-contact .page-contact .content-text #myvalidation .input-enquiryformError.parentFormmyvalidation.formError {
+    left: 75% !important;}
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 980px) {
+	.slider1_2 {top: 30px;}
+	.slider1_2 h1{line-height: 30px; margin-bottom: 20px;}
+	.slider1_2 h2{font-size: 40px;}
+	.slider3_4 { top: 100px;}
+	.banner-home2{margin-top: -70px;}
+	.products.grid_full.list-item .item-inner .product .action { padding-left: calc(35% + 20px);}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	 #homepage_4 ul#navbar{margin-top:15px;}
+	#homepage_4 section#slider-section {  margin-top: 15px;}
+	.ordering .respon_orderby .order-by.form {padding: 10px;}
+	.ordering .respon_orderby .order-by.form select {padding: 0px;}
+	.ordering .respon_orderby .order-by {margin-left: 0px;}
+	.banner-header.banner-lbook3 .text h3 {	font-size: 40px;padding-bottom: 0px;line-height: 60px;margin-bottom: 5px;}
+	.owl-dots{	display: none !important;}
+	
+}
+
+@media screen and (min-width: 980px) and (max-width: 1024px) {
+	.banner-home2{margin-top: -70px;}
+	 #homepage_1 .rospon_qty .changer,.detail_page4 .rospon_qty .changer.homev4,#homepage_2 .rospon_qty .changer,.homepage3 .changer.homev3 {left: 34%;width: 5.5%;}	
+	.slider1_2 {  top: 130px;}.slider3_4 {  top: 150px;}
+	.products.grid_full.list-item .item-inner .product .action { padding-left: calc(0% + 20px);}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+	.ordering .respon_orderby .order-by.form {	padding: 10px;}
+	.ordering .respon_orderby .order-by.form select {	padding: 0px;}
+	.ordering .order-by::after {	top: 15px;}	
+	
+}
+
+@media screen and (max-width: 1024px) {
+	.cart .icon-cart #cart button{	width: 45px;	}
+	#header .cart .icon-cart #cart .cart-count {	right: 14px;}
+
+}
+
+
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+ #homepage_4 .container .slider_start #main-slider .owl-stage-outer .owl-stage .owl-item .item .slider-image .sl_height {   max-height: 550px !important;}
+}

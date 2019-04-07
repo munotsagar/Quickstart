@@ -1,0 +1,106 @@
+{{ header }}
+<div class="container account-order">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ breadcrumbs[2].text }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+  <div class="container container-ver2 ">
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+     
+      {% if orders %}
+      <div class="table-responsive">
+        <table class="table cart-table space-80 hidden-xs">
+          <thead>
+            <tr>
+              <th class="text-center produc-name produc-price">{{ column_order_id }}</th>
+              <th class="text-center">{{ column_customer }}</th>
+              <th class="text-center produc-price">{{ column_product }}</th>
+              <th class="text-center">{{ column_status }}</th>
+              <th class="text-center">{{ column_total }}</th>
+              <th class="text-center produc-price">{{ column_date_added }}</th>
+              <th class="text-center">{{ text_view }}</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for order in orders %}
+            <tr>
+              <td class="text-center produc-name produc-price">#{{ order.order_id }}</td>
+              <td class="text-center customer">{{ order.name }}</td>
+              <td class="text-center produc-price">{{ order.products }}</td>
+              <td class="text-center customer">{{ order.status }}</td>
+              <td class="text-center pro-total">{{ order.total }}</td>
+              <td class="text-center produc-name produc-price">{{ order.date_added }}</td>
+              <td class="text-center"><a href="{{ order.view }}" data-toggle="tooltip" title="{{ button_view }}" class="link-v1 lh-50 rt"><i class="fa fa-eye"></i></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+		 <table class="table table-bordered hidden-sm hidden-md hidden-lg">
+          <thead>
+            <tr>
+              <th colspan="2" class="text-center">Product Detail</th>
+			</tr>
+			</thead>
+			 <tbody>
+            {% for order in orders %}
+			
+            <tr>
+				<td>{{ column_order_id }} </td>
+				<td class="text-center">#{{ order.order_id }}</td>
+            </tr>
+			<tr>
+				<td>{{ column_customer }}</td>
+				<td class="text-center">{{ order.name }}</td>
+            </tr>
+			<tr>
+				<td>{{ column_product }} </td>
+				<td class="text-center">{{ order.products }}</td>
+            </tr>
+			<tr>
+				<td>{{ column_status }}</td>
+				<td class="text-center">{{ order.status }}</td>
+            </tr>
+			<tr>
+				<td>{{ column_total }}</td>
+				<td class="text-center">{{ order.total }}</td>
+            </tr>
+			<tr>
+				<td>{{ column_date_added }}</td>
+				<td class="text-center">{{ order.date_added }}</td>
+            </tr>
+			<tr>
+				<td  colspan="2" class="text-center"><a href="{{ order.view }}" data-toggle="tooltip" title="{{ button_view }}" class="link-v1 lh-50 rt"><i class="fa fa-eye"></i></a></td>
+            </tr>
+			{%endfor%}
+			</tbody>
+		</table>
+		
+		
+      </div>
+      <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right page">{{ results }}</div>
+      </div><br />
+      {% else %}
+      <p>{{ text_empty }}</p>
+      {% endif %}
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div></div>
+{{ footer }}

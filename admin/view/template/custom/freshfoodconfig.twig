@@ -1,0 +1,1632 @@
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="view/javascript/jquery/jscolor.js"></script>
+
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" />
+ <script src="https://cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.ui.timepicker.addon/1.4.5/jquery-ui-timepicker-addon.min.css" />
+	<style>label{padding-top:5px;}
+	</style>
+{{ header }}
+{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <h1>{{ heading_title }}</h1>
+      <div class="pull-right">
+       <button type="submit" form="form-category" id="save" data-toggle="tooltip" title="{{ btn_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ btn_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+        </div>
+        <ul class="breadcrumb">
+		{% for breadcrumb in breadcrumbs %}
+		<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+		{% endfor %}
+		</ul>
+    </div>
+    </div>
+  
+ 
+    <div class="container-fluid"> 
+	{% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+	 {% if success %}
+    <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+		<form action="{{ addhome }}" method="post" enctype="multipart/form-data" id="form-category">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>Theme Setting</h3>
+			  </div>
+			  <div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-ean">
+							<span data-toggle="tooltip" title="Select Color">Theme Colors</span>
+						</label>
+						<div class="col-sm-10"> 
+							<input type="text" class="jscolor" value="{{ theme_color }}" id="get_color" name="theme_color">
+ 
+						<script type="text/javascript">
+						$(function(){						
+							 $('.jscolor').change(function(){ 
+								txt_color=$('.jscolor').val();
+								 $('.jscolor').attr('value',txt_color);
+								 });
+							}); 
+						</script>
+								
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i> {{ home_page }}</h3>
+			  </div>
+			  <div class="panel-body">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-ean">
+							<span data-toggle="tooltip" title="{{ help_homepage }}">{{ homepage }}</span>
+						</label>
+						<div class="col-sm-10">
+						
+							<select class="form-control" name="homepage" id="homepage">
+							
+									<option value="1" {% if selected_home == 1 %} selected="selected" {% endif %}> {{ homepage1 }}</option>
+									<option value="2" {% if selected_home == 2 %} selected="selected" {% endif %}> {{ homepage2 }}</option>
+									<option value="3" {% if selected_home == 3 %} selected="selected" {% endif %}> {{ homepage3 }}</option>
+									<option value="4" {% if selected_home == 4 %} selected="selected" {% endif %}>  {{ homepage4 }}</option>
+							</select>
+						</div>
+					</div>
+				</div>
+		 </div>
+		  <div class="panel panel-default free_banner" >
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home1_free_banner }}</h3>
+			</div>
+			<div class="panel-body">
+				 
+				<div class="form-group">
+				 	<div class="col-md-3 first">
+						<div style="padding-bottom:20px">
+							 
+					<label class="control-label" name="thumb-h1_image32">{{ text_free_banner_img1 }}</label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home1_banner_view1 }}" >
+						</a>
+						<input type="hidden" name="home1_banner1" value="{{ home1_banner1 }}" id="input-image32" >							
+						</div>
+					 <div style="padding-bottom:20px">
+								<label for="free_banner_title1"  class="control-label">{{ text_free_banner_title1 }} :</label><br>
+								<input  type="text" name="home1_banner_title1" value="{{ home1_banner_title1 }}" placeholder="{{ text_free_banner_title1 }}" class="form-control" />		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title2" class="control-label">{{ text_free_banner_title1 }} :</label><br>
+								<input  type="text" name="home1_banner_title2" value="{{ home1_banner_title2 }}" placeholder="{{ text_free_banner_title2 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="h1_banner_imag1_link" class="control-label">link:</label><br>
+								<input  type="text" name="home1_banner_link1" value="{{ home1_banner_link1 }}" class="form-control" />		
+						</div> 
+					</div>
+				 
+					 <div class="col-md-3 second">
+						<div style="padding-bottom:20px">
+							<label for="home1_banner2" class="control-label">{{ text_free_banner_img2 }}</label><br>
+							<a href="" id="thumb-h1_image19" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_view2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home1_banner2" value="{{ home1_banner2 }}" id="input-image33" />			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title3"  class="control-label">{{ text_free_banner_title3 }} :</label><br>
+							<input  type="text" name="home1_banner_title3" value="{{ home1_banner_title3 }}" placeholder="{{ text_free_banner_title3 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title2" name="free_banner_title2" class="control-label">{{ text_free_banner_title4 }}:</label><br>
+								<input  type="text" name="home1_banner_title4" value="{{ home1_banner_title4 }}" placeholder="{{ text_free_banner_title4 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="" class="control-label">link :</label><br>
+								<input  type="text" name="home1_banner_link2" value="{{ home1_banner_link2 }}"  class="form-control"/>		
+						</div>
+						 
+					</div>
+					<div class="col-md-3 third">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img3" name="free_banner_img3" class="control-label">{{ text_free_banner_img3 }}</label><br>
+							<a href="" id="thumb-h1_image20" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_view3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home1_banner3" value="{{ home1_banner3 }}" id="input-image34" class="form-control"/>			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title5" name="free_banner_title5" class="control-label">{{ text_free_banner_title5 }} :</label><br>
+							<input  type="text" name="home1_banner_title5" value="{{ home1_banner_title5 }}" placeholder="{{ text_free_banner_title5 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title6" name="free_banner_title6" class="control-label">{{ text_free_banner_title6 }}:</label><br>
+								<input  type="text" name="home1_banner_title6" value="{{ home1_banner_title6 }}" placeholder="{{ text_free_banner_title6 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label class="control-label">link :</label><br>
+								<input  type="text" name="home1_banner_link3" value="{{ home1_banner_link3 }}"  class="form-control"/>		
+						</div>
+						 
+					</div>
+					<div class="col-md-3 fourth">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img4" name="free_banner_img4" class="control-label">{{ text_free_banner_img4 }}</label><br>
+							<a href="" id="thumb-h1_image21" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_view4 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home1_banner4" value="{{ home1_banner4 }}" id="input-image35" class="form-control"/>			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title7" name="free_banner_title7" class="control-label">{{ text_free_banner_title7 }} :</label><br>
+							<input  type="text" name="home1_banner_title7" value="{{ home1_banner_title7 }}" placeholder="{{ text_free_banner_title7 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title8" name="free_banner_title8" class="control-label">{{ text_free_banner_title8 }} :</label><br>
+								<input  type="text" name="home1_banner_title8" value="{{ home1_banner_title8 }}" placeholder="{{ text_free_banner_title8 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="" class="control-label">link:</label><br>
+								<input  type="text" name="home1_banner_link4" value="{{ home1_banner_link4 }}"  class="form-control"/>		
+						</div>
+					</div>
+					<div class="col-sm-1 pull-left" style="margin-top: 8px;">
+						<label for="status" name="status" class="control-label">{{ text_status }} :</label><br>
+					</div>
+					<div class="col-sm-11 pull-right" style="margin-bottom:10px;">
+						<select name="h1_banner_status" id="h1_banner_status" class="form-control" style="width:auto;">
+							{% if h1_banner_status == 1 %}
+							
+								<option value="1" selected="selected">{{ text_big_enable }}</option>
+								<option value="0">{{ text_big_disable }}</option>
+							{% else %}
+								<option value="1">{{ text_big_enable }}</option>
+								<option value="0" selected="selected">{{ text_big_disable }}</option>
+							{% endif %}
+						</select>
+					</div>
+				</div>
+			</div>
+		 </div>
+		 <!-- home1 special countdown -->
+				<div class="panel panel-default slide_1" >
+					<div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home1_big_section }}</h3>		
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<div class="panel-body">
+							
+							<div class="col-md-12 col-sm-12">
+							  <div class="row">
+								<div class="col-md-4 col-sm-4 ">
+								 <div class="row">
+									<label for="background_image" name="background_image" class="control-label">{{ text_backgournd_image }} :</label><br>
+								 
+								<div style="margin-bottom:10px;">
+									<a href="" id="thumb-h1_image1" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_big_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+									</a>
+									<input type="hidden" name="h1_big_img1" value="{{ h1_big_img1 }}" id="input-image1" />			
+								</div>
+								</div>
+								
+							</div>
+							<div class="col-md-4 col-sm-4 ">
+								<label for="main_image" name="main_image" class="control-label">{{ text_main_image }} :</label><br>
+								 
+								<div style="margin-bottom:10px;">
+									<a href="" id="thumb-h1_image2" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_big_img2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+									</a>
+									<input type="hidden" name="h1_big_img2" value="{{ h1_big_img2 }}" id="input-image2" />			
+								</div>
+							</div>
+								<div class="col-md-4 col-sm-4 ">
+								<label for="icon_image" name="icon_image" class="control-label">{{ text_icon_image }} :</label><br>
+								 
+								<div   style="margin-bottom:10px;">
+									<a href="" id="thumb-h1_image3" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_big_img3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+									</a>
+									<input type="hidden" name="h1_big_img3" value="{{ h1_big_img3 }}" id="input-image3" />			
+								</div>
+								</div>
+								
+							 
+							 
+								<div class="col-md-6 col-sm-6">
+								<div class="row">
+									<div class="col-sm-3 pull-left" style="margin-bottom:10px;"><div class="row">
+									<label for="big_title" name="big_title" class="control-label">{{ text_big_title }} :</label>
+								</div></div>
+								<div class="col-sm-9 pull-left" style="margin-bottom:10px;">
+									<input  type="text" name="h1_big_title" value="{{ h1_big_title }}" placeholder="{{ text_big_title }}" class="form-control"/>		
+								</div>
+								
+								<div class="col-sm-3 pull-left" style="margin-bottom:10px;"><div class="row">
+									<label for="big_shop" name="big_shop" class="control-label">{{ text_big_shop }}:</label>
+								</div></div>
+								<div class="col-sm-9 pull-left" style="margin-bottom:10px;">
+									<input  type="text" name="h1_big_shop" value="{{ h1_big_shop }}" placeholder="{{ text_big_shop }}" class="form-control"/>		
+								</div>
+								<div class="col-sm-3 pull-left" style="margin-bottom:10px;"><div class="row">
+									<label class="control-label">{{ text_valid_date }}</label>
+								</div></div>
+								<div class="col-sm-9 pull-left" style="margin-bottom:10px;">
+									<input type="text" name="home1_valid_date" value="{{ home1_valid_date }}" class="form-control date_for form_datetime_h1">
+								</div>
+								<script type="text/javascript">
+									$(".form_datetime_h1").datetimepicker({format: 'YYYY-MM-DD HH:mm:ss', minDate:0
+								});
+								</script> 
+								<div class="col-sm-2 pull-left" style="margin-top:20px;"><div class="row">
+								<label for="status" name="status" class="control-label">{{ text_status }} :</label>
+							</div></div>
+							<div class="col-sm-10 pull-right" style="margin-top:20px;">
+								<select name="h1_big_status" id="h1_big_status" class="form-control" style="width:auto;">
+										{% if h1_big_status == 1 %}
+										<option value="1" selected="selected">{{ text_big_enable }}</option>
+										<option value="0">{{ text_big_disable }}</option>
+										{% else %}
+										<option value="1">{{ text_big_enable }}</option>
+										<option value="0" selected="selected">{{ text_big_disable }}</option>
+										{% endif %}
+								</select> 
+							</div>
+								</div>
+								</div>
+								<div class="col-md-6 col-sm-6">
+									<div class="col-sm-3 pull-left" style="margin-bottom:10px;">
+								<label for="big_desc" name="big_desc" class="control-label">{{ text_big_desc }}:</label>
+								</div>
+								<div class="col-sm-9 pull-left" style="margin-bottom:10px;">
+									<input  type="text"  name="h1_big_desc" value="{{ h1_big_desc }}" placeholder="{{ text_big_desc }}" class="form-control"/>		
+								</div>
+								</div>
+								
+							 
+								<div class="col-md-6 col-sm-6">
+										<div class="col-sm-3 pull-left" style="margin-bottom:10px;">
+									<label for="big_shop_link" name="big_shop_link" class="control-label">{{ text_big_shop_link }} :</label>
+								</div>
+								<div class="col-sm-9 pull-left" style="margin-bottom:10px;">
+									<input  type="text" name="h1_big_shop_link" value="{{ h1_big_shop_link }}" placeholder="{{ text_big_shop_link }}" class="form-control"/>		
+								</div>
+								</div>
+								
+								 
+							 </div>
+							 </div>
+								 <div class="col-md-12 col-sm-12"> 
+								
+							</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			<!--end home2 count time offer -->
+			
+			<div class="panel panel-default slide_1" >
+			 <div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home1_testi }}</h3>		
+					</div>
+			  <div class="panel-body">
+					<div class="form-group">
+						<div class="col-sm-2 pull-left" style="margin-bottom:10px;">
+								<label for="background_image" name="background_image" class="control-label">{{ text_testi_desc }} :</label>
+						</div>
+						<div class="col-sm-10">
+							<textarea class="form-control" id="home1_testi" name="home1_testi">
+							{{ home1_testi }}
+							</textarea>
+						</div>
+					</div>
+				</div>
+		 </div>
+		 
+		 <!--home2 banner img-->
+		  <div class="panel panel-default h2_free_banner" >
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home2_free_banner }}</h3>
+			</div>
+			 
+			 <div class="panel-body">
+				<div class="form-group">
+					<div class="col-md-4 first">
+						<div style="padding-bottom:20px">
+							<label for="free_banner2_img1" name="free_banner2_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image22" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home2_banner_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner2_img1" value="{{ h1_banner2_img1 }}" id="input-image22" />			
+						</div>
+					</div>
+					<div class="col-md-4 first">
+						<div style="padding-bottom:20px">
+							<label for="free_banner2_img2" name="free_banner2_img2" class="control-label">{{ text_free_banner_img2 }} :</label>
+							<a href="" id="thumb-h1_image23" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home2_banner_img2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner2_img2" value="{{ h1_banner2_img2 }}" id="input-image23" />			
+						</div>
+					</div>
+					
+					<div class="col-md-4 first">
+						<div style="padding-bottom:20px">
+							<label for="free_banner2_img3" name="free_banner2_img3" class="control-label">{{ text_free_banner_img3 }} :</label>
+							<a href="" id="thumb-h1_image24" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home2_banner_img3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner2_img3" value="{{ h1_banner2_img3 }}" id="input-image24" />			
+						</div>
+					</div>
+					 
+					 
+					<div class="col-sm-1 pull-left" style="margin-bottom:10px;">
+						<label for="status" name="status" class="control-label" >{{  text_status }} :</label>
+					</div>
+					<div class="col-sm-11 pull-right" style="margin-bottom:10px;">
+						<select name="h1_banner2_status" id="h1_banner2_status" class="form-control" style="width:auto;">
+							{% if h1_banner2_status == 1 %}
+								<option value="1" selected="selected">{{ text_big_enable }}</option>
+								<option value="0">{{ text_big_disable }}</option>
+							{% else %}
+								<option value="1">{{ text_big_enable }}</option>
+								<option value="0" selected="selected">{{ text_big_disable }}</option>
+							{% endif %}
+						</select>
+					</div>
+				</div>
+			</div>
+			  
+		 </div>
+		 
+		 <!--end home2 banner img-->
+		 
+		 <!--chooseus home2 -->
+		<div class="panel panel-default h2_choose">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home2_choose_us }}</h3>
+			</div>
+		 
+			<div class="panel-body">
+				<div class="form-group">
+				 <div class="col-sm-12 col-md-12">
+					<div class="col-sm-2 col-md-2" style="margin-bottom:10px;"><div class="row">
+						<label for="main_image" name="main_image" class="control-label">{{ text_main_image }} :</label>
+					</div>
+					</div>
+					<div class="col-sm-2 col-md-2" style="margin-bottom:10px;">
+						<a href="" id="thumb-h1_image25" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home2_choose_img }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+						</a>
+						<input type="hidden" name="h1_choose_us2_left_img1" value="{{ h1_choose_us2_left_img1 }}" id="input-image25" />			
+					</div>
+					<div class="col-sm-2 col-md-2" style="margin-bottom:10px;">
+						<label class="control-label">{{ text_free_banner_title1 }}</label>
+					</div>
+					<div class="col-sm-2 col-md-4">
+						<input type="text" name="h1_choose_us2_title1" value="{{ h1_choose_us2_title1 }}" style="margin-bottom:10px;" class="form-control"/>
+						<input type="text" name="h1_choose_us2_title2" value="{{ h1_choose_us2_title2 }}" class="form-control"/>
+					</div>
+					<div class="col-md-offset-4"></div>
+					 </div> 
+					<div class="col-sm-2 col-md-2" style="margin-bottom:10px;">
+							<label for="h1_choose_us2" name="h1_choose_us2" class="control-label">{{ text_big_desc }} :</label>
+					</div>
+					<div class="col-sm-10 col-md-10">					
+						<textarea class="form-control" id="home1_testi" name="h1_choose_us2_text" placeholder="{{ text_big_desc }}">
+							{{ h1_choose_us2_text }}
+						</textarea>
+					</div>
+					
+					<div class="col-md-3 first">
+					
+					
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img1" name="free_banner_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image26" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner_img1" value="{{ h1_banner_img1 }}" id="input-image26" />			
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title1" name="free_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+								<input  type="text" name="h1_banner_title1" value="{{ h1_banner_title1 }}" placeholder="{{ text_free_banner_title1 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title2" name="free_banner_title2" class="control-label">{{ text_free_banner_title2 }} :</label>
+								<input  type="text" name="h1_banner_title2" value="{{ h1_banner_title2 }}" placeholder="{{ text_free_banner_title2 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="h1_banner_imag1_link" class="control-label">link:</label>
+								<input  type="text" name="h1_banner_img1_link" value="{{ h1_banner_img1_link }}" class="form-control"/>		
+						</div>
+						
+					</div>
+					
+					<div class="col-md-3 second">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img2" name="free_banner_img2" class="control-label">{{ text_free_banner_img2 }} :</label>
+							<a href="" id="thumb-h1_image19" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_img2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner_img2" value="{{ h1_banner_img2 }}" id="input-image19" />			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title3" name="free_banner_title3" class="control-label">{{ text_free_banner_title3 }} :</label>
+							<input  type="text" name="h1_banner_title3" value="{{ h1_banner_title3 }}" placeholder="{{ text_free_banner_title3 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title2" name="free_banner_title2" class="control-label">{{ text_free_banner_title4 }} :</label>
+								<input  type="text" name="h1_banner_title4" value="{{ h1_banner_title4 }}" placeholder="{{ text_free_banner_title4 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="h1_banner_imag1_link" class="control-label">link:</label>
+								<input  type="text" name="h1_banner_img2_link" value="{{ h1_banner_img2_link }}" class="form-control"/>		
+						</div>
+					</div>
+					<div class="col-md-3 third">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img3" name="free_banner_img3" class="control-label">{{ text_free_banner_img3 }} :</label>
+							<a href="" id="thumb-h1_image20" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_img3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner_img3" value="{{ h1_banner_img3 }}" id="input-image20" />			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title5" name="free_banner_title5" class="control-label">{{ text_free_banner_title5 }} :</label>
+							<input  type="text" name="h1_banner_title5" value="{{ h1_banner_title5 }}" placeholder="{{ text_free_banner_title5 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title6" name="free_banner_title6" class="control-label">{{ text_free_banner_title6 }} :</label>
+								<input  type="text" name="h1_banner_title6" value="{{ h1_banner_title6 }}" placeholder="{{ text_free_banner_title6 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="h1_banner_imag1_link" class="control-label">link:</label>
+								<input  type="text" name="h1_banner_img3_link" value="{{ h1_banner_img3_link }}" class="form-control"/>		
+						</div>
+					</div>
+					
+					<div class="col-md-3 fourth">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img4" name="free_banner_img4" class="control-label">{{ text_free_banner_img4 }} :</label>
+							<a href="" id="thumb-h1_image21" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home1_banner_img4 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="h1_banner_img4" value="{{ h1_banner_img4 }}" id="input-image21" />			
+						</div>
+						<div style="padding-bottom:20px">
+							<label for="free_banner_title7" name="free_banner_title7" class="control-label">{{ text_free_banner_title7 }} :</label>
+							<input  type="text" name="h1_banner_title7" value="{{ h1_banner_title7 }}" placeholder="{{ text_free_banner_title7 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="free_banner_title8" name="free_banner_title8" class="control-label">{{ text_free_banner_title8 }} :</label>
+								<input  type="text" name="h1_banner_title8" value="{{ h1_banner_title8 }}" placeholder="{{ text_free_banner_title8 }}" class="form-control"/>		
+						</div>
+						<div style="padding-bottom:20px">
+								<label for="" name="h1_banner_imag1_link" class="control-label">link:</label>
+								<input  type="text" name="h1_banner_img4_link" value="{{ h1_banner_img4_link }}" class="form-control"/>		
+						</div>
+						
+					</div>
+					 
+						<div class="col-sm-1" style="margin-top:5px;">
+							<label class="control-label" >{{ text_status }}:</label> 
+						</div>	
+						
+						<div class="col-sm-11" style="margin-bottom:20px;">
+							<select name="h1_choose_us2_status" id="h1_choose_us2_status" class="form-control" style="width:auto;">
+							{% if h1_choose_us2_status == 1 %}
+								<option value="1" selected="selected">{{ text_big_enable }}</option>
+								 <option value="0">{{ text_big_disable }}</option>
+							{% else %}
+								 <option value="1">{{ text_big_enable }}</option>
+								 <option value="0" selected="selected">{{ text_big_disable }}</option>
+							{% endif %}
+							</select>
+						</div>	
+					 
+				</div>
+			</div>
+		</div>
+		  
+		 <!--end chooseus home2 -->
+		 
+		 <div class="panel panel-default h2_count_hour">
+			 <div class="panel-heading">
+						<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home1_choose }}</h3>		
+					</div>
+			  <div class="panel-body">
+					<div class="form-group">
+						<div class="col-md-4 left-choose">
+							<div style="padding-bottom:20px">
+								<label for="choose_left_img1" name="choose_left_img1" class="control-label">{{ text_choose_left_img1 }} :</label><br>
+								<a href="" id="thumb-h1_image12" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_left_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_left_img1" value="{{ h1_choose_left_img1 }}" id="input-image12" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_title1" name="choose_left_title1" class="control-label">{{ text_choose_left_title1 }} :</label>
+								<input  type="text" name="h1_choose_left_title1" value="{{ h1_choose_left_title1 }}" placeholder="{{ text_choose_left_title1 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_desc1" name="choose_left_desc1" class="control-label">{{ text_choose_left_desc1 }} :</label>
+								<input  type="text" name="h1_choose_left_desc1" value="{{ h1_choose_left_desc1 }}" placeholder="{{ text_choose_left_desc1 }}" class="form-control"/>		
+							</div>
+							<br>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_img2" name="choose_left_img2" class="control-label">{{ text_choose_left_img2 }} :</label><br>
+								<a href="" id="thumb-h1_image13" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_left_img2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_left_img2" value="{{ h1_choose_left_img2 }}" id="input-image13" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_title2" name="choose_left_title2" class="control-label">{{ text_choose_left_title2 }} :</label>
+								<input  type="text" name="h1_choose_left_title2" value="{{ h1_choose_left_title2 }}" placeholder="{{ text_choose_left_title2 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_desc2" name="choose_left_desc2" class="control-label">{{ text_choose_left_desc2 }} :</label>
+								<input  type="text" name="h1_choose_left_desc2" value="{{ h1_choose_left_desc2 }}" placeholder="{{ text_choose_left_desc2 }}" class="form-control"/>		
+							</div>
+							<br>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_img3" name="choose_left_img3" class="control-label">{{ text_choose_left_img3 }} :</label><br>
+								<a href="" id="thumb-h1_image14" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_left_img3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_left_img3" value="{{ h1_choose_left_img3 }}" id="input-image14" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_title3" name="choose_left_title3" class="control-label">{{ text_choose_left_title3 }} :</label>
+								<input  type="text" name="h1_choose_left_title3" value="{{ h1_choose_left_title3 }}" placeholder="{{ text_choose_left_title3 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_left_desc3" name="choose_left_desc3" class="control-label">{{ text_choose_left_desc3 }} :</label>
+								<input  type="text" name="h1_choose_left_desc3" value="{{ h1_choose_left_desc3 }}" placeholder="{{ text_choose_left_desc3 }}" class="form-control"/>		
+							</div>
+						</div>
+						
+						<div class="col-md-4 center-choose" style="margin-top: 29%;">
+						<div style="padding-bottom:20px; margin-left:25%">
+								<label for="choose_image" name="choose_image" class="control-label">{{ text_choose_img }} :</label><br>
+								<a href="" id="thumb-h1_image11" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_center3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_center3" value="{{ h1_choose_center3 }}" id="input-image11" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_title1" name="choose_title1" class="control-label">{{ text_choose_title1 }} :</label>
+								<input  type="text" name="h1_choose_center1" value="{{ h1_choose_center1 }}" placeholder="{{ text_choose_title1 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_desc" name="choose_desc" class="control-label">{{ text_choose_desc1 }} :</label>
+								<input  type="text" name="h1_choose_center2" value="{{ h1_choose_center2 }}" placeholder="{{ text_choose_desc1 }}" class="form-control"/>		
+							</div>
+							
+						</div>
+						<div class="col-md-4 right-choose">
+							<div style="padding-bottom:20px">
+								<label for="choose_right_img1" name="choose_right_img1" class="control-label">{{ text_choose_right_img1 }} :</label><br>
+								<a href="" id="thumb-h1_image15" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_right_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_right_img1" value="{{ h1_choose_right_img1 }}" id="input-image15" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_title1" name="choose_right_title1" class="control-label">{{ text_choose_right_title1 }} :</label>
+								<input  type="text" name="h1_choose_right_title1" value="{{ h1_choose_right_title1 }}" placeholder="{{ text_choose_right_title1 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_desc1" name="choose_right_desc1" class="control-label">{{ text_choose_right_desc1 }} :</label>
+								<input  type="text" name="h1_choose_right_desc1" value="{{ h1_choose_right_desc1 }}" placeholder="{{ text_choose_right_desc1 }}" class="form-control"/>		
+							</div>
+							<br>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_img2" name="choose_right_img2" class="control-label">{{ text_choose_right_img2 }} :</label><br>
+								<a href="" id="thumb-h1_image16" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_right_img2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_right_img2" value="{{ h1_choose_right_img2 }}" id="input-image16" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_title2" name="choose_right_title2" class="control-label">{{ text_choose_right_title2 }} :</label>
+								<input  type="text" name="h1_choose_right_title2" value="{{ h1_choose_right_title2 }}" placeholder="{{ text_choose_right_title2 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_desc2" name="choose_right_desc2" class="control-label">{{ text_choose_right_desc2 }} :</label>
+								<input  type="text" name="h1_choose_right_desc2" value="{{ h1_choose_right_desc2 }}" placeholder="{{ text_choose_right_desc2 }}" class="form-control"/>		
+							</div>
+							<br>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_img3" name="choose_right_img3" class="control-label">{{ text_choose_right_img3 }} :</label><br>
+								<a href="" id="thumb-h1_image17" data-toggle="image" class="img-thumbnail">
+										<img src="{{ home1_choose_right_img3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+								</a>
+								<input type="hidden" name="h1_choose_right_img3" value="{{ h1_choose_right_img3 }}" id="input-image17" />			
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_title3" name="choose_right_title3" class="control-label">{{ text_choose_right_title3 }} :</label>
+								<input  type="text" name="h1_choose_right_title3" value="{{ h1_choose_right_title3 }}" placeholder="{{ text_choose_right_title3 }}" class="form-control"/>		
+							</div>
+							<div style="padding-bottom:20px">
+								<label for="choose_right_desc3" name="choose_right_desc3" class="control-label">{{ text_choose_right_desc3 }} :</label>
+								<input  type="text" name="h1_choose_right_desc3" value="{{ h1_choose_right_desc3 }}" placeholder="{{ text_choose_right_desc3 }}" class="form-control"/>		
+							</div>
+						</div>
+					</div>
+				</div>
+		 </div>
+		 
+		
+		 
+		 <!--home2 special offers counter-->
+		<div class="panel panel-default h2_special">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home1_big_section }}</h3>
+			</div>
+			
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="col-sm-12"> <div class="row">
+					<div class="col-sm-6" style="margin-bottom:20px;"><div class="row">
+					<div class="col-sm-4">
+						<label for="" name="" class="control-label">{{ text_backgournd_image }}:</label>
+						</div> 
+						<a href="" id="thumb-h1_image27" data-toggle="image" class="img-thumbnail" style="margin-left: 15px;">
+							<img src="{{ home2_special_img1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+						</a> 
+							 
+						 <input type="hidden" name="home2_big_img1" value="{{ home2_big_img1 }}" id="input-image27">
+				
+					 </div>
+					 </div>
+					 
+					
+					<div class="col-sm-6">
+					<div class="col-sm-3">
+						<label for="" name="thumb-h1_image28" class="control-label">{{ text_choose_img }} </label>
+					</div>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home2_special_img2 }}" data-placeholder="{{ placeholder }}">
+						</a>
+						<input type="hidden" name="home2_big_img2" value="{{ home2_big_img2 }}" id="input-image28">
+					 </div>
+				 </div>
+				 </div>
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="control-label" >{{ text_big_title }}</label>
+					</div>
+					<div class="col-sm-4" style="margin-top:20px;">
+						<input type="text" name="home2_big_title1" value="{{ home2_big_title1 }}" class="form-control">
+					</div>
+					<div class="col-sm-1" style="margin-top:20px;">
+						<label class="control-label">{{ column_title2 }}</label>
+					</div>
+					<div class="col-sm-4" style="margin-top:20px;">
+						<input type="text" name="home2_big_title2" value="{{ home2_big_title2 }}" class="form-control">
+					</div>
+					
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="control-label">{{ text_home2_title3 }}</label>
+					</div>
+					<div class="col-sm-9" style="margin-top:20px;">
+					<input type="text" name="home2_big_title3" value="{{ home2_big_title3 }}" class="form-control">
+					</div>
+					
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="control-label">{{ text_big_shop }}</label>
+					</div>
+					<div class="col-sm-9" style="margin-top:20px;">
+					<input type="text" name="home2_big_shop_now" value="{{ home2_big_shop_now }}" class="form-control">
+					</div>
+					
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="cotrol-label"> {{ text_big_shop_link }} </label>
+					</div>
+					<div class="col-sm-9" style="margin-top:20px;">
+						<input type="text" name="home2_big_shop_link" value="{{ home2_big_shop_link }}" class="form-control">
+					</div>
+					
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="control-label">{{ text_valid_date }}</label>
+					</div>
+					<div class="col-sm-9" style="margin-top:20px;">
+						<input type="text" name="home2_valid_date" value="{{ home2_valid_date }}" class="form_datetime form-control">
+						 
+					</div>
+					<script type="text/javascript"><!--
+					/*	$('.date').datetimepicker({
+							pickTime: true
+						});
+						$(".date_for").datetimepicker({ 
+                             dateFormat: 'yy/mm/dd',
+							 timeFormat: 'HH:mm:ss',
+                              minDate:0,
+                       });*/
+						//--></script>
+					 
+						<script type="text/javascript">
+							$(".form_datetime").datetimepicker({format: 'YYYY-MM-DD HH:mm:ss', minDate:0
+						 });
+						</script>   
+					<div class="col-sm-2" style="margin-top:20px;">
+						<label class="control-label">{{ text_status }}:</label>						 
+					</div>
+					
+					<div class="col-sm-10" style="margin-top:20px;">
+						<select name="home2_big_offers_status" class="form-control" style="width:auto;">
+						{% if home2_big_offers_status == 1 %}
+							<option value="1" selected="selected">{{ text_big_enable }}</option>
+							<option value="0">{{ text_big_disable }}</option>
+						{% else %}
+							<option value="1" >{{ text_big_enable }}</option>
+							<option value="0" selected="selected">{{ text_big_disable }}</option>
+						{% endif %}
+						</select>
+					</div>
+			</div>
+		</div>
+		</div>
+		 <!--end home2 special offers-->
+		 
+		 <!--home page2 carousel-->
+		 <div class="panel panel-default h2_carousel">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home2_testi }}</h3>
+			</div>
+			
+			<div class="panel-body">
+				<div class="form-group">
+				
+					<div class="col-sm-2">
+						<label class="control-label">{{ text_big_title }}</label>
+					</div>
+					
+					<div class="col-sm-10">
+						<input type="text" name="home2_testi_title" value="{{ home2_testi_title }}" class="form-control" style="margin-bottom: 20px;">
+					</div>
+			
+					<div class="col-sm-2">
+						<label class="control-label">{{ text_big_desc }}</label>
+					</div>
+					
+					<div class="col-sm-10">
+					<textarea class="" name="home2_testi" id="home1_testi">
+						{{ home2_testi }}
+					</textarea>
+					</div>
+				</div>
+			</div>
+			 
+		 </div>
+		<!--end home2 carousel-->
+		
+		<!--cat img home3 -->
+		 <div class="panel panel-default slide_3">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home3_cat }}</h3>
+			</div>
+			<div class="panel-body">
+			 <div class="form-group">
+				<div class="col-sm-4">
+					<label for="" name="thumb-h1_image29" class="control-label">{{ text_free_banner_img1 }} </label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_category_img1 }}" data-placeholder="{{  placeholder }}">
+						</a>
+						<input type="hidden" name="h1_cat3_img1" value="{{ h1_cat3_img1 }}" id="input-image29">
+				</div>
+				<div class="col-sm-4">
+					<label for="" name="thumb-h1_image30" class="control-label">{{ text_free_banner_img2 }} </label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_category_img2 }}" data-placeholder="{{ placeholder }}">
+						</a>
+						<input type="hidden" name="h1_cat3_img2" value="{{ h1_cat3_img2 }}" id="input-image30">
+				</div>
+				
+				<div class="col-sm-4">
+					<label for="" name="thumb-h1_image31" class="control-label">{{ text_free_banner_img3 }} </label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_category_img3 }}" data-placeholder="{{ placeholder }}">
+						</a>
+						<input type="hidden" name="h1_cat3_img3" value="{{ h1_cat3_img3 }}" id="input-image31">
+				</div>
+				
+				<div class="col-sm-12">
+				<div class="row">
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ column_title1 }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_title1" value="{{ h1_cat3_title1 }}" placeholder="{{ text_free_banner_title5 }}" class="form-control"/>		
+				</div>	
+					
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ column_title1 }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_title2" value="{{ h1_cat3_title2 }}" placeholder="{{ text_free_banner_title5 }}" class="form-control"/>		
+				</div>	
+					
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ column_title1 }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_title3" value="{{ h1_cat3_title3 }}" placeholder="{{ text_free_banner_title5 }}" class="form-control"/>		
+				</div>
+
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ text_big_shop_link }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_link1" value="{{ h1_cat3_link1 }}" placeholder="{{ text_enter_link }}" class="form-control"/>		
+				</div>
+				
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ text_big_shop_link }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_link2" value="{{ h1_cat3_link2 }}" placeholder="{{ text_enter_link }}" class="form-control"/>		
+				</div>
+				
+				<div class="col-sm-1" style="margin-top:10px;">
+					<label for="" name="" class="control-label">{{ text_big_shop_link }}</label>
+				</div>
+				<div class="col-sm-3" style="margin-top:10px;">
+					<input  type="text" name="h1_cat3_link3" value="{{ h1_cat3_link3 }}" placeholder="{{ text_enter_link }}" class="form-control"/>		
+				</div>
+				</div>	
+				</div>	
+				</div>
+				 
+				<div class="col-sm-1" style="margin-top:20px;">
+						<label class="control-label" style="padding-top:5px;">{{ text_status }}</label>						 
+					</div>
+					
+					<div class="col-sm-11" style="margin-top:20px;">
+						<select name="home3_cat_img_status" class="form-control" style="width:auto;">
+						{% if home3_cat_img_status == 1 %}
+						<option value="1" selected="selected">{{ text_big_enable }}</option>
+						<option value="0">{{ text_big_disable }}</option>
+						{% else %}
+						<option value="1" >{{ text_big_enable }}</option>
+						<option value="0" selected="selected">{{ text_big_disable }}</option>
+						{% endif %}
+						</select>
+					</div>
+				
+			 </div>
+			</div>
+			
+		<!--end cat home3 -->
+		
+		<!--home3 big banner-->
+		  <!-- <div class="panel panel-default slide_3">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home3_cat_banner }}</h3>
+			</div>
+			
+			<div class="panel-body">
+				<div class="form-group">
+				<div class="col-sm-12">
+					<div class="col-sm-4">
+					<div class="row">
+						<label class="control-label" name="thumb-h1_image32">{{ text_main_image }}</label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_banner_img1 }}" >
+						</a>
+						<input type="hidden" name="home3_big_banner_img1" value="{{ home3_big_banner_img1 }}" id="input-image32" >
+			
+					</div>
+					</div>
+					
+					<div class="col-sm-6">
+						<label class="control-label" name="thumb-h1_image33">{{ text_main_image  }}</label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_banner_img2 }}" >
+						</a>
+						<input type="hidden" name="home3_big_banner_img2" value="{{ home3_big_banner_img2 }}" id="input-image33">
+			
+					</div>
+					</div>
+					 <div class="col-sm-12">
+					<div class="col-sm-1" style="margin-top:10px;"><div class="row">
+						<label class="control-label">{{ column_title1 }}</label>
+					</div>
+					</div>
+					<div class="col-sm-6" style="margin-top:10px;"><div class="row">
+						<input type="text" name="home3_big_banner_title" value="{{ home3_big_banner_title }}" class="form-control" >
+					</div>
+					</div>
+					</div>
+					 
+					<div class="col-sm-12">
+					<div class="col-sm-1" style="margin-top:10px;"><div class="row">
+						<label class="control-label">{{ column_title2 }}</label>
+					</div></div>
+					<div class="col-sm-6" style="margin-top:10px;"><div class="row">
+						<input type="text" name="home3_big_banner_title2" value="{{ home3_big_banner_title2 }}" class="form-control">
+					</div></div>
+					</div>
+					 
+					<div class="col-sm-1" style="margin-top:10px;">
+						<label class="control-label" style="padding-top: 5px;">{{ text_status }}</label>
+					</div> 
+					  
+					<div class="col-sm-11" style="margin-top:10px;">
+						<select name="home3_big_banner_status" class="form-control" style="width:auto;">
+						{% if home3_big_banner_status == 1 %}
+						<option value="1" selected="selected">{{ text_big_enable }}</option>
+						<option value="0">{{ text_big_disable }}</option>
+						{% else %}
+						<option value="1" >{{ text_big_enable }}</option>
+						<option value="0" selected="selected">{{ text_big_disable }}</option>
+						{% endif %} 
+						</select>
+					</div>
+					</div>
+			</div>
+			 
+		 </div>-->
+ 
+		 <!--end home3 big banner-->
+		 
+		  <!--homwpage4 image blogs-->
+		 <div class="panel panel-default h4_blog">
+		 <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home4_image_banner }}</h3>
+			</div>
+		 
+			<div class="panel-body">
+				<div class="form-group">
+					<div class="col-md-3 first">
+						<div class="">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img1" name="free_banner_img1" class="control-label">{{ text_free_banner_img1}} :</label>
+							<a href="" id="thumb-h1_image34" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home4_five_image1 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home4_banner_img1" value="{{ home4_banner_img1 }}" id="input-image34" />			
+						</div>
+						</div>
+						 
+							<div style="padding-bottom:20px">
+							<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+							<input type="text" name="home4_banner_title1" value="{{ home4_banner_title1 }}" class="form-control">
+							</div>
+							
+								<div style="padding-bottom:20px">
+							<label class="control-label">{{ text_big_shop_link }} :</label>
+							<input type="text" name="home4_banner_link1" value="{{ home4_banner_link1 }}" class="form-control">
+							</div>
+						</div>
+						<!--second image-->
+						<div class="col-md-3 first">
+						<div class="">
+						<div style="padding-bottom:20px">
+							<label for="free_banner_img1" name="free_banner_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image35" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home4_five_image2 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home4_banner_img2" value="{{ home4_banner_img2 }}" id="input-image35" />			
+						</div>
+						</div>
+						 
+							<div style="padding-bottom:20px">
+							<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+							<input type="text" name="home4_banner_title2" value="{{ home4_banner_title2 }}" class="form-control">
+							</div>
+							
+								<div style="padding-bottom:20px">
+							<label class="control-label">{{ text_big_shop_link }} :</label>
+							<input type="text" name="home4_banner_link2" value="{{ home4_banner_link2 }}" class="form-control">
+							</div>
+						</div>
+						<!--third image -->
+							<div class="col-md-3 first">
+						<div class="">
+						<div style="padding-bottom:20px">
+							<label for="home4_banner_img3" name="free_banner_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image36" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home4_five_image3 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home4_banner_img3" value="{{ home4_banner_img3 }}" id="input-image36" />			
+						</div>
+						</div>
+							<div style="padding-bottom:20px">
+							<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+							<input type="text" name="home4_banner_title3" value="{{ home4_banner_title3 }}" class="form-control">
+							</div>
+							
+								<div style="padding-bottom:20px">
+							<label class="control-label">{{ text_big_shop_link }} :</label>
+							<input type="text" name="home4_banner_link3" value="{{ home4_banner_link3 }}" class="form-control">
+							</div>
+						</div>
+						<!--fourth image -->
+						<div class="col-md-3 first">
+						<div class="">
+						<div style="padding-bottom:20px">
+							<label for="home4_banner_img3" name="free_banner_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image37" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home4_five_image4 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home4_banner_img4" value="{{ home4_banner_img4 }}" id="input-image37" />			
+						</div>
+						</div>
+							<div style="padding-bottom:20px">
+							<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+							<input type="text" name="home4_banner_title4" value="{{ home4_banner_title4 }}" class="form-control">
+							</div>
+							
+								<div style="padding-bottom:20px">
+							<label class="control-label">{{ text_big_shop_link }} :</label>
+							<input type="text" name="home4_banner_link4" value="{{ home4_banner_link4 }}" class="form-control">
+							</div>
+						</div>
+						<!--five image -->
+						<div class="col-md-3 first">
+						 
+						<div style="padding-bottom:20px">
+							<label for="home4_banner_img3" name="free_banner_img1" class="control-label">{{ text_free_banner_img1 }} :</label>
+							<a href="" id="thumb-h1_image38" data-toggle="image" class="img-thumbnail">
+									<img src="{{ home4_five_image5 }}" alt="" title="" data-placeholder="{{ placeholder }}" />
+							</a>
+							<input type="hidden" name="home4_banner_img5" value="{{ home4_banner_img5 }}" id="input-image38" />			
+						</div>
+						 
+							<div style="padding-bottom:20px">
+							<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_free_banner_title1 }} :</label>
+							<input type="text" name="home4_banner_title5" value="{{ home4_banner_title5 }}" class="form-control">
+							</div>
+							
+								<div style="padding-bottom:20px">
+							<label class="control-label">{{ text_big_shop_link }} :</label>
+							<input type="text" name="home4_banner_link5" value="{{ home4_banner_link5 }}" class="form-control">
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+		 <!-- end homepage4 image blogs -->
+		 
+		 <!--home4 big banner-->
+		   <div class="panel panel-default big_banner">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home3_cat_banner }}</h3>
+			</div>
+			
+			<div class="panel-body">
+				<div class="form-group">
+				<div class="col-sm-12">
+					<div class="col-sm-4">
+						<label class="control-label" name="thumb-h1_image32">{{ text_main_image }}</label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_banner_img1 }}" >
+						</a>
+						<input type="hidden" name="home3_big_banner_img1" value="{{ home3_big_banner_img1 }}" id="input-image32">
+			
+					</div>
+					
+					<div class="col-sm-6">
+						<label class="control-label" name="thumb-h1_image33">{{ text_main_image  }}</label>
+						<a href="" data-toggle="image" class="img-thumbnail">
+							<img src="{{ home3_banner_img2 }}">
+						</a>
+						<input type="hidden" name="home3_big_banner_img2" value="{{ home3_big_banner_img2 }}" id="input-image33">
+			
+					</div>
+					</div>
+					<div class="col-sm-12">
+					<div class="col-sm-1" style="margin-top:10px;">
+						<label class="control-label">{{ column_title1 }}</label>
+					</div>
+					<div class="col-sm-6" style="margin-top:10px;">
+						<input type="text" name="home3_big_banner_title" value="{{ home3_big_banner_title }}" class="form-control">
+					</div>
+					</div>
+					<div class="col-sm-12">
+					<div class="col-sm-1" style="margin-top:10px;">
+						<label class="control-label">{{ column_title2 }}</label>
+					</div>
+					<div class="col-sm-6" style="margin-top:10px;">
+						<input type="text" name="home3_big_banner_title2" value="{{ home3_big_banner_title2 }}" class="form-control">
+					</div>
+					</div>
+					<div class="col-sm-12">
+					<div class="col-sm-1" style="margin-top:10px;">
+						<label class="control-label" style="padding-top:5px;">{{ text_status }}</label>
+					</div> 
+					  
+					<div class="col-sm-2" style="margin-top:10px;">
+						<select name="home4_big_banner_status" class="form-control" style="width:auto;">
+							 
+						{% if home4_big_banner_status == 1 %}
+						<option value="1" selected="selected">{{ text_big_enable }}</option>
+						<option value="0">{{ text_big_disable }}</option>
+						{% else %}
+						<option value="1" >{{ text_big_enable }}</option>
+						<option value="0" selected="selected">{{ text_big_disable }}</option>
+						{% endif %}
+						</select>
+						 
+					</div>
+					 
+					</div>
+			</div>
+			 
+		 </div>
+		 </div>
+		 <!--end home4 big banner-->
+		 <!-- home4 testimonial -->
+			<div class="panel panel-default h4_testi">
+				
+				<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>{{ text_home4_testimonial }}</h3>
+				</div>
+				 <div class="panel-body">
+				 <div class="form-group">
+					<div class="col-sm-2" style="padding-bottom:20px">
+						<label for="home4_banner_title1" name="home4_banner_title1" class="control-label">{{ text_testi_desc }} :</label>
+						
+					</div>
+					<div class="col-sm-10">
+					<textarea name="home4_testi" id="home1_testi">{{ home4_testi }}</textarea>
+					</div>
+				</div>
+				</div>
+			
+			</div>
+		 <!--end testimonial -->
+		 <div class="panel panel-default">
+			  <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i>Footer Setting</h3>
+			  </div>
+			  <div class="panel-body">
+					<div class="form-group">
+					<div class="col-md-6">
+						<label class="col-sm-4 control-label" for="input-ean">{{text_about_footer}}:</label>
+						<div class="col-sm-8"> 
+							<input type="text" value="{{about_footer}}"  name="about_footer" class="form-control">
+						</div>
+					
+					</div>
+					 <div class="col-md-6">
+					<div class="col-md-12">
+					<div class="row" >
+						<label class="col-sm-4 control-label" for="input-ean">{{ txt_twitter }}:</label>
+						<div class="col-sm-8"> 
+							<input type="text" value="{{ twitter_link }}"  name="twitter_link" class="form-control">
+						</div>
+					</div>
+					</div>
+					<div class="col-md-12" style="margin-top:20px;">
+					<div class="row" >
+						<label class="col-sm-4 control-label" for="input-ean">{{ txt_facebook }}:
+						</label>
+						<div class="col-sm-8"> 
+							<input type="text" value="{{ fb_link }}"  name="fb_link" class="form-control">
+						</div>
+						</div>
+					</div>
+					<div class="col-md-12" style="margin-top:20px;">
+					<div class="row">
+						<label class="col-sm-4 control-label" for="input-ean">{{ txt_youtube }}:
+						</label>
+						<div class="col-sm-8"> 
+							<input type="text" value="{{ youtube_link }}"  name="youtube_link" class="form-control">
+						</div>
+					</div>
+					</div>
+					<div class="col-md-12" style="margin-top:20px;">
+					<div class="row">
+						<label class="col-sm-4 control-label" for="input-ean">{{ txt_gmail }}:
+						</label>
+						<div class="col-sm-8"> 
+							<input type="text" value="{{ google_link }}"  name="google_link" class="form-control">
+						</div>
+					</div>
+					</div>
+					
+					
+					</div>
+					</div>
+						
+				</div>
+				</div>
+		  
+		</form>
+	</div>
+	
+	<div class="container-fluid slider s1">
+         
+		<div class="panel panel-default"> 
+			  <div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-list"></i> {{ text_slider_title }}</h3>
+				<div class="pull-right"><a href="{{ addslider }}" data-toggle="tooltip" title="{{ add_slider_text }}" class="btn btn-primary btn-md" style="margin-top:-9px"><i class="fa fa-plus"></i></a>
+				 <button type="button"  style="margin-top:-9px" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger btn-md" onclick="confirm('{{ text_confirm }}') ? $('#form-category0').submit() : false;"><i class="fa fa-trash-o"></i></button>
+				</div>
+			  </div>
+			<div class="panel-body">
+               <form action="{{ deleteSlider }}" method="post" enctype="multipart/form-data" id="form-category0">
+              
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+						<tr>
+                          <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+                         
+                          <td class="text-primary text-center"><b>{{ label_title1 }}</b></td>
+                          
+                           <td class="text-primary text-center"><b>{{ label_title2 }}</b></td>
+                           <td class="text-primary text-center"><b>{{ column_button1text }}</b></td>
+						     
+						    <td class="text-primary text-center"><b>{{ column_image }}</b></td>
+                           <td class="text-right text-primary text-center"><b>{{ column_action }}</b></td>
+						   </tr>
+                    </thead>
+                    
+                    <tbody>
+					
+					
+						{% if slider %}
+						{% for sp in slider %}
+                        
+                        <tr>
+                             <td class="text-center">
+                                    
+										{% if sp.id in selected %}
+                                     <input type="checkbox" name="selected[]" value="{{ sp.id }}" checked="checked" />
+                                 
+										{% else %}
+                                     <input type="checkbox" name="selected[]" value="{{ sp.id }}" />
+                                  
+								  {% endif %}
+								  </td>
+                        
+                             <td>{{ sp.title1 }}</td>
+                           
+							<td>{{ sp.title2 }}</td>
+							<td>{{ sp.button1_text }}</td>
+
+					
+                         <td class="text-left">
+							{% if sp.s_image %}
+								<img src="../image/{{ sp.s_image }}" alt="{{ sp.s_image }}" class="img-thumbnail" width="50px" height="50px" />
+							{% else %}
+								<span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+							{% endif %}
+						</td>
+                            
+                            
+                             <td class="text-right text-center"><a href="{{ sp.action.0.href }}" data-toggle="tooltip" class="btn btn-primary"><i class="fa fa-pencil"></i></a> </td>
+                            
+                        </tr>
+                        {% endfor %}
+						{% endif %}
+                        
+                    </tbody>
+                    
+                    </table>
+                </div>
+               </form>
+             </div>
+			 
+		</div>
+    
+	</div>
+	
+	<!--homepage3 main slider -->
+	<div class="container-fluid slider slide_3">
+	    
+		<div class="panel panel-default">
+			  <div class="panel-heading">  
+				<h3 class="panel-title"><i class="fa fa-list"></i> {{ text_slider_title }}</h3>
+				 <div class="pull-right"><a href="{{ home3addslider }}" data-toggle="tooltip" title="{{ add_slider_text }}" class="btn btn-primary btn-md" style="margin-top:-9px"><i class="fa fa-plus"></i></a>
+				  <button type="button"  style="margin-top:-9px" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger btn-md" onclick="confirm('{{ text_confirm }}') ? $('#form-category1').submit() : false;"><i class="fa fa-trash-o"></i></button> 
+				</div>
+			  </div>
+			  	<div class="panel-body"> 
+               <form action="{{ deleteslide3 }}" method="post" enctype="multipart/form-data" id="form-category1">
+              
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+						<tr>
+                          <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+                         
+							<td class="text-left text-primary text-center"><b>{{ label_title1 }}</b></td>
+                         	<td class="text-primary text-center"><b>{{ label_title2 }}</b></td>
+							 
+						    <td class="text-primary text-center"><b>{{ column_image }}</b></td>
+                           <td class="text-right text-primary text-center"><b>{{ column_action }}</b></td>
+						   </tr>
+                    </thead>
+                    
+                    <tbody>   
+						{% if slider_3 %}
+                        {% for slide3 in slider_3 %}
+						 
+							<tr>                         
+								 <td class="text-center">
+                                   
+									{% if slide3.id in selected %}
+                                     <input type="checkbox" name="selected[]" value="{{ slide3.id }}" checked="checked" />
+									 {% else %}
+                                     <input type="checkbox" name="selected[]" value="{{ slide3.id }}" />
+									 {% endif %}
+								  </td>
+								<td>{{ slide3.title1 }}</td>
+								<td>{{ slide3.title2 }}</td>
+								  <td class="text-left">
+								  {% if slide3.image_slide3 %}
+										<img src="../image/{{ slide3.image_slide3 }}" alt="{{ slide3.image_slide3 }}" class="img-thumbnail" width="50px" height="50px" />
+								  {% else %}
+										<span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+								  {% endif %}
+								  </td>
+							 
+								
+								 
+								 <td class="text-right text-center"><a href="{{ slide3.action3.0.href }}" data-toggle="tooltip" class="btn btn-primary"><i class="fa fa-pencil"></i></a> </td>
+                            
+							</tr>
+						
+						
+                       
+						{% endfor %}
+						{% endif %}
+                    </tbody>
+                    
+                    </table>
+                </div>
+               </form>
+             </div>
+			  
+		</div>
+		 
+	</div>
+	<!--end homepage3 slider -->
+	
+	<!--homepage4 main slider -->
+	<div class="container-fluid slider slide_4">
+	    
+		<div class="panel panel-default">
+			  <div class="panel-heading">  
+				<h3 class="panel-title"><i class="fa fa-list"></i> {{ text_slider_title }}</h3>
+				 <div class="pull-right"><a href="{{ home4addslider }}" data-toggle="tooltip" title="{{ add_slider_text }}" class="btn btn-primary btn-md" style="margin-top:-9px"><i class="fa fa-plus"></i></a>
+				  <button type="button"  style="margin-top:-9px" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger btn-md" onclick="confirm('{{ text_confirm }}') ? $('#form-category4').submit() : false;"><i class="fa fa-trash-o"></i></button> 
+				</div>
+			  </div>
+			  	<div class="panel-body"> 
+               <form action="{{ deleteslide4 }}" method="post" enctype="multipart/form-data" id="form-category4">
+              
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+						<tr>
+                          <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+                         
+							<td class="text-left text-primary text-center"><b>{{ label_title1 }}</b></td>
+                         	<td class="text-primary text-center"><b>{{ label_title2 }}</b></td>
+							 
+						    <td class="text-primary text-center"><b>{{ column_image }}</b></td>
+                           <td class="text-right text-primary text-center"><b>{{ column_action }}</b></td>
+						   </tr>
+                    </thead>
+                    
+                    <tbody>   
+						{% if slider_4 %}
+                        {% for slide4 in slider_4 %}
+						 
+							<tr>                         
+								 <td class="text-center">
+                                   
+									{% if slide4.id in selected %}
+                                     <input type="checkbox" name="selected[]" value="{{ slide4.id }}" checked="checked" />
+									 {% else %}
+                                     <input type="checkbox" name="selected[]" value="{{ slide4.id }}" />
+									 {% endif %}
+								  </td>
+								<td>{{ slide4.title1 }}</td>
+								<td>{{ slide4.title2 }}</td> 
+								  
+								  <td class="text-left">
+								  {% if slide4.image_slide4 %}
+										<img src="../image/{{slide4.image_slide4}}" alt="{{ slide4.image_slide4 }}" class="img-thumbnail" width="50px" height="50px" />
+								  {% else %}
+										<span class="img-thumbnail list"><i class="fa fa-camera fa-2x"></i></span>
+								  {% endif %}
+								  </td>
+							  
+								 <td class="text-right text-center"><a href="{{ slide4.action4.0.href }}" data-toggle="tooltip" class="btn btn-primary"><i class="fa fa-pencil"></i></a> </td>
+                            
+							</tr>
+						
+						
+                       
+						{% endfor %}
+						{% endif %}
+                    </tbody>
+                    
+                    </table>
+                </div>
+               </form>
+             </div>
+			  
+		</div>
+		 
+	</div>
+	<!--end homepage3 slider -->
+	
+   
+   
+</div>
+{{ footer }}
+<script type="text/javascript">
+  $(function(){
+                                         
+             $('#home1_testi,#description2').summernote({
+                    height: 300
+          });
+             $('').summernote({
+                    height: 100
+          });                       
+                               
+      });
+	  
+	$(document).ready(function(){
+		/* var slider="<?php echo $selected_home; ?>"; */
+		
+		var homeval = "{{ selected_home }}";
+		//alert(homeval);
+		if(homeval == 1){
+			 $(".slide_1").css("display","block");
+			 $(".free_banner").css("display","block");
+			 $(".slide_3").css("display","none");
+			 $(".slide_4").css("display","none");
+			  $(".h2_free_banner").css("display","none");
+			  $(".h2_choose").css("display","none");
+			  $(".big_banner").css("display","none");
+			  $(".h4_blog").css("display","none");
+			  $(".h2_special").css("display","none");
+			  $(".h2_carousel").css("display","none");
+			  $(".h2_count_hour").css("display","block");
+			  $(".h4_testi").css("display","none");
+		}
+		if(homeval == 2){
+			 $(".slide_1").css("display","none");
+			 $(".free_banner").css("display","none");
+			 $(".big_banner").css("display","none");
+			 $(".slide_3").css("display","none");
+			 $(".slide_4").css("display","none");
+			 $(".h4_blog").css("display","none");
+			 $(".h2_choose").css("display","block");
+			 $(".h2_special").css("display","block");
+			 $(".h2_carousel").css("display","block");
+			 $(".h2_count_hour").css("display","none");
+			 $(".h4_testi").css("display","none");
+			 $(".h2_free_banner").css("display","block");
+		}
+		if(homeval == 3){
+			$(".slide_1").css("display","none");
+			$(".free_banner").css("display","none");
+			$(".h4_blog").css("display","none");
+			$(".s1").css("display","none");
+			 
+			$(".slide_3").css("display","block");
+			$(".slide_4").css("display","none");
+			$(".h2_choose").css("display","block");
+			$(".big_banner").css("display","block");
+			$(".h2_special").css("display","none");
+			$(".h2_carousel").css("display","none");
+			$(".h2_count_hour").css("display","none");
+			$(".h4_testi").css("display","none");
+			$(".h2_free_banner").css("display","none");
+		}
+		if(homeval == 4){
+			$(".slide_1").css("display","none");
+			$(".big_banner").css("display","block");
+			$(".free_banner").css("display","block");
+			$(".s1").css("display","none");
+			$(".slide_3").css("display","none");
+			$(".slide_4").css("display","block");
+			$(".h4_blog").css("display","block");
+			$(".h2_choose").css("display","none");
+			$(".h2_special").css("display","none");
+			$(".h2_count_hour").css("display","none");
+			$(".h4_testi").css("display","block");
+			$(".h2_free_banner").css("display","none");
+			$(".h2_carousel").css("display","none");
+		}
+		
+		 
+		 $("#homepage").change(function(){
+			 
+			 var slider_val=$(this).val();
+			 
+			 if(slider_val == 1){
+				 $(".slide_1").css("display","block");
+				 $(".free_banner").css("display","block");
+				 $(".s1").css("display","block");
+				 $(".slide_3").css("display","none");
+				 $(".slide_4").css("display","none");
+				 $(".big_banner").css("display","none");
+				 $(".h2_free_banner").css("display","none");
+				 $(".h2_choose").css("display","none");
+				 $(".h4_blog").css("display","none");
+				 $(".h2_special").css("display","none");
+				 $(".h2_carousel").css("display","none");
+				 $(".h2_count_hour").css("display","block");
+				 $(".h4_testi").css("display","none");
+				  
+			 }else if(slider_val == 2){
+				 $(".slide_1").css("display","none");
+				 $(".free_banner").css("display","none");
+				 $(".big_banner").css("display","none");
+				 $(".s1").css("display","block");
+				 $(".h2_free_banner").css("display","block");
+				 $(".slide_3").css("display","none");
+				 $(".slide_4").css("display","none");
+				 $(".h2_choose").css("display","block");
+				 $(".h2_special").css("display","block");
+				 $(".h4_blog").css("display","none");
+				 $(".h2_carousel").css("display","block");
+				 $(".h2_count_hour").css("display","none");
+				 $(".h4_testi").css("display","none");
+				 
+				 
+
+			 }else if(slider_val == 3){
+				 $(".slide_1").css("display","none");
+				 $(".free_banner").css("display","none");
+				 $(".slide_3").css("display","block");
+				 $(".slide_4").css("display","none");
+				 $(".big_banner").css("display","block");
+				 $(".s1").css("display","none");
+				 $(".h4_blog").css("display","none");
+				 $(".h2_free_banner").css("display","none");
+				 $(".h2_carousel").css("display","none");
+				 $(".h2_count_hour").css("display","none");
+				 $(".h4_testi").css("display","none");
+				 $(".h2_choose").css("display","block");
+				 $(".h2_special").css("display","none");
+				 
+			 }else if(slider_val == 4){
+				$(".slide_1").css("display","none");
+				$(".free_banner").css("display","block");
+				$(".slide_3").css("display","none");
+				$(".slide_4").css("display","block");
+				$(".big_banner").css("display","block");
+				$(".h4_blog").css("display","block");
+				$(".h2_free_banner").css("display","none");
+				$(".h2_choose").css("display","none");
+				$(".s1").css("display","none");
+				$(".h2_carousel").css("display","none");
+				$(".h2_count_hour").css("display","none");
+				$(".h4_testi").css("display","block");
+				$(".h2_special").css("display","none");
+			 }
+			 
+		 });
+
+	});
+
+</script>

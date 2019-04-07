@@ -1,0 +1,102 @@
+{{ header }}
+<div class="container account-return">
+<div class="banner-header banner-lbook3 space-50">
+    <img src="image/catalog/images/banner-catalog1.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ heading_title }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+<div class="container container-ver2">
+ 
+  <div class="">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content">{{ content_top }}
+      <h1 class="title-brand">{{ heading_title }}</h1>
+      {% if returns %}
+      <div class="table-responsive box cart-container">
+        <table class="table table cart-table space-80 hidden-xs">
+          <thead>
+            <tr>
+              <th class="text-center">{{ column_return_id }}</th>
+              <th class="text-center">{{ column_status }}</th>
+              <th class="text-center">{{ column_date_added }}</th>
+              <th class="text-right">{{ column_order_id }}</th>
+              <th class="text-right">{{ column_customer }}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {% for return in returns %}
+          <tr>
+            <td class="text-center return-id">#{{ return.return_id }}</td>
+            <td class="text-center status">{{ return.status }}</td>
+            <td class="text-center date">{{ return.date_added }}</td>
+            <td class="text-right order-id">{{ return.order_id }}</td>
+            <td class="text-right">{{ return.order_id }}</td>
+            <td class="text-right"><a href="{{ return.href }}" data-toggle="tooltip" title="{{ button_view }}" class="link-v1 lh-50 rt"><i class="fa fa-eye"></i></a></td>
+          </tr>
+          {% endfor %}
+            </tbody>
+          
+        </table>
+		 <table class="table table-bordered cart-return space-80 hidden-md hidden-sm hidden-lg">
+         <thead>
+            <tr>
+              <th colspan="3" class="text-center">{{ heading_title }}</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+           {% for return in returns %}
+            <tr><td>{{ column_return_id }}</td>
+				<td class="text-center return-id">#{{ return.return_id }}</td>
+			</tr>
+			<tr><td>{{ column_status }}</td>
+              <td class="text-center status">{{ return.status }}</td>
+            </tr>
+			<tr><td>{{ column_date_added }}</td>
+				<td class="text-center date">{{ return.date_added }}</td>
+            </tr>
+			<tr><td>{{ column_order_id }}</td>
+				<td class="text-right order-id">{{ return.order_id }}</td>
+            </tr> 
+			<tr><td>{{ column_customer }}</td>			
+				<td class="text-right">{{ return.order_id }}</td>
+             </tr>
+			<tr> 
+				<td colspan="2" class="text-center"><a href="{{ return.href }}" data-toggle="tooltip" title="{{ button_view }}" class="link-v1 lh-50 rt"><i class="fa fa-eye"></i></a></td>
+				
+            </tr>
+			 <tr class="no-border">
+				<td class="text-center" colspan='2'><br></td>
+			</tr> 
+			 
+			 {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right  page">{{ results }}</div>
+      </div><br/>
+	  
+      {% else %}
+      <p>{{ text_empty }}</p>
+      {% endif %}
+      <div class="buttons clearfix">
+        <div class="pull-right"><a href="{{ continue }}" class="link-v1 lh-50 rt">{{ button_continue }}</a></div>
+      </div>
+     </div>
+   </div>
+</div></div>
+{{ footer }} 

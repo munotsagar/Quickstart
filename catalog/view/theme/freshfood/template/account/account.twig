@@ -1,0 +1,59 @@
+{{ header }}
+<div class="container">
+<div class="banner-header banner-lbook3 space-70">
+    <img src="image/catalog/images/banner-blog.jpg" alt="Banner-header" class="img-responsive">
+            <div class="text">
+			 <h3 style="color:#ffffff;">{{ txt_regiaccount }}</h3><p>
+			 {% for breadcrumb in breadcrumbs %}
+               <a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><i class="fa fa-caret-right"></i>
+			 {% endfor %}</p>
+            </div>
+</div>
+<div id="account-account" class="account-account">
+ 
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+  <button type="button" class="close" data-dismiss="alert">&times;</button></div>
+  {% endif %}
+  <div class="">
+    <div id="content" class="{{ class }}">{{ content_top }}
+	<div class="container container-ver2">
+      <h2 class="title-brand">{{ text_my_account }}</h2>
+      <ul class="list-unstyled acc-style">
+        <li><a href="{{ edit }}">{{ text_accountedit }}</a></li>
+        <li><a href="{{ password }}">{{ text_accountpassword }}</a></li>
+	
+	
+        <li><a href={{ carddet }}>{{ text_carddet }}</a></li>
+        <li><a href="{{ wishlist }}">{{ text_accountwishlist }}</a></li>
+		<li><a href="{{ logout }}">{{ text_accountlogout }}</a><li>
+      </ul>
+      {% if credit_cards %}
+      <h2>{{ text_credit_card }}</h2>
+      <ul class="list-unstyled">
+        {% for credit_card in credit_cards %}
+        <li><a href="{{ credit_card.href }}">{{ credit_card.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <h2 class="title-brand">{{ text_my_orders }}</h2>
+      <ul class="list-unstyled acc-style">
+        <li><a href="{{ order }}">{{ text_accountorder }}</a></li>
+      <li><a href="{{ download }}">{{ text_download }}</a></li>  
+        {% if reward %}
+        <li><a href="{{ reward }}">{{ text_accountreward }}</a></li>
+        {% endif %}
+        <li><a href="{{ return }}">{{ text_accountreturn }}</a></li>
+        <li><a href="{{ transaction }}">{{ text_accounttransaction }}</a></li>
+        <li><a href="{{ recurring }}">{{ text_accountrecurring }}</a></li>
+      </ul>
+       
+      <h2 class="title-brand">{{ text_my_newsletter }}</h2>
+      <ul class="list-unstyled acc-style">
+        <li><a href="{{ newsletter }}">{{ text_accountnewsletter }}</a></li>
+      </ul>
+     </div></div>
+   </div>
+</div>
+</div>
+{{ footer }}
